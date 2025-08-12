@@ -1,0 +1,137 @@
+{
+  "name": "food",
+  "scopeName": "source.food",
+  "fileTypes": [
+    "food"
+  ],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#types"
+    },
+    {
+      "include": "#builtins"
+    },
+    {
+      "include": "#actions"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#variables"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.food",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.food",
+          "begin": "/\\*",
+          "end": "\\*/",
+          "patterns": [
+            {
+              "include": "#comments"
+            }
+          ]
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.food",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.food",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.declaration.food",
+          "match": "\\b(?:recipe|step|ingredient|utensil|fn|new|return)\\b"
+        },
+        {
+          "name": "keyword.control.food",
+          "match": "\\b(?:if|else|for|while|in|break|continue|await)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.class.food",
+          "match": "\\b(?:Bowl|Pan|Oven|Knife|Timer|Mixer|Blender|Pot|Skillet|Whisk|BakingSheet|Saucepan|Flour|Sugar|Salt|Butter|Eggs|Egg|Milk|Water|Oil|Vanilla|ChocolateChips|Cinnamon|BakingPowder|BakingSoda|Yeast|BrownSugar|GroundBeef|Cornstarch|Onion|BlackPepper|VegetableOil|PineappleJuice|SoySauce|WhiteVinegar|Pineapple|GreenPepper|Carrot)\\b"
+        }
+      ]
+    },
+    "builtins": {
+      "patterns": [
+        {
+          "name": "support.function.builtin.food",
+          "match": "\\b(?:wait|transfer)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "actions": {
+      "patterns": [
+        {
+          "name": "support.function.method.food",
+          "match": "\\.\\b(?:add|mix|stir|fold|whisk|pour|form|drain|preheat|bake|roast|broil|heatTo|heat|boil|simmer|saute|fry|brown|chop|dice|slice|mince|set|start|stop)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "meta.function.food",
+          "begin": "\\b(fn)\\b\\s+([A-Za-z_][\\w]*)\\s*(?=\\()",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.declaration.food"
+            },
+            "2": {
+              "name": "entity.name.function.food"
+            }
+          },
+          "end": "(?=\\()"
+        },
+        {
+          "name": "entity.name.function.food",
+          "match": "\\b([A-Za-z_][\\w]*)\\b(?=\\s*\\()"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.property.food",
+          "match": "\\.(?:[A-Za-z_][\\w]*)"
+        },
+        {
+          "name": "variable.other.food",
+          "match": "\\b[a-z_][A-Za-z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}

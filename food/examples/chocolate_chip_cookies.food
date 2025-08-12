@@ -1,0 +1,49 @@
+//chocolate_chip_cookies.food
+
+fn cook() {
+
+    // Ingredients
+    flour = new Flour("240g (2 cups)")
+    sugar = new Sugar("200g (1 cup)")
+    brown_sugar = new BrownSugar("220g (1 cup)")
+    butter = new Butter("226g (1 cup)")
+    eggs = new Eggs("2 large")
+    vanilla = new Vanilla("6ml (1 tsp)")
+    baking_soda = new BakingSoda("5g (1 tsp)")
+    salt = new Salt("3g (1/2 tsp)")
+    chocolate_chips = new ChocolateChips("340g (2 cups)")
+
+    // Equipment
+    mixing_bowl = new Bowl()
+    oven = new Oven()
+    baking_sheet = new BakingSheet()
+
+
+    oven.preheat("175C (350F)")
+
+    mixing_bowl.add(butter)
+    mixing_bowl.add(sugar)
+    mixing_bowl.add(brown_sugar)
+    mixing_bowl.mix("3 minutes") 
+
+    mixing_bowl.add(eggs)
+    mixing_bowl.add(vanilla)
+    mixing_bowl.mix(1) 
+
+    mixing_bowl.add(flour)
+    mixing_bowl.add(baking_soda)
+    mixing_bowl.add(salt)
+    mixing_bowl.mix(2) 
+
+    mixing_bowl.add(chocolate_chips)
+    mixing_bowl.fold() 
+
+
+    transfer(mixing_bowl, baking_sheet, "tablespoon-sized portions")
+
+    oven.bake(baking_sheet, "10-12 minutes")
+
+    wait("5 minutes")
+
+    return "Makes about 24 cookies"
+}

@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-grammar",
+      "type": "shell",
+      "command": "npm run build-grammar"
+    },
+    {
+      "label": "watch-grammar",
+      "type": "shell",
+      "command": "npm run watch-grammar",
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": ".",
+          "file": 1,
+          "location": 2,
+          "message": 3
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "Generated syntaxes/food.tmLanguage.json",
+          "endsPattern": "Generated syntaxes/food.tmLanguage.json"
+        }
+      },
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated"
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
+    }
+  ]
+}
