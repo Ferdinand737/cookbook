@@ -38,7 +38,6 @@ fn cook() {
     mixing_bowl.add(chocolate_chips)
     mixing_bowl.fold() 
 
-
     transfer(mixing_bowl, baking_sheet, "tablespoon-sized portions")
 
     oven.bake(baking_sheet, "10-12 minutes")

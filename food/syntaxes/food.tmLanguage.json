@@ -80,7 +80,7 @@
       "patterns": [
         {
           "name": "support.class.food",
-          "match": "\\b(?:Bowl|Pan|Oven|Knife|Timer|Mixer|Blender|Pot|Skillet|Whisk|BakingSheet|Saucepan|Flour|Sugar|Salt|Butter|Eggs|Egg|Milk|Water|Oil|Vanilla|ChocolateChips|Cinnamon|BakingPowder|BakingSoda|Yeast|BrownSugar|GroundBeef|Cornstarch|Onion|BlackPepper|VegetableOil|PineappleJuice|SoySauce|WhiteVinegar|Pineapple|GreenPepper|Carrot)\\b"
+          "match": "\\b(?:Bowl|Pan|Oven|Knife|Timer|Mixer|Blender|Pot|Skillet|Whisk|BakingSheet|Saucepan|AirFryer|RiceCooker|Flour|Sugar|Salt|Butter|Eggs|Egg|Milk|Water|Oil|Vanilla|ChocolateChips|Cinnamon|BakingPowder|BakingSoda|Yeast|BrownSugar|GroundBeef|Cornstarch|Onion|BlackPepper|VegetableOil|PineappleJuice|SoySauce|WhiteVinegar|Pineapple|GreenPepper|Carrot|ChickenBreast|BellPepper|Garlic|SesameOil|OliveOil|OnionPowder|GarlicPowder|FrozenStirFryVeggies|Rice)\\b"
         }
       ]
     },
