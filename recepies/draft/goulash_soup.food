@@ -1,0 +1,57 @@
+//goulash_soup.food
+
+fn cook() {
+    
+    // Ingredients
+    goulash_meat = new GoulashMeat("500g")
+    onion = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    bell_pepper = new BellPepper("1 medium")
+    tomatoes = new Tomato("2 medium")
+    potatoes = new Potato("500g")
+    carrots = new Carrot("2-3 medium")
+    celery = new Celery("1 slice")
+    salt = new Salt("to taste")
+    caraway_seeds = new CarawaySeeds("1/2 tsp")
+    paprika = new Paprika("2 tsp")
+    water = new Water("as needed")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
+    // Preparation
+    knife.dice(goulash_meat, "pieces")
+    knife.chop(onion)
+    knife.mince(garlic)
+    knife.dice(bell_pepper)
+    knife.dice(tomatoes)
+    knife.dice(potatoes)
+    knife.slice(carrots)
+    knife.dice(celery)
+    
+    // Cooking
+    pot.heat("medium-high")
+    pot.add(goulash_meat)
+    pot.brown("until seared")
+    
+    pot.add(onion)
+    pot.add(garlic)
+    pot.saute("until translucent")
+    
+    pot.add(bell_pepper)
+    pot.add(tomatoes)
+    pot.add(potatoes)
+    pot.add(carrots)
+    pot.add(celery)
+    
+    pot.add(salt)
+    pot.add(caraway_seeds)
+    pot.add(paprika)
+    
+    pot.add(water, "to cover ingredients")
+    pot.bring_to_boil()
+    pot.simmer("1-1.5 hours until meat is tender")
+    
+    return "Goulash Soup"
+}

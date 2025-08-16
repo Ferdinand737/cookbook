@@ -1,0 +1,74 @@
+//pizza_pockets.food
+
+fn cook() {
+    
+    // Dough Ingredients
+    flour = new Flour("425g")
+    salt = new Salt("1/2 tsp")
+    dry_yeast = new DryYeast("1 package")
+    olive_oil = new OliveOil("4 tbsp")
+    water = new Water("250ml, lukewarm")
+    
+    // Filling Ingredients
+    cooked_ham = new CookedHam("200g")
+    broccoli = new Broccoli("250g")
+    red_bell_pepper = new BellPepper("1 red")
+    mozzarella = new Mozzarella("125g")
+    salt_filling = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    knife = new Knife()
+    pot = new Pot()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    
+    // Make dough
+    mixing_bowl.add(flour)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(dry_yeast)
+    mixing_bowl.mix()
+    mixing_bowl.add(olive_oil)
+    mixing_bowl.add(water)
+    mixing_bowl.knead("until smooth")
+    
+    wait("45 minutes in warm place to rise")
+    mixing_bowl.knead("vigorously again")
+    dough_portions = mixing_bowl.divide("8 portions")
+    
+    // Prepare filling
+    knife.slice(cooked_ham, "strips")
+    broccoli.divide("florets")
+    pot.boil("salt water")
+    pot.add(broccoli)
+    pot.cook("1 minute")
+    pot.drain()
+    broccoli.rinse("cold water")
+    
+    knife.slice(red_bell_pepper, "strips")
+    knife.dice(mozzarella)
+    
+    filling_bowl = new Bowl()
+    filling_bowl.add(broccoli)
+    filling_bowl.add(red_bell_pepper)
+    filling_bowl.add(mozzarella)
+    filling_bowl.add(salt_filling)
+    filling_bowl.add(pepper)
+    filling_bowl.mix()
+    
+    // Assembly
+    rolling_pin.roll(dough_portions, "20cm rounds on flour")
+    dough_portions.fill(filling_bowl, "half of each round")
+    dough_portions.fold("other half over")
+    dough_portions.press("edges firmly")
+    
+    // Baking
+    baking_sheet.line("parchment paper")
+    baking_sheet.add(dough_portions)
+    oven.preheat("250C")
+    oven.bake(baking_sheet, "15 minutes until golden brown")
+    
+    return "Pizza Pockets - serve with tzatziki"
+}

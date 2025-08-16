@@ -1,0 +1,54 @@
+//duck_a_l_orange.food
+
+fn cook() {
+    
+    // Ingredients
+    duck = new Duck("1 whole")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    thyme = new Thyme("to taste")
+    oranges = new Orange("2")
+    apples = new Apple("2")
+    bay_leaf = new BayLeaf("1")
+    parsley = new Parsley("fresh")
+    root_vegetables = new RootVegetables("mixed")
+    celery = new Celery("little")
+    orange_juice = new OrangeJuice("for sauce")
+    white_wine = new WhiteWine("for sauce")
+    orange_peel = new OrangePeel("thinly sliced")
+    
+    // Equipment
+    roasting_pan = new RoastingPan()
+    oven = new Oven()
+    knife = new Knife()
+    
+    // Preparation
+    duck.rub(salt, "inside and outside")
+    duck.rub(pepper, "inside and outside")
+    duck.rub(thyme, "inside and outside")
+    
+    knife.quarter(oranges)
+    knife.quarter(apples)
+    
+    // Stuffing
+    duck.stuff(oranges)
+    duck.stuff(apples)
+    duck.stuff(bay_leaf)
+    duck.stuff(parsley)
+    
+    // Roasting
+    roasting_pan.add(root_vegetables)
+    roasting_pan.add(celery, "little")
+    roasting_pan.add(duck)
+    
+    oven.roast(roasting_pan, "like fat roast")
+    
+    // Sauce
+    sauce = roasting_pan.make_sauce()
+    sauce.add(orange_juice)
+    sauce.add(white_wine)
+    sauce.add(orange_peel)
+    sauce.adjust_seasoning()
+    
+    return "Duck à l'Orange"
+}

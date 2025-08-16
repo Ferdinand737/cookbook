@@ -1,0 +1,58 @@
+//stuffed_eggs.food
+
+fn cook() {
+    
+    // Ingredients
+    eggs = new Egg("8")
+    bread_rolls = new BreadRoll("4")
+    milk = new Milk("for soaking")
+    fat = new Fat("for sautéing")
+    salt = new Salt("to taste")
+    parsley = new Parsley("fresh")
+    sour_cream = new SourCream("for topping")
+    
+    // Equipment
+    pot = new Pot()
+    knife = new Knife()
+    pan = new Pan()
+    glass_dish = new GlassDish()
+    oven = new Oven()
+    mixing_bowl = new Bowl()
+    
+    // Preparation
+    pot.boil(eggs, "hard boiled")
+    eggs.cool()
+    knife.cut(eggs, "in half crosswise")
+    egg_yolks = eggs.remove("yolks")
+    
+    bread_rolls.soak(milk)
+    bread_rolls.squeeze_dry()
+    
+    knife.chop(parsley)
+    pan.heat("medium")
+    pan.add(fat)
+    pan.add(parsley)
+    pan.saute("until fragrant")
+    
+    // Make filling
+    mixing_bowl.add(egg_yolks)
+    mixing_bowl.add(bread_rolls)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(pan) // sautéed parsley
+    mixing_bowl.mix("into paste")
+    
+    // Stuff eggs
+    eggs.fill(mixing_bowl)
+    
+    // Assembly
+    glass_dish.grease()
+    glass_dish.add(mixing_bowl, "remaining egg mixture")
+    glass_dish.place(eggs, "stuffed eggs on top")
+    glass_dish.pour(sour_cream)
+    
+    // Baking
+    oven.preheat("180C")
+    oven.bake(glass_dish, "20 minutes gently")
+    
+    return "Stuffed Eggs"
+}

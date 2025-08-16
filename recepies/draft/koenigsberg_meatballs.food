@@ -1,0 +1,75 @@
+//koenigsberg_meatballs.food
+
+fn cook() {
+    
+    // Meatball Ingredients
+    ground_meat = new GroundMeat("400g")
+    onion = new Onion("1 medium")
+    bread_roll = new BreadRoll("1")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    parsley = new Parsley("1 tbsp, chopped")
+    mustard = new Mustard("1 tsp")
+    anchovy_paste = new AnchovyPaste("1 tsp")
+    
+    // Sauce Ingredients
+    butter = new Butter("60g")
+    flour = new Flour("40g")
+    lemon_juice = new LemonJuice("fresh")
+    egg_yolks = new EggYolk("2")
+    cognac = new Cognac("1 small glass")
+    capers = new Capers("to taste")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    knife = new Knife()
+    pot = new Pot()
+    saucepan = new Saucepan()
+    
+    // Prepare meatballs
+    knife.chop(onion, "fine")
+    bread_roll.soak()
+    bread_roll.squeeze_dry()
+    
+    mixing_bowl.add(ground_meat)
+    mixing_bowl.add(onion)
+    mixing_bowl.add(bread_roll)
+    mixing_bowl.add(mustard)
+    mixing_bowl.add(anchovy_paste)
+    mixing_bowl.add(parsley)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(pepper)
+    mixing_bowl.mix("until combined")
+    
+    meatballs = mixing_bowl.form("balls")
+    
+    // Cook meatballs
+    pot.add("500ml salt water")
+    pot.boil()
+    pot.add(meatballs)
+    pot.simmer("until cooked through")
+    
+    broth = pot.reserve("cooking liquid")
+    pot.drain()
+    
+    // Make sauce
+    saucepan.heat("medium")
+    saucepan.add(butter)
+    saucepan.add(flour)
+    saucepan.cook("until golden roux")
+    saucepan.add(broth)
+    saucepan.cook("until smooth")
+    saucepan.add(salt)
+    saucepan.add(lemon_juice)
+    saucepan.add(capers)
+    
+    // Finish sauce
+    saucepan.remove_from_heat()
+    saucepan.add(egg_yolks)
+    saucepan.stir("to thicken")
+    saucepan.add(cognac)
+    
+    saucepan.add(meatballs)
+    
+    return "Königsberg Meatballs - serve with potatoes and salad"
+}

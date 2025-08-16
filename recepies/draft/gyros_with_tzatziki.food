@@ -1,0 +1,68 @@
+//gyros_with_tzatziki.food
+
+fn cook() {
+    
+    // Gyros Ingredients
+    pork = new Pork("750g")
+    oil = new Oil("125ml")
+    thyme = new Thyme("1 tbsp, dried")
+    oregano = new Oregano("1 tbsp, dried")
+    garlic_gyros = new Garlic("3 cloves")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Tzatziki Ingredients
+    cucumber = new Cucumber("250g")
+    garlic_tzatziki = new Garlic("3 cloves")
+    cream_quark = new CreamQuark("250g")
+    cream_yogurt = new CreamYogurt("150g")
+    dill = new Dill("1 bunch, fresh")
+    vinegar = new Vinegar("for acidity")
+    
+    // Equipment
+    knife = new Knife()
+    mixing_bowl = new Bowl()
+    grater = new Grater()
+    pan = new Pan()
+    sieve = new Sieve()
+    
+    // Prepare gyros marinade
+    knife.dice(garlic_gyros, "fine")
+    knife.slice(pork, "strips")
+    
+    marinade_bowl = new Bowl()
+    marinade_bowl.add(oil)
+    marinade_bowl.add(thyme)
+    marinade_bowl.add(oregano)
+    marinade_bowl.add(garlic_gyros)
+    marinade_bowl.stir()
+    
+    marinade_bowl.add(pork)
+    marinade_bowl.mix("to coat")
+    wait("4 hours minimum, covered")
+    
+    // Prepare tzatziki
+    grater.grate(cucumber, "coarse")
+    cucumber.squeeze("to remove excess water")
+    knife.crush(garlic_tzatziki)
+    knife.chop(dill, "fine")
+    
+    tzatziki_bowl = new Bowl()
+    tzatziki_bowl.add(cream_quark)
+    tzatziki_bowl.add(cream_yogurt)
+    tzatziki_bowl.add(garlic_tzatziki)
+    tzatziki_bowl.add(cucumber)
+    tzatziki_bowl.add(dill)
+    tzatziki_bowl.add(salt)
+    tzatziki_bowl.add(pepper)
+    tzatziki_bowl.add(vinegar, "to taste")
+    tzatziki_bowl.stir("until combined")
+    
+    // Cook gyros
+    sieve.drain(pork, "remove marinade")
+    pan.heat("high")
+    pan.add(pork)
+    pan.fry("4 minutes, stirring frequently")
+    
+    return "Gyros with Tzatziki"
+}

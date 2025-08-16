@@ -1,0 +1,57 @@
+//pizza.food
+
+fn cook() {
+    
+    // Dough Ingredients
+    flour = new Flour("250g")
+    margarine = new Margarine("100g")
+    salt = new Salt("1 tsp")
+    vinegar = new Vinegar("1 tsp")
+    water = new Water("125ml")
+    
+    // Topping Ingredients
+    tomato_cans = new TomatoCan("1-2 cans")
+    tomato_paste = new TomatoPaste("to taste")
+    garlic = new Garlic("to taste")
+    spices = new MixedSpices("various")
+    salami = new Salami("sliced")
+    anchovies = new Anchovies("optional")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    
+    // Make dough
+    mixing_bowl.add(flour)
+    mixing_bowl.add(margarine)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(vinegar)
+    mixing_bowl.add(water)
+    mixing_bowl.mix("until smooth and elastic")
+    
+    // Add flour as needed until dough is workable
+    wait("refrigerate if possible for better consistency")
+    
+    // Prepare topping sauce
+    sauce_bowl = new Bowl()
+    sauce_bowl.add(tomato_cans)
+    sauce_bowl.add(tomato_paste)
+    sauce_bowl.add(garlic)
+    sauce_bowl.add(spices)
+    sauce_bowl.mix("into paste")
+    
+    // Assembly
+    rolling_pin.roll(mixing_bowl, "flat")
+    baking_sheet.add(mixing_bowl) // rolled dough
+    baking_sheet.spread(sauce_bowl)
+    baking_sheet.add(salami)
+    baking_sheet.add(anchovies)
+    
+    // Baking
+    oven.preheat("200C")
+    oven.bake(baking_sheet, "15-20 minutes")
+    
+    return "Pizza"
+}

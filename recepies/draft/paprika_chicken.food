@@ -1,0 +1,50 @@
+//paprika_chicken.food
+
+fn cook() {
+    
+    // Ingredients
+    chicken = new Chicken("1 whole")
+    onion = new Onion("1 medium")
+    fat = new Fat("for frying")
+    paprika = new Paprika("generous amount")
+    tomato = new Tomato("1 medium")
+    salt = new Salt("to taste")
+    flour = new Flour("for thickening")
+    sour_cream = new SourCream("2 tbsp")
+    water = new Water("2 tbsp")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    small_bowl = new Bowl()
+    
+    // Preparation
+    knife.cut(chicken, "8 pieces")
+    knife.chop(onion, "fine")
+    knife.quarter(tomato)
+    
+    // Cooking
+    pot.heat("medium")
+    pot.add(fat)
+    pot.add(onion)
+    pot.brown("until golden")
+    
+    pot.add(paprika)
+    pot.add(chicken)
+    pot.add(tomato)
+    pot.add(salt)
+    pot.add(water)
+    
+    pot.cover()
+    pot.braise("slowly until chicken is tender")
+    
+    // Thicken sauce
+    small_bowl.add(flour)
+    small_bowl.add(sour_cream)
+    small_bowl.stir("until smooth")
+    
+    pot.add(small_bowl)
+    pot.boil("once to thicken")
+    
+    return "Paprika Chicken - serve with rice"
+}

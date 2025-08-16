@@ -1,0 +1,50 @@
+//mushroom_schnitzel.food
+
+fn cook() {
+    
+    // Ingredients
+    schnitzels = new Schnitzel("2 pieces")
+    lemon_juice = new LemonJuice("fresh")
+    mushrooms = new Mushroom("125-150g, fresh")
+    oil = new Oil("for frying")
+    salt = new Salt("to taste")
+    flour = new Flour("for dusting")
+    cream = new Cream("125ml")
+    white_wine = new WhiteWine("2 tbsp")
+    
+    // Equipment
+    meat_mallet = new MeatMallet()
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    meat_mallet.pound(schnitzels, "until thin")
+    schnitzels.sprinkle(lemon_juice)
+    
+    knife.slice(mushrooms)
+    mushrooms.sprinkle(lemon_juice)
+    
+    // Cooking mushrooms
+    pan.heat("medium-high")
+    pan.add(oil)
+    pan.add(mushrooms)
+    pan.fry("until golden")
+    mushrooms.remove_from_pan()
+    
+    // Cooking schnitzels
+    pan.add(schnitzels)
+    pan.fry("6-10 minutes, turning once")
+    schnitzels.season(salt)
+    
+    // Make sauce
+    pan.sprinkle(flour, "over schnitzels")
+    pan.add(cream)
+    pan.add(white_wine)
+    pan.stir("to deglaze")
+    
+    pan.add(mushrooms)
+    pan.stir("to combine")
+    pan.adjust_seasoning()
+    
+    return "Mushroom Schnitzel"
+}

@@ -1,0 +1,47 @@
+//colorful_onion_pot.food
+
+fn cook() {
+    
+    // Ingredients
+    onions = new Onion("500g")
+    long_grain_rice = new LongGrainRice("2 tbsp")
+    instant_broth = new InstantBroth("1 tbsp")
+    tomatoes = new Tomato("500g")
+    bell_peppers = new BellPepper("500g")
+    corned_beef = new CornedBeef("340g, 1 can")
+    paprika = new Paprika("1 tsp")
+    parsley = new Parsley("1/2 bunch")
+    oil = new Oil("for frying")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    knife.slice(onions)
+    knife.dice(tomatoes)
+    knife.dice(bell_peppers)
+    knife.chop(parsley)
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(oil)
+    pan.add(onions)
+    pan.saute("until translucent")
+    
+    pan.add(long_grain_rice)
+    pan.add(instant_broth)
+    pan.stir()
+    
+    pan.add(tomatoes)
+    pan.add(bell_peppers)
+    pan.add(corned_beef)
+    pan.add(paprika)
+    pan.stir()
+    
+    pan.simmer("until rice is tender and vegetables are cooked")
+    
+    pan.garnish(parsley)
+    
+    return "Colorful Onion Pot"
+}

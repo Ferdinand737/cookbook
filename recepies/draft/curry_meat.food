@@ -1,0 +1,66 @@
+//curry_meat.food
+
+fn cook() {
+    
+    // Ingredients
+    pork_tenderloin = new PorkTenderloin("500g")
+    pepper = new BlackPepper("to taste")
+    salt = new Salt("to taste")
+    curry = new Curry("to taste")
+    oil = new Oil("for frying")
+    onion = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    apple = new Apple("1 large")
+    red_bell_pepper = new BellPepper("1 red")
+    pineapple = new Pineapple("2 slices")
+    water = new Water("250ml")
+    curry_sauce_mix = new CurrySauceMix("1 box")
+    
+    // Equipment
+    knife = new Knife()
+    roasting_pot = new RoastingPot()
+    
+    // Preparation
+    pork_tenderloin.rinse("cold water")
+    pork_tenderloin.dry("with kitchen paper")
+    knife.slice(pork_tenderloin, "1/2 cm thick strips")
+    
+    spice_mix = new Bowl()
+    spice_mix.add(salt)
+    spice_mix.add(pepper)
+    spice_mix.add(curry)
+    spice_mix.mix()
+    
+    pork_tenderloin.sprinkle(spice_mix)
+    
+    knife.dice(onion)
+    knife.dice(garlic)
+    knife.dice(apple)
+    knife.dice(red_bell_pepper)
+    knife.dice(pineapple, "small pieces")
+    
+    // Cooking
+    roasting_pot.heat("medium")
+    roasting_pot.add(oil)
+    roasting_pot.add(pork_tenderloin)
+    roasting_pot.brown("10 minutes")
+    
+    roasting_pot.add(onion)
+    roasting_pot.add(garlic)
+    roasting_pot.add(apple)
+    roasting_pot.add(red_bell_pepper)
+    roasting_pot.add(pineapple)
+    roasting_pot.mix()
+    
+    roasting_pot.cover()
+    roasting_pot.braise("5 minutes on low heat")
+    
+    roasting_pot.add(water)
+    roasting_pot.add(curry_sauce_mix)
+    roasting_pot.stir()
+    roasting_pot.boil()
+    
+    wait("few minutes without heat to let flavors meld")
+    
+    return "Curry Meat"
+}

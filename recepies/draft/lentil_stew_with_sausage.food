@@ -1,0 +1,66 @@
+//lentil_stew_with_sausage.food
+
+fn cook() {
+    
+    // Ingredients
+    lentils = new Lentils("500g")
+    smoked_bacon = new SmokedBacon("100g")
+    onions = new Onion("2 medium")
+    carrots = new Carrot("3 medium")
+    celery_root = new CeleryRoot("1/4")
+    potatoes = new Potato("700g")
+    water = new Water("1l")
+    smoked_sausages = new SmokedSausage("4 small")
+    chives = new Chives("1 bunch")
+    parsley = new Parsley("1 bunch")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
+    // Preparation
+    knife.slice(smoked_bacon)
+    knife.dice(onions, "fine")
+    knife.slice(carrots, "sticks")
+    knife.dice(celery_root)
+    knife.dice(potatoes)
+    lentils.rinse("cold water")
+    lentils.drain()
+    
+    // Cooking
+    pot.heat("medium")
+    pot.add(smoked_bacon)
+    pot.render("until crispy")
+    
+    pot.add(onions)
+    pot.fry("golden brown with bacon")
+    
+    pot.add(carrots)
+    pot.add(potatoes)
+    pot.add(celery_root)
+    pot.fry("briefly")
+    
+    pot.add(lentils)
+    pot.add(water)
+    pot.stir()
+    pot.boil()
+    
+    pot.add(smoked_sausages)
+    pot.cover()
+    pot.simmer("1 hour on low heat")
+    
+    // Finish
+    knife.chop(parsley, "fine")
+    knife.chop(chives, "fine")
+    
+    pot.add(parsley)
+    pot.add(chives)
+    pot.stir()
+    
+    pot.add(salt)
+    pot.add(pepper)
+    
+    return "Lentil Stew with Smoked Sausage - pressure cooker reduces time to 20 min"
+}

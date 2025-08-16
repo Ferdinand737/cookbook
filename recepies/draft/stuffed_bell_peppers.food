@@ -1,0 +1,74 @@
+//stuffed_bell_peppers.food
+
+fn cook() {
+    
+    // Ingredients
+    bell_peppers = new BellPepper("8-10 large")
+    fat = new Fat("2 tbsp")
+    onion = new Onion("1 small")
+    rice = new Rice("4 tbsp")
+    ground_meat = new GroundMeat("500g, mixed")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    paprika = new Paprika("to taste")
+    tomato_paste = new TomatoPaste("1 can")
+    sugar = new Sugar("2 tbsp")
+    flour = new Flour("1 tbsp")
+    water = new Water("250ml")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    large_pot = new Pot()
+    pan = new Pan()
+    
+    // Preparation
+    knife.chop(onion, "fine")
+    bell_peppers.wash()
+    bell_peppers.hollow_out()
+    
+    // Cook rice filling
+    pan.heat("medium")
+    pan.add(fat)
+    pan.add(onion)
+    pan.saute("until translucent")
+    pan.add(rice)
+    pan.add(water, "until 2-3cm above rice")
+    pan.simmer("until rice half-cooked")
+    
+    // Add meat
+    pan.add(ground_meat)
+    pan.add(salt)
+    pan.add(pepper)
+    pan.add(water, "1-2 tbsp")
+    pan.mix("well")
+    
+    // Stuff peppers
+    bell_peppers.fill(pan, "loosely")
+    
+    // Prepare sauce
+    sauce_bowl = new Bowl()
+    sauce_bowl.add(tomato_paste)
+    sauce_bowl.add(water, "250ml")
+    sauce_bowl.add(salt)
+    sauce_bowl.add(sugar)
+    sauce_bowl.mix()
+    
+    // Cook peppers
+    large_pot.add(bell_peppers)
+    large_pot.add(sauce_bowl)
+    large_pot.simmer("low heat until tender")
+    
+    // Make roux
+    roux_pan = new Pan()
+    roux_pan.add(fat)
+    roux_pan.add(flour)
+    roux_pan.cook("until golden")
+    
+    // Finish sauce
+    large_pot.add(roux_pan)
+    large_pot.boil("briefly")
+    bell_peppers.simmer("10 minutes more")
+    
+    return "Stuffed Bell Peppers"
+}

@@ -1,0 +1,52 @@
+//swallows_nests.food
+
+fn cook() {
+    
+    // Ingredients
+    thin_schnitzels = new Schnitzel("4 thin pieces")
+    gouda = new Gouda("4 slices")
+    ham = new Ham("4 slices, cooked")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    tomato_paste = new TomatoPaste("1 tbsp")
+    hard_eggs = new HardBoiledEgg("4")
+    raw_eggs = new Egg("2")
+    breadcrumbs = new Breadcrumbs("for coating")
+    emmental = new Emmental("2 tbsp, grated")
+    fat = new Fat("for deep frying")
+    
+    // Equipment
+    knife = new Knife()
+    mixing_bowl = new Bowl()
+    deep_fryer = new DeepFryer()
+    kitchen_string = new KitchenString()
+    
+    // Preparation
+    thin_schnitzels.spread(tomato_paste, "thinly")
+    thin_schnitzels.sprinkle(salt)
+    thin_schnitzels.sprinkle(pepper)
+    thin_schnitzels.top(ham, "1 slice each")
+    thin_schnitzels.add(tomato_paste, "a bit more")
+    thin_schnitzels.top(gouda, "1 slice each")
+    thin_schnitzels.place(hard_eggs, "1 on each")
+    
+    // Roll and tie
+    thin_schnitzels.roll("over eggs into roulades")
+    kitchen_string.tie(thin_schnitzels, "securely")
+    
+    // Prepare coating
+    mixing_bowl.add(breadcrumbs)
+    mixing_bowl.add(emmental)
+    mixing_bowl.mix()
+    
+    // Coat roulades
+    raw_eggs.beat()
+    thin_schnitzels.dip(raw_eggs)
+    thin_schnitzels.coat(mixing_bowl)
+    
+    // Deep fry
+    deep_fryer.heat("hot fat")
+    deep_fryer.fry(thin_schnitzels, "until golden brown")
+    
+    return "Swallows' Nests"
+}

@@ -1,0 +1,61 @@
+//potato_soup.food
+
+fn cook() {
+    
+    // Ingredients
+    beef = new Beef("300g")
+    oil = new Oil("2 tbsp")
+    onions = new Onion("2 medium")
+    meat_broth_cubes = new MeatBrothCube("1 box")
+    potatoes = new Potato("500g")
+    bell_peppers = new BellPepper("2 medium")
+    leek = new Leek("1 small stalk")
+    pepper = new BlackPepper("to taste")
+    salt = new Salt("to taste")
+    parsley = new Parsley("1/2 bunch")
+    cream = new Cream("2 tbsp, optional")
+    water = new Water("1l")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
+    // Preparation
+    knife.dice(beef, "1cm cubes")
+    knife.dice(onions)
+    knife.dice(potatoes)
+    knife.slice(bell_peppers, "strips")
+    knife.slice(leek)
+    knife.chop(parsley, "fine")
+    
+    // Cooking
+    pot.heat("medium")
+    pot.add(oil)
+    pot.add(beef)
+    pot.brown("10 minutes")
+    
+    pot.add(onions)
+    pot.saute("briefly")
+    
+    pot.add(water)
+    pot.add(meat_broth_cubes)
+    pot.boil()
+    pot.cover()
+    pot.cook("40 minutes (pressure cooker 20 min)")
+    
+    pot.add(potatoes)
+    pot.add(bell_peppers)
+    pot.add(leek)
+    pot.boil()
+    pot.cook("15-20 minutes until tender (pressure cooker 5-6 min)")
+    
+    // Season and finish
+    pot.add(salt)
+    pot.add(pepper)
+    pot.add(cream)
+    pot.stir()
+    
+    pot.add(parsley)
+    
+    return "Potato Soup"
+}

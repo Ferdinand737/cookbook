@@ -1,0 +1,48 @@
+//ratatouille_mama.food
+
+fn cook() {
+    
+    // Ingredients
+    bell_peppers = new BellPepper("3 medium")
+    eggplants = new Eggplant("3 medium, peeled")
+    zucchini = new Zucchini("3 medium")
+    tomatoes = new Tomato("4 medium")
+    oil = new Oil("3 tbsp")
+    onion = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    paprika = new Paprika("to taste")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    knife.chop(bell_peppers, "small pieces")
+    knife.chop(eggplants, "small pieces")
+    knife.chop(zucchini, "small pieces")
+    knife.chop(tomatoes, "small pieces")
+    knife.chop(onion)
+    knife.mince(garlic)
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(oil)
+    pan.add(onion)
+    pan.add(garlic)
+    pan.saute("until fragrant")
+    
+    pan.add(bell_peppers)
+    pan.add(eggplants)
+    pan.add(zucchini)
+    pan.add(tomatoes)
+    pan.saute("until tender")
+    
+    pan.add(salt)
+    pan.add(pepper)
+    pan.add(paprika)
+    pan.stir()
+    
+    return "Ratatouille - serve with bread or rice"
+}

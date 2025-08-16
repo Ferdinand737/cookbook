@@ -1,0 +1,57 @@
+//serbian_rice_meat.food
+
+fn cook() {
+    
+    // Ingredients
+    pork = new Pork("500g")
+    oil = new Oil("for frying")
+    onions = new Onion("3 medium")
+    garlic = new Garlic("1 clove")
+    tomato_paste = new TomatoPaste("40g")
+    water = new Water("750ml")
+    broth_cube = new BrothCube("1")
+    thyme = new Thyme("2 tsp, dried")
+    paprika_powder = new PaprikaPowder("to taste")
+    long_grain_rice = new LongGrainRice("150g")
+    bell_peppers = new BellPepper("2 medium")
+    chili_pepper = new ChiliPepper("1 fresh")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
+    // Preparation
+    knife.dice(pork, "pieces")
+    knife.dice(onions)
+    knife.mince(garlic)
+    knife.dice(bell_peppers)
+    knife.mince(chili_pepper)
+    
+    // Cooking
+    pot.heat("medium-high")
+    pot.add(oil)
+    pot.add(pork)
+    pot.brown("until seared")
+    
+    pot.add(onions)
+    pot.add(garlic)
+    pot.saute("until translucent")
+    
+    pot.add(tomato_paste)
+    pot.stir("1 minute")
+    
+    pot.add(water)
+    pot.add(broth_cube)
+    pot.add(thyme)
+    pot.add(paprika_powder)
+    pot.boil()
+    
+    pot.add(long_grain_rice)
+    pot.add(bell_peppers)
+    pot.add(chili_pepper)
+    pot.stir()
+    
+    pot.simmer("20-25 minutes until rice is tender and liquid absorbed")
+    
+    return "Serbian Rice Meat"
+}

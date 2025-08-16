@@ -1,0 +1,87 @@
+//zeppelins.food
+
+fn cook() {
+    
+    // Potato Dough Ingredients
+    fresh_potatoes = new Potato("3kg, fresh")
+    cooked_potatoes = new Potato("1kg, cooked")
+    salt_dough = new Salt("to taste")
+    
+    // Meat Filling Ingredients
+    ground_meat = new GroundMeat("1kg, mixed")
+    onion_filling = new Onion("1 medium")
+    egg_filling = new Egg("1")
+    pepper_filling = new BlackPepper("to taste")
+    salt_filling = new Salt("to taste")
+    
+    // Bacon Sauce Ingredients
+    smoked_bacon = new SmokedBacon("300g")
+    onion_sauce = new Onion("1 medium")
+    cream = new Cream("1 cup")
+    pepper_sauce = new BlackPepper("to taste")
+    salt_sauce = new Salt("to taste")
+    
+    // Equipment
+    grater = new Grater()
+    potato_ricer = new PotatoRicer()
+    mixing_bowl = new Bowl()
+    pan = new Pan()
+    pot = new Pot()
+    knife = new Knife()
+    
+    // Prepare potato dough
+    fresh_potatoes.peel()
+    grater.grate(fresh_potatoes)
+    fresh_potatoes.drain("well")
+    starch = fresh_potatoes.settle("let starch settle")
+    fresh_potatoes.add(starch)
+    
+    cooked_potatoes.peel()
+    potato_ricer.press(cooked_potatoes)
+    
+    mixing_bowl.add(fresh_potatoes)
+    mixing_bowl.add(cooked_potatoes)
+    mixing_bowl.add(salt_dough)
+    mixing_bowl.knead("until dough doesn't stick")
+    
+    // Prepare meat filling
+    knife.chop(onion_filling)
+    pan.heat("medium")
+    pan.add(onion_filling)
+    pan.fry("until golden")
+    
+    filling_bowl = new Bowl()
+    filling_bowl.add(ground_meat)
+    filling_bowl.add(pan)
+    filling_bowl.add(egg_filling)
+    filling_bowl.add(pepper_filling)
+    filling_bowl.add(salt_filling)
+    filling_bowl.mix()
+    
+    // Form dumplings
+    dumplings = mixing_bowl.form("palm-sized flat pieces")
+    dumplings.fill(filling_bowl)
+    dumplings.shape("oval dumplings")
+    
+    // Cook dumplings
+    pot.boil("large pot of water")
+    pot.add(dumplings)
+    pot.cook("20 minutes")
+    
+    // Prepare bacon sauce
+    knife.dice(smoked_bacon)
+    knife.slice(onion_sauce)
+    
+    sauce_pan = new Pan()
+    sauce_pan.heat("medium")
+    sauce_pan.add(smoked_bacon)
+    sauce_pan.render("until crispy")
+    sauce_pan.add(onion_sauce)
+    sauce_pan.fry("until golden")
+    sauce_pan.add(cream)
+    sauce_pan.add(pepper_sauce)
+    sauce_pan.add(salt_sauce)
+    sauce_pan.simmer("until heated")
+    
+    return "Zeppelins with bacon sauce - TIP: can use 2 packages ready-made dumpling dough"
+}

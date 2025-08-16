@@ -1,0 +1,34 @@
+//bread_roll_sauce.food
+
+fn cook() {
+    
+    // Ingredients
+    bread_rolls = new BreadRoll("1 per person")
+    garlic = new Garlic("1 clove")
+    salt = new Salt("to taste")
+    fat = new Fat("for frying")
+    onions = new Onion("to taste")
+    meat_broth = new MeatBroth("hot, as needed")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    knife.chop(onions)
+    knife.dice(bread_rolls, "cubes")
+    knife.mince(garlic)
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(fat)
+    pan.add(onions)
+    pan.add(bread_rolls)
+    pan.add(garlic)
+    pan.saute("until golden")
+    
+    pan.add(meat_broth, "until sauce reaches right consistency")
+    pan.stir()
+    
+    return "Bread Roll Sauce - for boiled beef"
+}

@@ -1,0 +1,51 @@
+//satarasch.food
+
+fn cook() {
+    
+    // Ingredients
+    pork_schnitzel = new PorkSchnitzel("200-250g")
+    onions = new Onion("3 large")
+    bell_peppers = new BellPepper("2 medium")
+    oil = new Oil("for frying")
+    tomato_paste = new TomatoPaste("to taste")
+    garlic = new Garlic("1 clove")
+    cream = new Cream("4 tbsp")
+    broth = new Broth("4 tbsp")
+    salt = new Salt("to taste")
+    paprika = new Paprika("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    pork_schnitzel.freeze("15-30 minutes")
+    knife.slice(pork_schnitzel, "narrow strips")
+    knife.slice(onions)
+    knife.slice(bell_peppers, "strips")
+    knife.mince(garlic)
+    
+    // Cooking
+    pan.heat("medium-high")
+    pan.add(oil)
+    pan.add(onions)
+    pan.add(bell_peppers)
+    pan.fry("until tender")
+    
+    pan.add(pork_schnitzel)
+    pan.fry("3 minutes")
+    
+    pan.add(tomato_paste)
+    pan.add(garlic)
+    pan.add(cream)
+    pan.add(broth)
+    pan.simmer("until heated through")
+    
+    pan.add(salt)
+    pan.add(paprika)
+    pan.add(pepper)
+    pan.stir("to combine")
+    
+    return "Satarasch"
+}

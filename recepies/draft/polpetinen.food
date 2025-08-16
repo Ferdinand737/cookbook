@@ -1,0 +1,76 @@
+//polpetinen.food
+
+fn cook() {
+    
+    // Meat Mixture Ingredients
+    ground_beef = new GroundBeef("250g")
+    smoked_bacon = new SmokedBacon("125g")
+    garlic = new Garlic("1 clove")
+    parsley = new Parsley("fresh, chopped")
+    eggs = new Eggs("2")
+    emmental = new Emmental("60g, grated")
+    bread_roll = new BreadRoll("1, soaked")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    oregano = new Oregano("to taste")
+    
+    // Sauce Ingredients
+    oil = new Oil("2 tbsp")
+    onions = new Onion("2 medium")
+    tomatoes = new Tomato("500g")
+    hot_broth = new Broth("250ml, hot")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    knife = new Knife()
+    pan = new Pan()
+    saucepan = new Saucepan()
+    sieve = new Sieve()
+    
+    // Prepare meat mixture
+    knife.mince(garlic)
+    knife.chop(smoked_bacon, "fine")
+    bread_roll.soak()
+    bread_roll.squeeze_dry()
+    
+    mixing_bowl.add(ground_beef)
+    mixing_bowl.add(smoked_bacon)
+    mixing_bowl.add(garlic)
+    mixing_bowl.add(parsley)
+    mixing_bowl.add(eggs)
+    mixing_bowl.add(emmental)
+    mixing_bowl.add(bread_roll)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(pepper)
+    mixing_bowl.add(oregano)
+    mixing_bowl.mix("until combined")
+    
+    meatballs = mixing_bowl.form("small balls")
+    
+    // Brown meatballs
+    pan.heat("medium")
+    pan.add(meatballs)
+    pan.brown("all sides")
+    
+    // Prepare tomato sauce
+    knife.chop(onions)
+    saucepan.heat("medium")
+    saucepan.add(oil)
+    saucepan.add(onions)
+    saucepan.brown("until golden")
+    
+    saucepan.add(tomatoes)
+    saucepan.saute("until soft")
+    saucepan.add(hot_broth)
+    saucepan.simmer("until tender")
+    
+    // Strain sauce
+    sieve.strain(saucepan)
+    saucepan.season("with salt, pepper, oregano")
+    
+    // Combine
+    saucepan.add(meatballs)
+    saucepan.simmer("until heated through")
+    
+    return "Polpetinen"
+}

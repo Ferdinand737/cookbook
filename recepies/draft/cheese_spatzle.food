@@ -1,0 +1,53 @@
+//cheese_spatzle.food
+
+fn cook() {
+    
+    // Ingredients
+    flour = new Flour("500g")
+    water = new Water("375ml")
+    salt = new Salt("to taste")
+    eggs = new Eggs("4")
+    emmental = new Emmental("200g, grated")
+    onions = new Onion("for topping")
+    butter = new Butter("for frying onions")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    spatzle_maker = new SpatzleMaker()
+    pot = new Pot()
+    casserole_dish = new CasseroleDish()
+    pan = new Pan()
+    oven = new Oven()
+    
+    // Make spatzle dough
+    mixing_bowl.add(flour)
+    mixing_bowl.add(water)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(eggs)
+    mixing_bowl.mix("until smooth")
+    
+    // Cook spatzle
+    pot.boil("salted water")
+    spatzle_maker.press(mixing_bowl, pot)
+    pot.cook("until spatzle float")
+    pot.drain()
+    
+    // Prepare onions
+    knife = new Knife()
+    knife.slice(onions, "rings")
+    pan.heat("medium")
+    pan.add(butter)
+    pan.add(onions)
+    pan.fry("until golden and crispy")
+    
+    // Layer casserole
+    casserole_dish.layer(pot, "spatzle")
+    casserole_dish.layer(emmental)
+    casserole_dish.repeat("layering")
+    casserole_dish.top(pan, "fried onion rings")
+    
+    oven.preheat("180C")
+    oven.bake(casserole_dish, "until cheese melts")
+    
+    return "Cheese Spätzle"
+}
