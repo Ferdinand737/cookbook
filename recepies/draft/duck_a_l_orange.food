@@ -23,18 +23,18 @@ fn cook() {
     knife = new Knife()
     
     // Preparation
-    duck.rub(salt, "inside and outside")
-    duck.rub(pepper, "inside and outside")
-    duck.rub(thyme, "inside and outside")
+    rub(duck, salt, "inside and outside")
+    rub(duck, pepper, "inside and outside")
+    rub(duck, thyme, "inside and outside")
     
     knife.quarter(oranges)
     knife.quarter(apples)
     
     // Stuffing
-    duck.stuff(oranges)
-    duck.stuff(apples)
-    duck.stuff(bay_leaf)
-    duck.stuff(parsley)
+    stuff(duck, oranges)
+    stuff(duck, apples)
+    stuff(duck, bay_leaf)
+    stuff(duck, parsley)
     
     // Roasting
     roasting_pan.add(root_vegetables)

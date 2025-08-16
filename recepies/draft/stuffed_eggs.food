@@ -21,12 +21,12 @@ fn cook() {
     
     // Preparation
     pot.boil(eggs, "hard boiled")
-    eggs.cool()
+    cool(eggs)
     knife.cut(eggs, "in half crosswise")
-    egg_yolks = eggs.remove("yolks")
+    egg_yolks = knife.remove(eggs, "yolks")
     
-    bread_rolls.soak(milk)
-    bread_rolls.squeeze_dry()
+    soak(bread_rolls, milk)
+    squeeze_dry(bread_rolls)
     
     knife.chop(parsley)
     pan.heat("medium")
@@ -42,7 +42,7 @@ fn cook() {
     mixing_bowl.mix("into paste")
     
     // Stuff eggs
-    eggs.fill(mixing_bowl)
+    fill(eggs, mixing_bowl)
     
     // Assembly
     glass_dish.grease()

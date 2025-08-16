@@ -28,8 +28,8 @@ fn cook() {
     
     // Prepare meatballs
     knife.chop(onion, "fine")
-    bread_roll.soak()
-    bread_roll.squeeze_dry()
+    soak(bread_roll)
+    squeeze_dry(bread_roll)
     
     mixing_bowl.add(ground_meat)
     mixing_bowl.add(onion)
@@ -50,7 +50,7 @@ fn cook() {
     pot.simmer("until cooked through")
     
     broth = pot.reserve("cooking liquid")
-    pot.drain()
+    drain(pot)
     
     // Make sauce
     saucepan.heat("medium")

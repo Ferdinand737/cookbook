@@ -42,7 +42,7 @@ fn cook() {
     pot.cook("15 minutes")
     
     // Blend half the soup
-    half_soup = pot.remove("half the soup")
+    half_soup = pot.reserve("half the soup")
     immersion_blender.puree(half_soup)
     pot.add(half_soup)
     
@@ -53,7 +53,7 @@ fn cook() {
     pot.add(sausages)
     pot.heat("until sausages are warm")
     
-    pot.sprinkle(chives)
+    sprinkle(pot, chives)
     
     return "Vegetable Soup with Sausages"
 }

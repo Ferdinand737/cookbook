@@ -13,7 +13,7 @@ fn cook() {
     salt = new Salt("to taste")
     meat_soup = new MeatSoup("500ml, clear")
     curry_sauce_mix = new CurrySauceMix("1 box")
-    peach_halves = new PeachHalves("8, canned")
+    peach_halves = drain(new PeachHalves("8, canned"), "reserve juice")
     butter = new Butter("for frying")
     water = new Water("125ml")
     
@@ -24,8 +24,8 @@ fn cook() {
     pan = new Pan()
     
     // Prepare meatballs
-    bread_roll.soak("warm water")
-    bread_roll.squeeze_dry("very well")
+    soak(bread_roll, "milk")
+    squeeze_dry(bread_roll, "very well")
     
     mixing_bowl.add(bread_roll)
     mixing_bowl.add(ground_beef)

@@ -26,8 +26,8 @@ fn cook() {
     knife.slice(carrots, "sticks")
     knife.dice(celery_root)
     knife.dice(potatoes)
-    lentils.rinse("cold water")
-    lentils.drain()
+    rinse(lentils, "cold water")
+    drain(lentils)
     
     // Cooking
     pot.heat("medium")

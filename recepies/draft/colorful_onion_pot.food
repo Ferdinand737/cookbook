@@ -6,7 +6,7 @@ fn cook() {
     onions = new Onion("500g")
     long_grain_rice = new LongGrainRice("2 tbsp")
     instant_broth = new InstantBroth("1 tbsp")
-    tomatoes = new Tomato("500g")
+    potatoes = new Potato("500g")
     bell_peppers = new BellPepper("500g")
     corned_beef = new CornedBeef("340g, 1 can")
     paprika = new Paprika("1 tsp")

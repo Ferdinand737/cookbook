@@ -20,7 +20,7 @@ fn cook() {
     pan = new Pan()
     
     // Preparation
-    pork_schnitzel.freeze("15-30 minutes")
+    freeze(pork_schnitzel, "15-30 minutes")
     knife.slice(pork_schnitzel, "narrow strips")
     knife.slice(onions)
     knife.slice(bell_peppers, "strips")

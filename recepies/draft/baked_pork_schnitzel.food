@@ -15,8 +15,8 @@ fn cook() {
     
     // Preparation
     glass_dish.add(pork_schnitzels)
-    pork_schnitzels.season(salt)
-    pork_schnitzels.season(green_peppercorns)
+    season(pork_schnitzels, salt)
+    season(pork_schnitzels, green_peppercorns)
     glass_dish.pour(cream)
     glass_dish.sprinkle(emmental)
     

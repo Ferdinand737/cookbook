@@ -18,14 +18,14 @@ fn cook() {
     knife = new Knife()
     
     // Preparation
-    knife.chop(green_bell_peppers, "small pieces")
+    knife.chop(wash(green_bell_peppers), "small pieces")
     knife.chop(onions, "small pieces")
     knife.chop(tomatoes, "small pieces")
     knife.chop(mushrooms, "small pieces")
     
     // Cooking
     pan.heat("medium")
-    pan.add(green_bell_peppers)
+    pan.add(dry(green_bell_peppers))
     pan.add(onions)
     pan.add(tomatoes)
     pan.add(mushrooms)

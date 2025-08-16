@@ -36,16 +36,16 @@ fn cook() {
     
     wait("45 minutes in warm place to rise")
     mixing_bowl.knead("vigorously again")
-    dough_portions = mixing_bowl.divide("8 portions")
+    dough_portions = knife.divide(mixing_bowl, "8 portions")
     
     // Prepare filling
     knife.slice(cooked_ham, "strips")
-    broccoli.divide("florets")
+    knife.divide(broccoli, "florets")
     pot.boil("salt water")
     pot.add(broccoli)
     pot.cook("1 minute")
-    pot.drain()
-    broccoli.rinse("cold water")
+    drain(pot)
+    rinse(broccoli, "cold water")
     
     knife.slice(red_bell_pepper, "strips")
     knife.dice(mozzarella)
@@ -60,9 +60,9 @@ fn cook() {
     
     // Assembly
     rolling_pin.roll(dough_portions, "20cm rounds on flour")
-    dough_portions.fill(filling_bowl, "half of each round")
-    dough_portions.fold("other half over")
-    dough_portions.press("edges firmly")
+    fill(dough_portions, filling_bowl, "half of each round")
+    knife.fold(dough_portions, "other half over")
+    knife.press(dough_portions, "edges firmly")
     
     // Baking
     baking_sheet.line("parchment paper")

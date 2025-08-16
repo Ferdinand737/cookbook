@@ -22,6 +22,7 @@ fn cook() {
     rolling_pin = new RollingPin()
     baking_sheet = new BakingSheet()
     oven = new Oven()
+    knife = new Knife()
     
     // Make dough
     mixing_bowl.add(flour)
@@ -34,6 +35,9 @@ fn cook() {
     // Add flour as needed until dough is workable
     wait("refrigerate if possible for better consistency")
     
+    dough = mixing_bowl.get()
+    dough_portions = knife.divide(dough, "4 portions")
+    
     // Prepare topping sauce
     sauce_bowl = new Bowl()
     sauce_bowl.add(tomato_cans)
@@ -43,8 +47,8 @@ fn cook() {
     sauce_bowl.mix("into paste")
     
     // Assembly
-    rolling_pin.roll(mixing_bowl, "flat")
-    baking_sheet.add(mixing_bowl) // rolled dough
+    rolled_dough = rolling_pin.roll(dough_portions, "thin circles")
+    baking_sheet.add(rolled_dough) 
     baking_sheet.spread(sauce_bowl)
     baking_sheet.add(salami)
     baking_sheet.add(anchovies)

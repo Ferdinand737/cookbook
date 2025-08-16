@@ -25,13 +25,11 @@ fn cook() {
     // Preparation
     knife.chop(onion, "fine")
     bell_peppers.wash()
-    bell_peppers.hollow_out()
-    
-    // Cook rice filling
+    hollow_out(bell_peppers, "remove seeds and membranes")
     pan.heat("medium")
     pan.add(fat)
     pan.add(onion)
-    pan.saute("until translucent")
+    rinse(rice, "until water runs clear")
     pan.add(rice)
     pan.add(water, "until 2-3cm above rice")
     pan.simmer("until rice half-cooked")
@@ -44,7 +42,7 @@ fn cook() {
     pan.mix("well")
     
     // Stuff peppers
-    bell_peppers.fill(pan, "loosely")
+    stuff(bell_peppers, pan, "loosely")
     
     // Prepare sauce
     sauce_bowl = new Bowl()

@@ -35,7 +35,7 @@ fn cook() {
     
     pot.add(onions)
     pot.add(garlic)
-    pot.saute("until translucent")
+    rinse(long_grain_rice, "until water runs clear")
     
     pot.add(tomato_paste)
     pot.stir("1 minute")

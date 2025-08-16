@@ -42,8 +42,10 @@ fn cook() {
     wait("4 hours minimum, covered")
     
     // Prepare tzatziki
+    peel(cucumber)
     grater.grate(cucumber, "coarse")
-    cucumber.squeeze("to remove excess water")
+    season(cucumber, salt)
+    drain(cucumber, "30 minutes") // remove excess water
     knife.crush(garlic_tzatziki)
     knife.chop(dill, "fine")
     

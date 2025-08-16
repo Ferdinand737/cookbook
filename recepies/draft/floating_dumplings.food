@@ -17,9 +17,9 @@ fn cook() {
     spoon = new Spoon()
     
     // Make choux pastry base
-    pot.add(milk)
-    pot.add(butter)
-    pot.boil()
+    soak(bread_rolls, milk)
+    squeeze_dry(bread_rolls)
+    drain(pot)
     pot.add(flour)
     pot.stir("until dough ball forms")
     

@@ -30,13 +30,13 @@ fn cook() {
     knife = new Knife()
     
     // Prepare potato dough
-    fresh_potatoes.peel()
+    peel(fresh_potatoes)
     grater.grate(fresh_potatoes)
-    fresh_potatoes.drain("well")
-    starch = fresh_potatoes.settle("let starch settle")
-    fresh_potatoes.add(starch)
+    drain(fresh_potatoes, "well")
+    starch = settle(fresh_potatoes, "let starch settle")
+    knife.add(fresh_potatoes, starch)
     
-    cooked_potatoes.peel()
+    peel(cooked_potatoes)
     potato_ricer.press(cooked_potatoes)
     
     mixing_bowl.add(fresh_potatoes)
@@ -60,8 +60,8 @@ fn cook() {
     
     // Form dumplings
     dumplings = mixing_bowl.form("palm-sized flat pieces")
-    dumplings.fill(filling_bowl)
-    dumplings.shape("oval dumplings")
+    fill(dumplings, filling_bowl)
+    knife.shape(dumplings, "oval dumplings")
     
     // Cook dumplings
     pot.boil("large pot of water")

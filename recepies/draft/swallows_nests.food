@@ -22,16 +22,16 @@ fn cook() {
     kitchen_string = new KitchenString()
     
     // Preparation
-    thin_schnitzels.spread(tomato_paste, "thinly")
-    thin_schnitzels.sprinkle(salt)
-    thin_schnitzels.sprinkle(pepper)
-    thin_schnitzels.top(ham, "1 slice each")
-    thin_schnitzels.add(tomato_paste, "a bit more")
-    thin_schnitzels.top(gouda, "1 slice each")
-    thin_schnitzels.place(hard_eggs, "1 on each")
+    knife.spread(thin_schnitzels, tomato_paste, "thinly")
+    sprinkle(thin_schnitzels, salt)
+    sprinkle(thin_schnitzels, pepper)
+    knife.top(thin_schnitzels, ham, "1 slice each")
+    knife.add(thin_schnitzels, tomato_paste, "a bit more")
+    knife.top(thin_schnitzels, gouda, "1 slice each")
+    knife.place(thin_schnitzels, hard_eggs, "1 on each")
     
     // Roll and tie
-    thin_schnitzels.roll("over eggs into roulades")
+    knife.roll(thin_schnitzels, "over eggs into roulades")
     kitchen_string.tie(thin_schnitzels, "securely")
     
     // Prepare coating
@@ -40,9 +40,9 @@ fn cook() {
     mixing_bowl.mix()
     
     // Coat roulades
-    raw_eggs.beat()
-    thin_schnitzels.dip(raw_eggs)
-    thin_schnitzels.coat(mixing_bowl)
+    mixing_bowl.beat(raw_eggs)
+    mixing_bowl.dip(thin_schnitzels, raw_eggs)
+    mixing_bowl.coat(thin_schnitzels)
     
     // Deep fry
     deep_fryer.heat("hot fat")

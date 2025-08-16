@@ -30,8 +30,8 @@ fn cook() {
     // Prepare meat mixture
     knife.mince(garlic)
     knife.chop(smoked_bacon, "fine")
-    bread_roll.soak()
-    bread_roll.squeeze_dry()
+    soak(bread_roll, milk)
+    squeeze_dry(bread_roll)
     
     mixing_bowl.add(ground_beef)
     mixing_bowl.add(smoked_bacon)

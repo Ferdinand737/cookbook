@@ -4,6 +4,8 @@ fn cook() {
     
     // Ingredients
     bread_rolls = new BreadRoll("1 per person")
+    soak(bread_rolls, milk)
+    squeeze_dry(bread_rolls)
     garlic = new Garlic("1 clove")
     salt = new Salt("to taste")
     fat = new Fat("for frying")

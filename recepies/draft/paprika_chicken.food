@@ -3,7 +3,7 @@
 fn cook() {
     
     // Ingredients
-    chicken = new Chicken("1 whole")
+    chicken = season(new Chicken("1 whole"), new Salt("to taste"), new Pepper("to taste"))
     onion = new Onion("1 medium")
     fat = new Fat("for frying")
     paprika = new Paprika("generous amount")
@@ -29,7 +29,7 @@ fn cook() {
     pot.add(onion)
     pot.brown("until golden")
     
-    pot.add(paprika)
+    rub(chicken, paprika)
     pot.add(chicken)
     pot.add(tomato)
     pot.add(salt)

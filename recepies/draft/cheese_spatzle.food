@@ -27,10 +27,10 @@ fn cook() {
     mixing_bowl.mix("until smooth")
     
     // Cook spatzle
-    pot.boil("salted water")
+    rinse(spatzle, "cold water")
     spatzle_maker.press(mixing_bowl, pot)
     pot.cook("until spatzle float")
-    pot.drain()
+    drain(pot)
     
     // Prepare onions
     knife = new Knife()

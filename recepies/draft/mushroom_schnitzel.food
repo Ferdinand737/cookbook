@@ -19,25 +19,25 @@ fn cook() {
     
     // Preparation
     meat_mallet.pound(schnitzels, "until thin")
-    schnitzels.sprinkle(lemon_juice)
+    sprinkle(schnitzels, lemon_juice)
     
     knife.slice(mushrooms)
-    mushrooms.sprinkle(lemon_juice)
+    sprinkle(mushrooms, lemon_juice)
     
     // Cooking mushrooms
     pan.heat("medium-high")
     pan.add(oil)
     pan.add(mushrooms)
     pan.fry("until golden")
-    mushrooms.remove_from_pan()
+    pan.remove(mushrooms)
     
     // Cooking schnitzels
     pan.add(schnitzels)
     pan.fry("6-10 minutes, turning once")
-    schnitzels.season(salt)
+    season(schnitzels, salt)
     
     // Make sauce
-    pan.sprinkle(flour, "over schnitzels")
+    sprinkle(flour, schnitzels)
     pan.add(cream)
     pan.add(white_wine)
     pan.stir("to deglaze")

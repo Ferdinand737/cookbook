@@ -37,7 +37,7 @@ fn cook() {
     
     // Cook lasagna noodles
     pot.boil(lasagna_noodles, "according to package directions")
-    pot.drain()
+    drain(pot)
     
     // Prepare meat sauce
     knife.chop(onion_meat)
