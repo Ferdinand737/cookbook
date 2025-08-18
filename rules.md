@@ -1,4 +1,4 @@
-# Rules for writing recipes in `food` language
+# .food Recipe Language Guide
 
 ## Objects
 
@@ -34,3 +34,69 @@ There are some built-in functions that can be used in recipes. These are used wh
 ## Style
 
 All variables are snake_case. All constructors and functions/methods are camelCase. All functions and methods must be defined in the `tokens.json` file for proper highlighting. The main function is always called `cook()`.
+
+## File Naming Conventions
+
+Recipe files should use descriptive, snake_case names with the `.food` extension. Examples:
+
+- `chocolate_chip_cookies.food`
+- `beef_stir_fry.food`
+- `tomato_basil_soup.food`
+
+Avoid spaces, special characters, or camelCase in filenames.
+
+## Comments
+
+Comments in `.food` files use `//` for single-line comments:
+
+```food
+// This is a comment explaining the next step
+flour.sift()
+
+// Multi-line comments can be written
+// across several lines like this
+mixing_bowl.mix("until smooth")
+```
+
+Use comments to:
+
+- Only to separate steps
+
+## Development Workflow
+
+The `.food` recipe development follows this workflow:
+
+### 1. Convert → `recepies/converted/`
+
+Convert raw recipes from various formats into `.food` syntax. Files are placed in the `converted/` directory.
+
+### 2. Compile → `recepies/compiled/`
+
+Run the compilation script to add line numbers and verify grammar:
+
+```bash
+cd recepies/
+python3 compile_recipes.py
+```
+
+### 3. Update Tokens → `grammar/tokens.json`
+
+If compilation fails due to missing constructors or methods:
+
+- Add missing constructors to `types.ingredients` or `types.utensils`
+- Add missing methods to appropriate `actions` categories
+- Add new built-in functions to `builtins` array
+
+### 4. Re-compile → Verification
+
+Re-run the compilation script to verify all tokens are properly defined:
+
+```bash
+python3 compile_recipes.py
+```
+
+### 5. Done ✅
+
+Once compilation succeeds with grammar verification, recipes are ready for use with proper syntax highlighting.
+
+**Important:** The compilation script will **not compile** recipes if any constructors or methods are missing from the grammar. This ensures syntax highlighting works correctly for all recipe elements.

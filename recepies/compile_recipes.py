@@ -195,9 +195,9 @@ def compile_recipes(source_dir: Path, output_dir: Path) -> int:
 def main():
     """Main function to verify grammar and compile recipes."""
     # Define paths
-    source_dir = Path("recepies/converted")
-    output_dir = Path("recepies/compiled")
-    grammar_file = Path("grammar/tokens.json")
+    source_dir = Path("converted")
+    output_dir = Path("compiled")
+    grammar_file = Path("../grammar/tokens.json")
     
     print("=== Recipe Compilation with Grammar Verification ===\n")
     
