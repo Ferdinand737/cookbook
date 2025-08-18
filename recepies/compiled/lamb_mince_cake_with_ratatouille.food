@@ -1,0 +1,74 @@
+    1	//lamb_mince_cake_with_ratatouille.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    ground_lamb = new GroundMeat("350g, lamb")
+    7	    onions = new Onion("2 medium")
+    8	    egg = new Egg("1")
+    9	    quark = new CreamQuark("80g, low-fat")
+   10	    lemon = new Lemon("1/2 untreated")
+   11	    breadcrumbs = new Flour("2 tbsp breadcrumbs")
+   12	    salt = new Salt("to taste")
+   13	    pepper = new BlackPepper("to taste")
+   14	    paprika = new Paprika("to taste")
+   15	    eggplant = new Eggplant("1 small")
+   16	    oil = new Oil("2 tbsp")
+   17	    basil = new ItalianHerbs("1 bunch basil")
+   18	    red_bell_pepper = new BellPepper("1 red")
+   19	    zucchini = new Zucchini("1 medium")
+   20	    
+   21	    // Equipment
+   22	    knife = new Knife()
+   23	    grater = new Grater()
+   24	    mixing_bowl = new Bowl()
+   25	    pan = new Pan()
+   26	    baking_dish = new BakingDish()
+   27	    oven = new Oven()
+   28	    
+   29	    // Preparation
+   30	    onions = knife.dice(onions)
+   31	    lemon_zest = grater.grate(lemon)
+   32	    eggplant = knife.dice(eggplant, "cubes")
+   33	    basil = knife.chop(basil)
+   34	    red_bell_pepper = knife.dice(red_bell_pepper, "cubes")
+   35	    zucchini = knife.dice(zucchini, "cubes")
+   36	    
+   37	    // Make meat mixture
+   38	    mixing_bowl.add(ground_lamb)
+   39	    mixing_bowl.add(onions, "one diced onion")
+   40	    mixing_bowl.add(egg)
+   41	    mixing_bowl.add(quark)
+   42	    mixing_bowl.add(lemon_zest)
+   43	    mixing_bowl.add(breadcrumbs)
+   44	    season(mixing_bowl, salt)
+   45	    season(mixing_bowl, pepper)
+   46	    season(mixing_bowl, paprika)
+   47	    mixing_bowl.mix("until combined")
+   48	    
+   49	    // Prepare vegetables
+   50	    salt(eggplant, "cubes")
+   51	    pan.heat("medium")
+   52	    pan.add(oil)
+   53	    pan.add(eggplant)
+   54	    pan.saute("5 minutes")
+   55	    
+   56	    vegetable_bowl = new Bowl()
+   57	    vegetable_bowl.add(basil)
+   58	    vegetable_bowl.add(red_bell_pepper)
+   59	    vegetable_bowl.add(zucchini)
+   60	    vegetable_bowl.add(pan, "eggplant")
+   61	    vegetable_bowl.mix()
+   62	    
+   63	    // Assembly
+   64	    baking_dish.add(mixing_bowl, "meat mixture")
+   65	    baking_dish.smooth("surface")
+   66	    baking_dish.top(vegetable_bowl)
+   67	    baking_dish.top(onions, "remaining onion as rings")
+   68	    
+   69	    // Baking
+   70	    oven.preheat("200C")
+   71	    oven.bake(baking_dish, "40 minutes")
+   72	    
+   73	    return "Lamb Mince Cake with Ratatouille"
+   74	}

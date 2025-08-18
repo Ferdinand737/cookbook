@@ -21,14 +21,14 @@ fn cook() {
     pot = new Pot()
     
     // Preparation
-    knife.dice(goulash_meat, "pieces")
-    knife.chop(onion)
-    knife.mince(garlic)
-    knife.dice(bell_pepper)
-    knife.dice(tomatoes)
-    knife.dice(potatoes)
-    knife.slice(carrots)
-    knife.dice(celery)
+    goulash_meat = knife.dice(goulash_meat, "pieces")
+    onion = knife.chop(onion)
+    garlic = knife.mince(garlic)
+    bell_pepper = knife.dice(bell_pepper)
+    tomatoes = knife.dice(tomatoes)
+    potatoes = knife.dice(potatoes)
+    carrots = knife.slice(carrots)
+    celery = knife.dice(celery)
     
     // Cooking
     pot.heat("medium-high")
@@ -50,7 +50,7 @@ fn cook() {
     pot.add(paprika)
     
     pot.add(water, "to cover ingredients")
-    pot.bring_to_boil()
+    pot.boil()
     pot.simmer("1-1.5 hours until meat is tender")
     
     return "Goulash Soup"

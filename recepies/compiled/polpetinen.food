@@ -1,0 +1,76 @@
+    1	//polpetinen.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Meat Mixture Ingredients
+    6	    ground_beef = new GroundBeef("250g")
+    7	    smoked_bacon = new SmokedBacon("125g")
+    8	    garlic = new Garlic("1 clove")
+    9	    parsley = new Parsley("fresh, chopped")
+   10	    eggs = new Eggs("2")
+   11	    emmental = new Emmental("60g, grated")
+   12	    bread_roll = new BreadRoll("1, soaked")
+   13	    salt = new Salt("to taste")
+   14	    pepper = new BlackPepper("to taste")
+   15	    mixed_spices = new MixedSpices("oregano, to taste")
+   16	    
+   17	    // Sauce Ingredients
+   18	    oil = new Oil("2 tbsp")
+   19	    onions = new Onion("2 medium")
+   20	    tomatoes = new Tomato("500g")
+   21	    hot_broth = new Broth("250ml, hot")
+   22	    
+   23	    // Equipment
+   24	    mixing_bowl = new Bowl()
+   25	    knife = new Knife()
+   26	    pan = new Pan()
+   27	    saucepan = new Saucepan()
+   28	    sieve = new Sieve()
+   29	    
+   30	    // Prepare meat mixture
+   31	    garlic = knife.mince(garlic)
+   32	    smoked_bacon = knife.chop(smoked_bacon, "fine")
+   33	    soak(bread_roll, "milk")
+   34	    squeeze_dry(bread_roll)
+   35	    
+   36	    mixing_bowl.add(ground_beef)
+   37	    mixing_bowl.add(smoked_bacon)
+   38	    mixing_bowl.add(garlic)
+   39	    mixing_bowl.add(parsley)
+   40	    mixing_bowl.add(eggs)
+   41	    mixing_bowl.add(emmental)
+   42	    mixing_bowl.add(bread_roll)
+   43	    mixing_bowl.add(salt)
+   44	    mixing_bowl.add(pepper)
+   45	    mixing_bowl.add(mixed_spices)
+   46	    mixing_bowl.mix("until combined")
+   47	    
+   48	    meatballs = mixing_bowl.form("small balls")
+   49	    
+   50	    // Brown meatballs
+   51	    pan.heat("medium")
+   52	    pan.add(meatballs)
+   53	    pan.brown("all sides")
+   54	    
+   55	    // Prepare tomato sauce
+   56	    onions = knife.chop(onions)
+   57	    saucepan.heat("medium")
+   58	    saucepan.add(oil)
+   59	    saucepan.add(onions)
+   60	    saucepan.brown("until golden")
+   61	    
+   62	    saucepan.add(tomatoes)
+   63	    saucepan.saute("until soft")
+   64	    saucepan.add(hot_broth)
+   65	    saucepan.simmer("until tender")
+   66	    
+   67	    // Strain sauce
+   68	    sieve.strain(saucepan)
+   69	    season(saucepan, "salt, pepper, oregano")
+   70	    
+   71	    // Combine
+   72	    saucepan.add(meatballs)
+   73	    saucepan.simmer("until heated through")
+   74	    
+   75	    return "Polpetinen"
+   76	}

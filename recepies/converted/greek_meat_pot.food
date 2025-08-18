@@ -1,0 +1,81 @@
+//greek_meat_pot.food
+
+fn cook() {
+    
+    // Ingredients
+    meat = new Pork("500g") // or lamb/mutton
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    thyme = new Thyme("to taste")
+    oil = new Oil("4 tbsp")
+    garlic = new Garlic("2 cloves")
+    bay_leaf = new BayLeaf("1")
+    cinnamon = new Cinnamon("1 small stick")
+    eggplants = new Eggplant("1-2 medium")
+    zucchini = new Zucchini("1-2 medium")
+    bell_peppers = new BellPepper("2 medium")
+    onions = new Onion("4 medium")
+    potatoes = new Potato("2-3 medium")
+    tomatoes = new Tomato("4 medium")
+    lemon_juice = new LemonJuice("1 lemon")
+    tomato_paste = new TomatoPaste("2 tbsp")
+    water = new Water("125ml")
+    instant_broth = new InstantBroth("to taste")
+    parsley = new Parsley("fresh")
+    
+    // Equipment
+    knife = new Knife()
+    roasting_pot = new RoastingPot()
+    
+    // Preparation
+    rinse(meat, "cold water")
+    dry(meat, "with kitchen paper")
+    meat = knife.dice(meat, "2cm cubes")
+    sprinkle(meat, salt)
+    sprinkle(meat, pepper)
+    sprinkle(meat, thyme)
+    
+    garlic = knife.crush(garlic)
+    eggplants = knife.dice(eggplants, "1.5cm pieces")
+    zucchini = knife.slice(zucchini, "1.5cm slices")
+    bell_peppers = knife.dice(bell_peppers, "1.5cm pieces")
+    onions = knife.quarter(onions)
+    potatoes = knife.dice(potatoes, "pieces")
+    tomatoes = knife.quarter(tomatoes)
+    
+    // Cooking
+    roasting_pot.heat("medium-high")
+    roasting_pot.add(oil)
+    roasting_pot.add(meat)
+    roasting_pot.brown("8-10 minutes")
+    
+    roasting_pot.add(garlic)
+    roasting_pot.add(bay_leaf)
+    roasting_pot.add(cinnamon)
+    roasting_pot.cover()
+    roasting_pot.braise("10 minutes")
+    
+    // Arrange vegetables
+    roasting_pot.arrange(eggplants, "outer ring")
+    roasting_pot.arrange(zucchini, "outer ring")
+    roasting_pot.arrange(bell_peppers, "outer ring")
+    roasting_pot.arrange(onions, "outer ring")
+    roasting_pot.arrange(potatoes, "outer ring")
+    roasting_pot.arrange(tomatoes, "outer ring")
+    
+    // Prepare broth mixture
+    broth_bowl = new Bowl()
+    broth_bowl.add(lemon_juice)
+    broth_bowl.add(tomato_paste)
+    broth_bowl.add(water)
+    broth_bowl.add(instant_broth)
+    broth_bowl.add(parsley)
+    broth_bowl.mix()
+    
+    roasting_pot.pour(broth_bowl, "over vegetables")
+    roasting_pot.boil()
+    roasting_pot.cover()
+    roasting_pot.braise("20-25 minutes on lowest heat until tender")
+    
+    return "Greek Meat Pot"
+}

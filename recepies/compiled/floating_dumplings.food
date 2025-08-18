@@ -1,0 +1,49 @@
+    1	//floating_dumplings.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    milk = new Milk("100ml")
+    7	    butter = new Butter("50g")
+    8	    flour = new Flour("60g")
+    9	    eggs = new Eggs("2")
+   10	    nutmeg = new Nutmeg("to taste")
+   11	    pepper = new BlackPepper("to taste")
+   12	    salt = new Salt("to taste")
+   13	    
+   14	    // Equipment
+   15	    pot = new Pot()
+   16	    mixing_bowl = new Bowl()
+   17	    spoon = new Spoon()
+   18	    
+   19	    // Make choux pastry base
+   20	    soak(bread_rolls, milk)
+   21	    squeeze_dry(bread_rolls)
+   22	    drain(pot)
+   23	    pot.add(flour)
+   24	    pot.stir("until dough ball forms")
+   25	    
+   26	    // Transfer to bowl and cool slightly
+   27	    mixing_bowl.add(pot)
+   28	    mixing_bowl.add(eggs.first)
+   29	    mixing_bowl.stir("immediately until smooth")
+   30	    
+   31	    wait("until dough is smooth again")
+   32	    mixing_bowl.add(eggs.second)
+   33	    mixing_bowl.stir("until well incorporated")
+   34	    
+   35	    // Season
+   36	    mixing_bowl.add(nutmeg)
+   37	    mixing_bowl.add(pepper)
+   38	    mixing_bowl.add(salt)
+   39	    mixing_bowl.mix()
+   40	    
+   41	    // Form and cook dumplings
+   42	    soup_pot = new Pot()
+   43	    soup_pot.heat("hot soup")
+   44	    
+   45	    spoon.drop(mixing_bowl, soup_pot, "small dumplings")
+   46	    soup_pot.simmer("5-8 minutes at lowest heat")
+   47	    
+   48	    return "Floating Dumplings for soup"
+   49	}

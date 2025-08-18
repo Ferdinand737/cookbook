@@ -80,7 +80,7 @@
       "patterns": [
         {
           "name": "support.class.food",
-          "match": "\\b(?:Bowl|Pan|Oven|Knife|Timer|Mixer|Blender|Pot|Skillet|Whisk|BakingSheet|Saucepan|AirFryer|RiceCooker|BakingDish|CasseroleDish|DeepFryer|GlassDish|Grater|ImmersionBlender|KitchenString|MeatMallet|PotatoRicer|RoastingPan|RoastingPot|RollingPin|Sieve|SpatzleMaker|Flour|Sugar|Salt|Butter|Eggs|Egg|Milk|Water|Oil|Vanilla|ChocolateChips|Cinnamon|BakingPowder|BakingSoda|Yeast|BrownSugar|GroundBeef|Cornstarch|Onion|BlackPepper|VegetableOil|PineappleJuice|SoySauce|WhiteVinegar|Pineapple|GreenPepper|Carrot|ChickenBreast|BellPepper|Garlic|SesameOil|OliveOil|OnionPowder|GarlicPowder|FrozenStirFryVeggies|Rice|Anchovies|AnchovyPaste|Apple|BayLeaf|BreadRoll|Broccoli|Broth|BrothCube|Capers|CarawaySeeds|Celery|CeleryRoot|Chicken|ChiliPepper|Chives|Cognac|CookedHam|CornedBeef|Cream|CreamQuark|CreamYogurt|Cucumber|Curry|CurrySauceMix|Dill|DryYeast|Duck|Eggplant|EggYolk|Emmental|Fat|GoulashMeat|GratedCheese|GreenPeppercorns|GroundMeat|Ham|HardBoiledEgg|HeavyCream|InstantBroth|ItalianHerbs|LasagnaNoodles|Leek|LemonJuice|Lentils|LongGrainRice|Margarine|MeatBroth|MeatBrothCube|MeatSoup|MixedSpices|Mozzarella|Mushroom|Mustard|Nutmeg|OnionSeasoning|Orange|OrangeJuice|OrangePeel|Paprika|Parmesan|Parsley|PeachHalves|Peas|Pork|PorkSchnitzel|PorkTenderloin|Potato|RootVegetables|Rosemary|Salami|Sausage|Schnitzel|SmokedBacon|SmokedSausage|SourCream|Thyme|Tomato|TomatoCan|TomatoPaste|Vinegar|WhiteWine|YellowTurnip|Zucchini)\\b"
+          "match": "\\b(?:Bowl|Pan|Oven|Knife|Timer|Mixer|Blender|Pot|Skillet|Whisk|BakingSheet|Saucepan|AirFryer|RiceCooker|BakingDish|CasseroleDish|DeepFryer|GlassDish|Grater|ImmersionBlender|KitchenString|MeatMallet|PotatoRicer|RoastingPan|RoastingPot|RollingPin|Sieve|SpatzleMaker|Spoon|Flour|Sugar|Salt|Butter|Eggs|Egg|Milk|Water|Oil|Vanilla|ChocolateChips|Cinnamon|BakingPowder|BakingSoda|Yeast|BrownSugar|GroundBeef|Cornstarch|Onion|BlackPepper|VegetableOil|PineappleJuice|SoySauce|WhiteVinegar|Pineapple|GreenPepper|Carrot|ChickenBreast|BellPepper|Garlic|SesameOil|OliveOil|OnionPowder|GarlicPowder|FrozenStirFryVeggies|Rice|Anchovies|AnchovyPaste|Apple|BayLeaf|BreadRoll|Broccoli|Broth|BrothCube|Capers|CarawaySeeds|Celery|CeleryRoot|Chicken|ChiliPepper|Chives|Cognac|CookedHam|CornedBeef|Cream|CreamQuark|CreamYogurt|Cucumber|Curry|CurrySauceMix|Dill|DryYeast|Duck|Eggplant|EggYolk|Emmental|Fat|GoulashMeat|GratedCheese|GreenPeppercorns|GroundMeat|Ham|HardBoiledEgg|HeavyCream|InstantBroth|ItalianHerbs|LasagnaNoodles|Leek|LemonJuice|Lentils|LongGrainRice|Margarine|MeatBroth|MeatBrothCube|MeatSoup|MixedSpices|Mozzarella|Mushroom|Mustard|Nutmeg|OnionSeasoning|Orange|OrangeJuice|OrangePeel|Paprika|Parmesan|Parsley|PeachHalves|Peas|Pork|PorkSchnitzel|PorkTenderloin|Potato|RootVegetables|Rosemary|Salami|Sausage|Schnitzel|SmokedBacon|SmokedSausage|SourCream|Thyme|Tomato|TomatoCan|TomatoPaste|Vinegar|WhiteWine|YellowTurnip|Zucchini|Beef|Breadcrumbs|Cabbage|Gouda|Lemon|Olives|Oregano|Pasta|Pepper|Spinach)\\b"
         }
       ]
     },
@@ -88,7 +88,7 @@
       "patterns": [
         {
           "name": "support.function.builtin.food",
-          "match": "\\b(?:wait|transfer|season|sprinkle|cool|soak|squeeze_dry|rinse|drain|peel|grate|squeeze|divide|fill|stuff|rub|dry|freeze|wash|hollow_out|remove_from_broth|settle)\\b(?=\\s*\\()"
+          "match": "\\b(?:wait|transfer|season|sprinkle|cool|soak|squeeze_dry|rinse|drain|peel|grate|squeeze|divide|fill|stuff|rub|dry|freeze|wash|hollow_out|remove_from_broth|settle|form)\\b(?=\\s*\\()"
         }
       ]
     },
@@ -96,7 +96,7 @@
       "patterns": [
         {
           "name": "support.function.method.food",
-          "match": "\\.\\b(?:add|mix|stir|fold|whisk|pour|form|drain|sprinkle|preheat|bake|roast|broil|heatTo|heat|boil|simmer|saute|fry|brown|chop|dice|slice|mince|set|start|stop)\\b(?=\\s*\\()"
+          "match": "\\.\\b(?:add|mix|stir|fold|whisk|pour|form|drain|sprinkle|get|layer|top|grease|cover|strain|arrange|beat|coat|cut|dip|divide|drop|garnish|knead|line|pound|prepare|prick|puree|render|reserve|tie|wash|preheat|bake|roast|broil|heatTo|heat|boil|simmer|saute|fry|brown|cook|braise|chop|dice|slice|mince|crush|set|start|stop|press|roll|grate|press|strain|spread|sift|dust|crumble|dissolve|place|fold|seal|brush|wrap|spread|roll|unfold|makeWell|removeSteams|pick|melt|quarter|arrange|pour|smooth|top|uncover|place|distribute|remove|set|heat|fry|saute|brown|cook|boil|simmer|cook|heat|mix|beat|whisk|combine|stir|mix|fold|pound|tie|grease|layer|bake|layer|bake|cover|roast|place|braise|cook|layer|bake|fry|heat|puree|blend)\\b(?=\\s*\\()"
         }
       ]
     },

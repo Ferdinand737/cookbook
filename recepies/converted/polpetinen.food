@@ -12,7 +12,7 @@ fn cook() {
     bread_roll = new BreadRoll("1, soaked")
     salt = new Salt("to taste")
     pepper = new BlackPepper("to taste")
-    oregano = new Oregano("to taste")
+    mixed_spices = new MixedSpices("oregano, to taste")
     
     // Sauce Ingredients
     oil = new Oil("2 tbsp")
@@ -28,9 +28,9 @@ fn cook() {
     sieve = new Sieve()
     
     // Prepare meat mixture
-    knife.mince(garlic)
-    knife.chop(smoked_bacon, "fine")
-    soak(bread_roll, milk)
+    garlic = knife.mince(garlic)
+    smoked_bacon = knife.chop(smoked_bacon, "fine")
+    soak(bread_roll, "milk")
     squeeze_dry(bread_roll)
     
     mixing_bowl.add(ground_beef)
@@ -42,7 +42,7 @@ fn cook() {
     mixing_bowl.add(bread_roll)
     mixing_bowl.add(salt)
     mixing_bowl.add(pepper)
-    mixing_bowl.add(oregano)
+    mixing_bowl.add(mixed_spices)
     mixing_bowl.mix("until combined")
     
     meatballs = mixing_bowl.form("small balls")
@@ -53,7 +53,7 @@ fn cook() {
     pan.brown("all sides")
     
     // Prepare tomato sauce
-    knife.chop(onions)
+    onions = knife.chop(onions)
     saucepan.heat("medium")
     saucepan.add(oil)
     saucepan.add(onions)
@@ -66,7 +66,7 @@ fn cook() {
     
     // Strain sauce
     sieve.strain(saucepan)
-    saucepan.season("with salt, pepper, oregano")
+    season(saucepan, "salt, pepper, oregano")
     
     // Combine
     saucepan.add(meatballs)

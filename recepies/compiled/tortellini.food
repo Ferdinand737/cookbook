@@ -1,0 +1,52 @@
+    1	//tortellini.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Option 1 Ingredients
+    6	    tortellini = new Pasta("650g, tortellini")
+    7	    butter = new Butter("20g")
+    8	    mushrooms = new Mushroom("100g, fresh")
+    9	    ham = new Ham("100g, cooked")
+   10	    cream = new HeavyCream("500ml, sweet")
+   11	    parmesan = new Parmesan("150g")
+   12	    salt = new Salt("to taste")
+   13	    pepper = new BlackPepper("to taste")
+   14	    nutmeg = new Nutmeg("to taste")
+   15	    
+   16	    // Equipment
+   17	    pot = new Pot()
+   18	    pan = new Pan()
+   19	    knife = new Knife()
+   20	    
+   21	    // Cooking Option 1
+   22	    pot.boil("salted water or broth")
+   23	    pot.add(tortellini)
+   24	    pot.cook("15 minutes")
+   25	    
+   26	    mushrooms = knife.dice(mushrooms)
+   27	    ham = knife.dice(ham)
+   28	    
+   29	    pan.heat("medium")
+   30	    pan.add(butter)
+   31	    pan.melt()
+   32	    pan.add(mushrooms)
+   33	    pan.add(ham)
+   34	    pan.saute("until tender")
+   35	    
+   36	    pan.add(cream)
+   37	    pan.add(parmesan, "100g")
+   38	    pan.stir("well")
+   39	    pan.simmer("3-4 minutes")
+   40	    
+   41	    season(pan, salt)
+   42	    season(pan, pepper)
+   43	    season(pan, nutmeg)
+   44	    
+   45	    tortellini = pot.drain()
+   46	    pan.add(tortellini)
+   47	    wait("let sit in cream sauce before serving")
+   48	    
+   49	    pan.sprinkle(parmesan, "remaining 50g")
+   50	    
+   51	    return "Tortellini Option 1"
+   52	}

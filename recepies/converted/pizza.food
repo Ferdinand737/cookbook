@@ -36,7 +36,7 @@ fn cook() {
     wait("refrigerate if possible for better consistency")
     
     dough = mixing_bowl.get()
-    dough_portions = knife.divide(dough, "4 portions")
+    dough_portions = divide(dough, "4 portions")
     
     // Prepare topping sauce
     sauce_bowl = new Bowl()

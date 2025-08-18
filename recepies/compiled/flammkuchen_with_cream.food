@@ -1,0 +1,69 @@
+    1	//flammkuchen_with_cream.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Dough Ingredients
+    6	    flour = new Flour("375g")
+    7	    yeast = new DryYeast("20g")
+    8	    water = new Water("125-250ml, lukewarm")
+    9	    salt = new Salt("to taste")
+   10	    oil = new Oil("2 tbsp")
+   11	    
+   12	    // Topping Ingredients
+   13	    sour_cream = new SourCream("2 cups")
+   14	    emmental = new Emmental("100g, grated")
+   15	    nutmeg = new Nutmeg("to taste")
+   16	    pepper = new BlackPepper("to taste")
+   17	    onions = new Onion("200g")
+   18	    ham = new Ham("100g, cubes")
+   19	    smoked_bacon = new SmokedBacon("100g, cubes")
+   20	    
+   21	    // Equipment
+   22	    mixing_bowl = new Bowl()
+   23	    pan = new Pan()
+   24	    rolling_pin = new RollingPin()
+   25	    baking_sheet = new BakingSheet()
+   26	    oven = new Oven()
+   27	    knife = new Knife()
+   28	    
+   29	    // Make yeast dough
+   30	    mixing_bowl.add(flour)
+   31	    mixing_bowl.add(yeast)
+   32	    mixing_bowl.add(water)
+   33	    mixing_bowl.add(salt)
+   34	    mixing_bowl.add(oil)
+   35	    mixing_bowl.mix("until smooth dough forms")
+   36	    
+   37	    wait("let rise covered in warm place for 30 minutes")
+   38	    
+   39	    // Prepare topping
+   40	    cream_bowl = new Bowl()
+   41	    cream_bowl.add(sour_cream)
+   42	    cream_bowl.add(emmental)
+   43	    season(cream_bowl, salt)
+   44	    season(cream_bowl, pepper)
+   45	    season(cream_bowl, nutmeg)
+   46	    cream_bowl.mix()
+   47	    
+   48	    onions = knife.slice(onions, "thin rings")
+   49	    
+   50	    pan.heat("medium")
+   51	    pan.add(ham)
+   52	    pan.add(smoked_bacon)
+   53	    pan.fry("render fat")
+   54	    pan.add(onions)
+   55	    pan.saute("until translucent")
+   56	    
+   57	    // Assembly
+   58	    mixing_bowl.mix("knead dough again")
+   59	    baking_sheet.grease()
+   60	    dough = rolling_pin.roll(mixing_bowl, "large sheet on baking sheet")
+   61	    baking_sheet.spread(cream_bowl)
+   62	    baking_sheet.top(pan, "onion-bacon mixture")
+   63	    
+   64	    // Baking
+   65	    oven.preheat("230C")
+   66	    oven.bake(baking_sheet, "10 minutes")
+   67	    
+   68	    return "Flammkuchen with Cream"
+   69	}

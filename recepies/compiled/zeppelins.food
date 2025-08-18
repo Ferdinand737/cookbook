@@ -1,0 +1,87 @@
+    1	//zeppelins.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Potato Dough Ingredients
+    6	    fresh_potatoes = new Potato("3kg, fresh")
+    7	    cooked_potatoes = new Potato("1kg, cooked")
+    8	    salt_dough = new Salt("to taste")
+    9	    
+   10	    // Meat Filling Ingredients
+   11	    ground_meat = new GroundMeat("1kg, mixed")
+   12	    onion_filling = new Onion("1 medium")
+   13	    egg_filling = new Egg("1")
+   14	    pepper_filling = new BlackPepper("to taste")
+   15	    salt_filling = new Salt("to taste")
+   16	    
+   17	    // Bacon Sauce Ingredients
+   18	    smoked_bacon = new SmokedBacon("300g")
+   19	    onion_sauce = new Onion("1 medium")
+   20	    cream = new Cream("1 cup")
+   21	    pepper_sauce = new BlackPepper("to taste")
+   22	    salt_sauce = new Salt("to taste")
+   23	    
+   24	    // Equipment
+   25	    grater = new Grater()
+   26	    potato_ricer = new PotatoRicer()
+   27	    mixing_bowl = new Bowl()
+   28	    pan = new Pan()
+   29	    pot = new Pot()
+   30	    knife = new Knife()
+   31	    
+   32	    // Prepare potato dough
+   33	    peel(fresh_potatoes)
+   34	    fresh_potatoes = grater.grate(fresh_potatoes)
+   35	    drain(fresh_potatoes, "well")
+   36	    starch = settle(fresh_potatoes, "let starch settle")
+   37	    fresh_potatoes.add(starch)
+   38	    
+   39	    peel(cooked_potatoes)
+   40	    cooked_potatoes = potato_ricer.press(cooked_potatoes)
+   41	    
+   42	    mixing_bowl.add(fresh_potatoes)
+   43	    mixing_bowl.add(cooked_potatoes)
+   44	    mixing_bowl.add(salt_dough)
+   45	    mixing_bowl.mix("until dough doesn't stick")
+   46	    
+   47	    // Prepare meat filling
+   48	    onion_filling = knife.chop(onion_filling)
+   49	    pan.heat("medium")
+   50	    pan.add(onion_filling)
+   51	    pan.fry("until golden")
+   52	    
+   53	    filling_bowl = new Bowl()
+   54	    filling_bowl.add(ground_meat)
+   55	    filling_bowl.add(pan)
+   56	    filling_bowl.add(egg_filling)
+   57	    filling_bowl.add(pepper_filling)
+   58	    filling_bowl.add(salt_filling)
+   59	    filling_bowl.mix()
+   60	    
+   61	    // Form dumplings
+   62	    dumplings = mixing_bowl.form("palm-sized flat pieces")
+   63	    fill(dumplings, filling_bowl)
+   64	    dumplings = form(dumplings, "oval dumplings")
+   65	    
+   66	    // Cook dumplings
+   67	    pot.boil("large pot of water")
+   68	    pot.add(dumplings)
+   69	    pot.cook("20 minutes")
+   70	    
+   71	    // Prepare bacon sauce
+   72	    smoked_bacon = knife.dice(smoked_bacon)
+   73	    onion_sauce = knife.slice(onion_sauce)
+   74	    
+   75	    sauce_pan = new Pan()
+   76	    sauce_pan.heat("medium")
+   77	    sauce_pan.add(smoked_bacon)
+   78	    sauce_pan.fry("until crispy")
+   79	    sauce_pan.add(onion_sauce)
+   80	    sauce_pan.fry("until golden")
+   81	    sauce_pan.add(cream)
+   82	    sauce_pan.add(pepper_sauce)
+   83	    sauce_pan.add(salt_sauce)
+   84	    sauce_pan.simmer("until heated")
+   85	    
+   86	    return "Zeppelins with bacon sauce - TIP: can use 2 packages ready-made dumpling dough"
+   87	}

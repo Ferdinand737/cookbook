@@ -21,9 +21,9 @@ fn cook() {
     roasting_pot = new RoastingPot()
     
     // Preparation
-    pork_tenderloin.rinse("cold water")
-    pork_tenderloin.dry("with kitchen paper")
-    knife.slice(pork_tenderloin, "1/2 cm thick strips")
+    rinse(pork_tenderloin, "cold water")
+    dry(pork_tenderloin, "with kitchen paper")
+    pork_tenderloin = knife.slice(pork_tenderloin, "1/2 cm thick strips")
     
     spice_mix = new Bowl()
     spice_mix.add(salt)
@@ -31,13 +31,13 @@ fn cook() {
     spice_mix.add(curry)
     spice_mix.mix()
     
-    pork_tenderloin.sprinkle(spice_mix)
+    sprinkle(pork_tenderloin, spice_mix)
     
-    knife.dice(onion)
-    knife.dice(garlic)
-    knife.dice(apple)
-    knife.dice(red_bell_pepper)
-    knife.dice(pineapple, "small pieces")
+    onion = knife.dice(onion)
+    garlic = knife.dice(garlic)
+    apple = knife.dice(apple)
+    red_bell_pepper = knife.dice(red_bell_pepper)
+    pineapple = knife.dice(pineapple, "small pieces")
     
     // Cooking
     roasting_pot.heat("medium")

@@ -36,12 +36,14 @@ fn cook() {
     oven = new Oven()
     
     // Cook lasagna noodles
-    pot.boil(lasagna_noodles, "according to package directions")
-    drain(pot)
+    pot.boil("salted water")
+    pot.add(lasagna_noodles)
+    pot.cook("according to package directions")
+    lasagna_noodles = pot.drain()
     
     // Prepare meat sauce
-    knife.chop(onion_meat)
-    knife.crush(garlic)
+    onion_meat = knife.chop(onion_meat)
+    garlic = knife.mince(garlic)
     
     pan.heat("medium")
     pan.add(onion_meat)
@@ -58,8 +60,8 @@ fn cook() {
     pan.simmer("to blend flavors")
     
     // Prepare béchamel sauce
-    knife.chop(ham)
-    knife.chop(onion_bechamel)
+    ham = knife.chop(ham)
+    onion_bechamel = knife.chop(onion_bechamel)
     
     saucepan.heat("medium")
     saucepan.add(butter)
@@ -81,8 +83,10 @@ fn cook() {
     baking_dish.layer(pan, "meat sauce")
     baking_dish.layer(lasagna_noodles)
     baking_dish.layer(saucepan, "béchamel sauce")
-    baking_dish.repeat("layering twice more")
-    baking_dish.top(grated_cheese, "thick layer")
+    baking_dish.layer(pan, "meat sauce")
+    baking_dish.layer(lasagna_noodles)
+    baking_dish.layer(saucepan, "béchamel sauce")
+    baking_dish.top(grated_cheese)
     
     // Baking
     oven.preheat("200C")

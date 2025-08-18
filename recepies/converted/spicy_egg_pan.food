@@ -1,0 +1,63 @@
+//spicy_egg_pan.food
+
+fn cook() {
+    
+    // Ingredients
+    leek = new Leek("500g")
+    onion = new Onion("1 medium")
+    mushrooms = new Mushroom("125g, fresh")
+    tomatoes = new Tomato("2 medium")
+    bacon = new SmokedBacon("75g, breakfast")
+    eggs = new Eggs("4")
+    milk = new Milk("4 tbsp, canned")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    paprika = new Paprika("to taste")
+    cheese = new Emmental("80g, Gouda or Emmental")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    whisk = new Whisk()
+    bowl = new Bowl()
+    grater = new Grater()
+    
+    // Preparation
+    leek = knife.slice(leek, "clean and slice")
+    onion = knife.dice(onion)
+    mushrooms = knife.dice(mushrooms)
+    tomatoes = knife.dice(tomatoes, "pieces")
+    cheese = grater.grate(cheese)
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(bacon)
+    pan.fry("until crispy")
+    bacon = pan.remove("set aside")
+    
+    pan.add(onion, "in bacon fat")
+    pan.saute("until translucent")
+    pan.add(leek)
+    pan.add(mushrooms)
+    pan.cook("until tender")
+    
+    pan.add(tomatoes)
+    pan.cook("briefly")
+    
+    // Prepare egg mixture
+    bowl.add(eggs)
+    bowl.add(milk)
+    whisk.beat(bowl)
+    season(bowl, salt)
+    season(bowl, pepper)
+    season(bowl, paprika)
+    
+    pan.add(bowl, "egg mixture over vegetables")
+    pan.add(bacon, "back to pan")
+    pan.cook("until eggs are set")
+    
+    pan.sprinkle(cheese)
+    wait("let cheese melt")
+    
+    return "Spicy Egg Pan"
+}

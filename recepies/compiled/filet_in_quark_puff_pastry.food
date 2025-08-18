@@ -1,0 +1,68 @@
+    1	//filet_in_quark_puff_pastry.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Main Ingredients
+    6	    pork_filet = new Pork("1kg, filet")
+    7	    
+    8	    // Quark Puff Pastry Ingredients
+    9	    flour = new Flour("200g")
+   10	    butter = new Butter("200g")
+   11	    cream_quark = new CreamQuark("200g")
+   12	    
+   13	    // Filling Ingredients
+   14	    sausage_meat = new Sausage("200g, meat")
+   15	    eggs = new Eggs("2")
+   16	    creme_fraiche = new Cream("1 cup, crème fraîche")
+   17	    chervil = new Chives("50g")
+   18	    onion = new Onion("1 small")
+   19	    parsley = new Parsley("fresh")
+   20	    salt = new Salt("to taste")
+   21	    pepper = new BlackPepper("to taste")
+   22	    nutmeg = new Nutmeg("to taste")
+   23	    
+   24	    // Equipment
+   25	    mixing_bowl = new Bowl()
+   26	    pan = new Pan()
+   27	    rolling_pin = new RollingPin()
+   28	    baking_dish = new BakingDish()
+   29	    oven = new Oven()
+   30	    knife = new Knife()
+   31	    
+   32	    // Make quark puff pastry
+   33	    mixing_bowl.add(flour)
+   34	    mixing_bowl.add(butter)
+   35	    mixing_bowl.add(cream_quark)
+   36	    mixing_bowl.mix("until smooth dough forms")
+   37	    
+   38	    // Prepare filling
+   39	    onion = knife.mince(onion)
+   40	    filling_bowl = new Bowl()
+   41	    filling_bowl.add(sausage_meat)
+   42	    filling_bowl.add(eggs)
+   43	    filling_bowl.add(creme_fraiche)
+   44	    filling_bowl.add(chervil)
+   45	    filling_bowl.add(onion)
+   46	    filling_bowl.add(parsley)
+   47	    filling_bowl.add(salt)
+   48	    filling_bowl.add(pepper)
+   49	    filling_bowl.add(nutmeg)
+   50	    filling_bowl.mix("until combined")
+   51	    
+   52	    // Prepare meat
+   53	    pan.heat("high")
+   54	    pan.add(pork_filet)
+   55	    pan.brown("sear well on all sides")
+   56	    
+   57	    // Assembly
+   58	    pork_filet.spread(filling_bowl, "on top")
+   59	    dough = rolling_pin.roll(mixing_bowl, "large sheet")
+   60	    dough.wrap(pork_filet)
+   61	    
+   62	    // Baking
+   63	    oven.preheat("180C")
+   64	    baking_dish.add(dough)
+   65	    oven.bake(baking_dish, "35 minutes")
+   66	    
+   67	    return "Filet in Quark Puff Pastry"
+   68	}

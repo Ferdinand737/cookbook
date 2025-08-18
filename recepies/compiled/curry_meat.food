@@ -1,0 +1,66 @@
+    1	//curry_meat.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    pork_tenderloin = new PorkTenderloin("500g")
+    7	    pepper = new BlackPepper("to taste")
+    8	    salt = new Salt("to taste")
+    9	    curry = new Curry("to taste")
+   10	    oil = new Oil("for frying")
+   11	    onion = new Onion("1 medium")
+   12	    garlic = new Garlic("1 clove")
+   13	    apple = new Apple("1 large")
+   14	    red_bell_pepper = new BellPepper("1 red")
+   15	    pineapple = new Pineapple("2 slices")
+   16	    water = new Water("250ml")
+   17	    curry_sauce_mix = new CurrySauceMix("1 box")
+   18	    
+   19	    // Equipment
+   20	    knife = new Knife()
+   21	    roasting_pot = new RoastingPot()
+   22	    
+   23	    // Preparation
+   24	    rinse(pork_tenderloin, "cold water")
+   25	    dry(pork_tenderloin, "with kitchen paper")
+   26	    pork_tenderloin = knife.slice(pork_tenderloin, "1/2 cm thick strips")
+   27	    
+   28	    spice_mix = new Bowl()
+   29	    spice_mix.add(salt)
+   30	    spice_mix.add(pepper)
+   31	    spice_mix.add(curry)
+   32	    spice_mix.mix()
+   33	    
+   34	    sprinkle(pork_tenderloin, spice_mix)
+   35	    
+   36	    onion = knife.dice(onion)
+   37	    garlic = knife.dice(garlic)
+   38	    apple = knife.dice(apple)
+   39	    red_bell_pepper = knife.dice(red_bell_pepper)
+   40	    pineapple = knife.dice(pineapple, "small pieces")
+   41	    
+   42	    // Cooking
+   43	    roasting_pot.heat("medium")
+   44	    roasting_pot.add(oil)
+   45	    roasting_pot.add(pork_tenderloin)
+   46	    roasting_pot.brown("10 minutes")
+   47	    
+   48	    roasting_pot.add(onion)
+   49	    roasting_pot.add(garlic)
+   50	    roasting_pot.add(apple)
+   51	    roasting_pot.add(red_bell_pepper)
+   52	    roasting_pot.add(pineapple)
+   53	    roasting_pot.mix()
+   54	    
+   55	    roasting_pot.cover()
+   56	    roasting_pot.braise("5 minutes on low heat")
+   57	    
+   58	    roasting_pot.add(water)
+   59	    roasting_pot.add(curry_sauce_mix)
+   60	    roasting_pot.stir()
+   61	    roasting_pot.boil()
+   62	    
+   63	    wait("few minutes without heat to let flavors meld")
+   64	    
+   65	    return "Curry Meat"
+   66	}

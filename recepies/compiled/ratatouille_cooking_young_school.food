@@ -1,0 +1,64 @@
+    1	//ratatouille_cooking_young_school.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    bell_peppers = new BellPepper("3 medium, 600g")
+    7	    eggplants = new Eggplant("400g")
+    8	    zucchini = new Zucchini("300g")
+    9	    onions = new Onion("4 medium")
+   10	    garlic = new Garlic("2 cloves")
+   11	    tomatoes = new Tomato("4 medium")
+   12	    parsley = new Parsley("1 bunch")
+   13	    basil = new ItalianHerbs("1 sprig basil")
+   14	    thyme = new Thyme("dried")
+   15	    oil = new Oil("for frying")
+   16	    salt = new Salt("to taste")
+   17	    pepper = new BlackPepper("to taste")
+   18	    
+   19	    // Equipment
+   20	    knife = new Knife()
+   21	    pan = new Pan()
+   22	    
+   23	    // Preparation
+   24	    bell_peppers = knife.slice(bell_peppers, "strips")
+   25	    onions = knife.dice(onions, "finely")
+   26	    garlic = knife.dice(garlic, "finely")
+   27	    peel(tomatoes)
+   28	    tomatoes = knife.quarter(tomatoes)
+   29	    
+   30	    wash(eggplants)
+   31	    eggplants = knife.slice(eggplants, "crosswise into slices, remove stem and leaves")
+   32	    zucchini = knife.slice(zucchini, "slices")
+   33	    
+   34	    thyme = thyme.pick("leaves from stems")
+   35	    basil = basil.pick("leaves from stems")
+   36	    
+   37	    // Cooking
+   38	    pan.heat("medium")
+   39	    pan.add(oil)
+   40	    pan.add(zucchini)
+   41	    pan.fry("until tender")
+   42	    pan.add(eggplants)
+   43	    pan.fry("until tender")
+   44	    
+   45	    pan.add(onions)
+   46	    pan.add(garlic)
+   47	    pan.fry("briefly")
+   48	    
+   49	    pan.add(bell_peppers)
+   50	    pan.add(tomatoes)
+   51	    sprinkle(pan, thyme)
+   52	    pan.stir()
+   53	    pan.saute("25 minutes until vegetables are soft")
+   54	    
+   55	    season(pan, salt)
+   56	    season(pan, pepper)
+   57	    pan.cook("5 minutes more")
+   58	    
+   59	    pan.add(parsley)
+   60	    pan.add(basil)
+   61	    pan.mix("herbs in")
+   62	    
+   63	    return "Ratatouille"
+   64	}

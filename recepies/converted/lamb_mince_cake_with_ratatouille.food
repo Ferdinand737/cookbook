@@ -1,0 +1,74 @@
+//lamb_mince_cake_with_ratatouille.food
+
+fn cook() {
+    
+    // Ingredients
+    ground_lamb = new GroundMeat("350g, lamb")
+    onions = new Onion("2 medium")
+    egg = new Egg("1")
+    quark = new CreamQuark("80g, low-fat")
+    lemon = new Lemon("1/2 untreated")
+    breadcrumbs = new Flour("2 tbsp breadcrumbs")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    paprika = new Paprika("to taste")
+    eggplant = new Eggplant("1 small")
+    oil = new Oil("2 tbsp")
+    basil = new ItalianHerbs("1 bunch basil")
+    red_bell_pepper = new BellPepper("1 red")
+    zucchini = new Zucchini("1 medium")
+    
+    // Equipment
+    knife = new Knife()
+    grater = new Grater()
+    mixing_bowl = new Bowl()
+    pan = new Pan()
+    baking_dish = new BakingDish()
+    oven = new Oven()
+    
+    // Preparation
+    onions = knife.dice(onions)
+    lemon_zest = grater.grate(lemon)
+    eggplant = knife.dice(eggplant, "cubes")
+    basil = knife.chop(basil)
+    red_bell_pepper = knife.dice(red_bell_pepper, "cubes")
+    zucchini = knife.dice(zucchini, "cubes")
+    
+    // Make meat mixture
+    mixing_bowl.add(ground_lamb)
+    mixing_bowl.add(onions, "one diced onion")
+    mixing_bowl.add(egg)
+    mixing_bowl.add(quark)
+    mixing_bowl.add(lemon_zest)
+    mixing_bowl.add(breadcrumbs)
+    season(mixing_bowl, salt)
+    season(mixing_bowl, pepper)
+    season(mixing_bowl, paprika)
+    mixing_bowl.mix("until combined")
+    
+    // Prepare vegetables
+    salt(eggplant, "cubes")
+    pan.heat("medium")
+    pan.add(oil)
+    pan.add(eggplant)
+    pan.saute("5 minutes")
+    
+    vegetable_bowl = new Bowl()
+    vegetable_bowl.add(basil)
+    vegetable_bowl.add(red_bell_pepper)
+    vegetable_bowl.add(zucchini)
+    vegetable_bowl.add(pan, "eggplant")
+    vegetable_bowl.mix()
+    
+    // Assembly
+    baking_dish.add(mixing_bowl, "meat mixture")
+    baking_dish.smooth("surface")
+    baking_dish.top(vegetable_bowl)
+    baking_dish.top(onions, "remaining onion as rings")
+    
+    // Baking
+    oven.preheat("200C")
+    oven.bake(baking_dish, "40 minutes")
+    
+    return "Lamb Mince Cake with Ratatouille"
+}

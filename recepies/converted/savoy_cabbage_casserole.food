@@ -1,0 +1,58 @@
+//savoy_cabbage_casserole.food
+
+fn cook() {
+    
+    // Ingredients
+    savoy_cabbage = new Cabbage("1kg, savoy")
+    rice = new Rice("100g")
+    ground_meat = new GroundMeat("500g")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    fat = new Fat("60g")
+    onion = new Onion("1 medium")
+    sour_cream = new SourCream("for brushing")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    pan = new Pan()
+    casserole_dish = new CasseroleDish()
+    oven = new Oven()
+    
+    // Preparation
+    savoy_cabbage = knife.chop(savoy_cabbage, "wide strips")
+    onion = knife.dice(onion)
+    
+    // Cooking
+    pot.boil("salted water")
+    pot.add(savoy_cabbage)
+    pot.cook("until tender")
+    savoy_cabbage = pot.drain()
+    drain(savoy_cabbage, "let drip")
+    
+    pan.heat("medium")
+    pan.add(fat)
+    pan.add(onion)
+    pan.saute("until translucent")
+    pan.add(ground_meat)
+    pan.cook("until meat turns gray")
+    pan.add(rice)
+    pan.mix()
+    
+    // Assembly
+    casserole_dish.grease(fat)
+    casserole_dish.layer(savoy_cabbage)
+    casserole_dish.layer(pan, "ground meat with rice")
+    casserole_dish.layer(savoy_cabbage)
+    casserole_dish.layer(pan, "ground meat with rice")
+    casserole_dish.top(savoy_cabbage, "final layer should be savoy cabbage")
+    
+    fat.melt()
+    casserole_dish.brush(fat, "melted")
+    casserole_dish.brush(sour_cream)
+    
+    // Baking
+    oven.bake(casserole_dish, "until golden brown")
+    
+    return "Savoy Cabbage Casserole"
+}

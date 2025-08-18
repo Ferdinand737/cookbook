@@ -1,0 +1,59 @@
+    1	//vegetable_soup_with_sausages.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    onions = new Onion("200g")
+    7	    leek = new Leek("1 stalk")
+    8	    yellow_turnips = new YellowTurnip("200g")
+    9	    potatoes = new Potato("400g")
+   10	    butter = new Butter("30g")
+   11	    broth = new Broth("1l")
+   12	    salt = new Salt("to taste")
+   13	    pepper = new BlackPepper("to taste")
+   14	    heavy_cream = new HeavyCream("100g")
+   15	    sausages = new Sausage("200g")
+   16	    chives = new Chives("1 bunch")
+   17	    
+   18	    // Equipment
+   19	    knife = new Knife()
+   20	    pot = new Pot()
+   21	    immersion_blender = new ImmersionBlender()
+   22	    
+   23	    // Preparation
+   24	    knife.dice(onions)
+   25	    knife.slice(leek, "rings")
+   26	    knife.dice(yellow_turnips)
+   27	    knife.dice(potatoes)
+   28	    knife.chop(chives)
+   29	    
+   30	    // Cooking
+   31	    pot.heat("medium")
+   32	    pot.add(butter)
+   33	    pot.add(onions)
+   34	    pot.add(leek)
+   35	    pot.add(yellow_turnips)
+   36	    pot.add(potatoes)
+   37	    pot.saute("until softened")
+   38	    
+   39	    pot.add(broth)
+   40	    pot.add(salt)
+   41	    pot.add(pepper)
+   42	    pot.cook("15 minutes")
+   43	    
+   44	    // Blend half the soup
+   45	    half_soup = pot.reserve("half the soup")
+   46	    immersion_blender.puree(half_soup)
+   47	    pot.add(half_soup)
+   48	    
+   49	    pot.add(heavy_cream)
+   50	    pot.boil()
+   51	    pot.adjust_seasoning()
+   52	    
+   53	    pot.add(sausages)
+   54	    pot.heat("until sausages are warm")
+   55	    
+   56	    sprinkle(pot, chives)
+   57	    
+   58	    return "Vegetable Soup with Sausages"
+   59	}

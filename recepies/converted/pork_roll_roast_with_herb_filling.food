@@ -1,0 +1,81 @@
+//pork_roll_roast_with_herb_filling.food
+
+fn cook() {
+    
+    // Ingredients
+    pork_roll_roast = new Pork("1kg, roll roast")
+    pepper = new BlackPepper("to taste")
+    salt = new Salt("to taste")
+    bacon = new SmokedBacon("50g")
+    onion = new Onion("1 medium")
+    parsley = new Parsley("1 bunch")
+    thyme = new Thyme("dried")
+    zucchini = new Zucchini("2 x 200g")
+    creme_fraiche = new Cream("3 tbsp crème fraîche")
+    green_beans = new Peas("500g, green beans")
+    garlic = new Garlic("2 cloves")
+    rosemary = new Rosemary("fresh")
+    tomatoes = new Tomato("500g")
+    fresh_thyme = new Thyme("fresh sprigs")
+    
+    // Equipment
+    knife = new Knife()
+    grater = new Grater()
+    pan = new Pan()
+    casserole_dish = new CasseroleDish() // clay pot
+    kitchen_string = new KitchenString()
+    oven = new Oven()
+    
+    // Preparation
+    pork_roll_roast.unfold()
+    season(pork_roll_roast, salt)
+    season(pork_roll_roast, pepper)
+    
+    bacon = knife.dice(bacon, "fine strips")
+    onion = knife.dice(onion, "cubes")
+    parsley = knife.chop(parsley)
+    zucchini_grated = grater.grate(zucchini, "one coarsely grated")
+    zucchini_sliced = knife.slice(zucchini, "remaining cut into slices")
+    
+    peel(garlic)
+    tomatoes = knife.quarter(tomatoes)
+    
+    // Make filling
+    pan.heat("low")
+    pan.add(bacon)
+    pan.render("slowly at low heat")
+    pan.add(onion)
+    pan.saute("until translucent")
+    pan.add(parsley)
+    pan.add(thyme)
+    pan.add(zucchini_grated)
+    pan.add(creme_fraiche, "1 tbsp")
+    pan.stir()
+    season(pan, salt)
+    season(pan, pepper)
+    
+    // Assembly
+    pork_roll_roast.spread(pan, "bacon-vegetable filling")
+    pork_roll_roast.roll("tightly")
+    kitchen_string.tie(pork_roll_roast)
+    
+    // Prepare clay pot
+    casserole_dish.add(green_beans, "cleaned")
+    casserole_dish.add(zucchini_sliced)
+    casserole_dish.add(garlic)
+    casserole_dish.add(rosemary)
+    casserole_dish.place(pork_roll_roast, "on top")
+    
+    // Cooking
+    oven.set("cold oven")
+    casserole_dish.cover("soaked lid")
+    oven.cook(casserole_dish, "220C for 1.5-2 hours")
+    
+    casserole_dish.add(tomatoes)
+    casserole_dish.add(fresh_thyme)
+    casserole_dish.add(creme_fraiche, "remaining 2 tbsp to vegetables")
+    casserole_dish.uncover()
+    oven.roast(casserole_dish, "15 minutes more")
+    
+    return "Pork Roll Roast with Herb Filling and Vegetables"
+}

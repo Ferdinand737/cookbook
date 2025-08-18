@@ -1,0 +1,64 @@
+//ratatouille_cooking_young_school.food
+
+fn cook() {
+    
+    // Ingredients
+    bell_peppers = new BellPepper("3 medium, 600g")
+    eggplants = new Eggplant("400g")
+    zucchini = new Zucchini("300g")
+    onions = new Onion("4 medium")
+    garlic = new Garlic("2 cloves")
+    tomatoes = new Tomato("4 medium")
+    parsley = new Parsley("1 bunch")
+    basil = new ItalianHerbs("1 sprig basil")
+    thyme = new Thyme("dried")
+    oil = new Oil("for frying")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    knife = new Knife()
+    pan = new Pan()
+    
+    // Preparation
+    bell_peppers = knife.slice(bell_peppers, "strips")
+    onions = knife.dice(onions, "finely")
+    garlic = knife.dice(garlic, "finely")
+    peel(tomatoes)
+    tomatoes = knife.quarter(tomatoes)
+    
+    wash(eggplants)
+    eggplants = knife.slice(eggplants, "crosswise into slices, remove stem and leaves")
+    zucchini = knife.slice(zucchini, "slices")
+    
+    thyme = thyme.pick("leaves from stems")
+    basil = basil.pick("leaves from stems")
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(oil)
+    pan.add(zucchini)
+    pan.fry("until tender")
+    pan.add(eggplants)
+    pan.fry("until tender")
+    
+    pan.add(onions)
+    pan.add(garlic)
+    pan.fry("briefly")
+    
+    pan.add(bell_peppers)
+    pan.add(tomatoes)
+    sprinkle(pan, thyme)
+    pan.stir()
+    pan.saute("25 minutes until vegetables are soft")
+    
+    season(pan, salt)
+    season(pan, pepper)
+    pan.cook("5 minutes more")
+    
+    pan.add(parsley)
+    pan.add(basil)
+    pan.mix("herbs in")
+    
+    return "Ratatouille"
+}

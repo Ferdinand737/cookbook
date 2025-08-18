@@ -1,0 +1,69 @@
+//ground_meat_pate.food
+
+fn cook() {
+    
+    // Ingredients
+    ground_meat = new GroundMeat("500g, mixed")
+    butter = new Butter("30g, clarified")
+    mushrooms = new Mushroom("150g, brown")
+    onions = new Onion("2 medium")
+    red_bell_pepper = new BellPepper("1 red")
+    eggs = new Eggs("3")
+    coriander = new MixedSpices("1 pot coriander")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    chili_sauce = new MixedSpices("2 tbsp chili sauce")
+    puff_pastry = new Flour("1 package frozen puff pastry")
+    flour = new Flour("for dusting")
+    breadcrumbs = new Flour("breadcrumbs")
+    milk = new Milk("2 tbsp")
+    fat = new Fat("for baking sheet")
+    
+    // Equipment
+    pan = new Pan()
+    knife = new Knife()
+    mixing_bowl = new Bowl()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    
+    // Preparation
+    onions = knife.dice(onions)
+    mushrooms = knife.dice(mushrooms)
+    red_bell_pepper = knife.dice(red_bell_pepper)
+    
+    // Cooking
+    pan.heat("medium")
+    pan.add(butter)
+    pan.add(ground_meat)
+    pan.brown("until cooked")
+    
+    pan.add(onions)
+    pan.add(mushrooms)
+    pan.add(red_bell_pepper)
+    pan.cook("until vegetables are tender")
+    
+    pan.add(eggs)
+    pan.stir("beat in eggs")
+    season(pan, coriander)
+    season(pan, salt)
+    season(pan, pepper)
+    season(pan, chili_sauce)
+    
+    // Assembly
+    dough = rolling_pin.roll(puff_pastry, "large sheet")
+    dough.place(pan, "meat mixture in center")
+    dough.fold("over filling")
+    dough.seal("edges")
+    
+    baking_sheet.grease(fat)
+    baking_sheet.add(dough)
+    baking_sheet.brush(milk)
+    sprinkle(baking_sheet, breadcrumbs)
+    
+    // Baking
+    oven.preheat("according to pastry package instructions")
+    oven.bake(baking_sheet, "according to pastry package instructions")
+    
+    return "Ground Meat Pâté"
+}

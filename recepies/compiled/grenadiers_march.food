@@ -1,0 +1,43 @@
+    1	//grenadiers_march.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    pasta = new Pasta("200g")
+    7	    potatoes = new Potato("500g")
+    8	    onion = new Onion("1 medium")
+    9	    fat = new Fat("100g") // lard or oil
+   10	    salt = new Salt("to taste")
+   11	    paprika = new Paprika("to taste")
+   12	    
+   13	    // Equipment
+   14	    knife = new Knife()
+   15	    pot = new Pot()
+   16	    pan = new Pan()
+   17	    
+   18	    // Preparation
+   19	    peel(potatoes)
+   20	    potatoes = knife.dice(potatoes, "small cubes")
+   21	    onion = knife.dice(onion)
+   22	    
+   23	    // Cooking
+   24	    pot.boil("salted water")
+   25	    pot.add(potatoes)
+   26	    pot.cook("until tender")
+   27	    potatoes = pot.drain()
+   28	    
+   29	    pan.heat("medium")
+   30	    pan.add(fat)
+   31	    pan.add(onion)
+   32	    pan.saute("until golden")
+   33	    
+   34	    pan.add(paprika)
+   35	    pan.add(potatoes)
+   36	    pan.add(pasta)
+   37	    pan.stir("well")
+   38	    pan.cook("low heat for 10 minutes, stirring occasionally")
+   39	    
+   40	    season(pan, salt)
+   41	    
+   42	    return "Grenadier's March"
+   43	}

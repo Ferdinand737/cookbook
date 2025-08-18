@@ -1,0 +1,70 @@
+    1	//meatballs_in_peaches.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    bread_roll = new BreadRoll("1")
+    7	    ground_beef = new GroundBeef("350g")
+    8	    egg = new Egg("1")
+    9	    curry = new Curry("1/2-1 tsp")
+   10	    onion_seasoning = new OnionSeasoning("1 tsp, liquid")
+   11	    rosemary = new Rosemary("to taste")
+   12	    pepper = new BlackPepper("to taste")
+   13	    salt = new Salt("to taste")
+   14	    meat_soup = new MeatSoup("500ml, clear")
+   15	    curry_sauce_mix = new CurrySauceMix("1 box")
+   16	    peach_halves = drain(new PeachHalves("8, canned"), "reserve juice")
+   17	    butter = new Butter("for frying")
+   18	    water = new Water("125ml")
+   19	    
+   20	    // Equipment
+   21	    mixing_bowl = new Bowl()
+   22	    pot = new Pot()
+   23	    saucepan = new Saucepan()
+   24	    pan = new Pan()
+   25	    
+   26	    // Prepare meatballs
+   27	    soak(bread_roll, "milk")
+   28	    squeeze_dry(bread_roll, "very well")
+   29	    
+   30	    mixing_bowl.add(bread_roll)
+   31	    mixing_bowl.add(ground_beef)
+   32	    mixing_bowl.add(egg)
+   33	    mixing_bowl.add(curry)
+   34	    mixing_bowl.add(onion_seasoning)
+   35	    mixing_bowl.add(rosemary)
+   36	    mixing_bowl.add(pepper)
+   37	    mixing_bowl.add(salt)
+   38	    mixing_bowl.mix("into smooth, spicy meat mixture")
+   39	    
+   40	    meatballs = mixing_bowl.form("8 meatballs")
+   41	    
+   42	    // Cook meatballs
+   43	    pot.prepare(meat_soup)
+   44	    pot.boil()
+   45	    pot.add(meatballs)
+   46	    pot.reduce_heat("lowest setting")
+   47	    pot.simmer("10-12 minutes")
+   48	    
+   49	    // Prepare curry sauce
+   50	    broth = pot.reserve("125ml meat broth")
+   51	    saucepan.add(broth)
+   52	    saucepan.add(water)
+   53	    saucepan.boil()
+   54	    saucepan.add(curry_sauce_mix)
+   55	    saucepan.stir()
+   56	    
+   57	    // Prepare peaches
+   58	    pan.add(butter)
+   59	    pan.melt()
+   60	    peach_halves.drain()
+   61	    pan.add(peach_halves)
+   62	    pan.heat("3 minutes")
+   63	    
+   64	    // Assembly
+   65	    meatballs.remove_from_broth()
+   66	    pan.place(meatballs, "on peach halves")
+   67	    pan.pour(saucepan, "hot curry sauce over")
+   68	    
+   69	    return "Meatballs in Peaches - recipe serves 4 people but may be too little"
+   70	}

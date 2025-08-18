@@ -1,0 +1,68 @@
+//filet_in_quark_puff_pastry.food
+
+fn cook() {
+    
+    // Main Ingredients
+    pork_filet = new Pork("1kg, filet")
+    
+    // Quark Puff Pastry Ingredients
+    flour = new Flour("200g")
+    butter = new Butter("200g")
+    cream_quark = new CreamQuark("200g")
+    
+    // Filling Ingredients
+    sausage_meat = new Sausage("200g, meat")
+    eggs = new Eggs("2")
+    creme_fraiche = new Cream("1 cup, crème fraîche")
+    chervil = new Chives("50g")
+    onion = new Onion("1 small")
+    parsley = new Parsley("fresh")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    nutmeg = new Nutmeg("to taste")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    pan = new Pan()
+    rolling_pin = new RollingPin()
+    baking_dish = new BakingDish()
+    oven = new Oven()
+    knife = new Knife()
+    
+    // Make quark puff pastry
+    mixing_bowl.add(flour)
+    mixing_bowl.add(butter)
+    mixing_bowl.add(cream_quark)
+    mixing_bowl.mix("until smooth dough forms")
+    
+    // Prepare filling
+    onion = knife.mince(onion)
+    filling_bowl = new Bowl()
+    filling_bowl.add(sausage_meat)
+    filling_bowl.add(eggs)
+    filling_bowl.add(creme_fraiche)
+    filling_bowl.add(chervil)
+    filling_bowl.add(onion)
+    filling_bowl.add(parsley)
+    filling_bowl.add(salt)
+    filling_bowl.add(pepper)
+    filling_bowl.add(nutmeg)
+    filling_bowl.mix("until combined")
+    
+    // Prepare meat
+    pan.heat("high")
+    pan.add(pork_filet)
+    pan.brown("sear well on all sides")
+    
+    // Assembly
+    pork_filet.spread(filling_bowl, "on top")
+    dough = rolling_pin.roll(mixing_bowl, "large sheet")
+    dough.wrap(pork_filet)
+    
+    // Baking
+    oven.preheat("180C")
+    baking_dish.add(dough)
+    oven.bake(baking_dish, "35 minutes")
+    
+    return "Filet in Quark Puff Pastry"
+}

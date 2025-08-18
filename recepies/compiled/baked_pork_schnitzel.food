@@ -1,0 +1,28 @@
+    1	//baked_pork_schnitzel.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    pork_schnitzels = new PorkSchnitzel("4 pieces")
+    7	    salt = new Salt("to taste")
+    8	    green_peppercorns = new GreenPeppercorns("to taste")
+    9	    cream = new Cream("200g")
+   10	    emmental = new Emmental("30g, grated")
+   11	    
+   12	    // Equipment
+   13	    glass_dish = new GlassDish()
+   14	    oven = new Oven()
+   15	    
+   16	    // Preparation
+   17	    glass_dish.add(pork_schnitzels)
+   18	    season(pork_schnitzels, salt)
+   19	    season(pork_schnitzels, green_peppercorns)
+   20	    glass_dish.pour(cream)
+   21	    glass_dish.sprinkle(emmental)
+   22	    
+   23	    // Cooking
+   24	    oven.preheat("200C")
+   25	    oven.bake(glass_dish, "30-40 minutes")
+   26	    
+   27	    return "Baked Pork Schnitzel"
+   28	}

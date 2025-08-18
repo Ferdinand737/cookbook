@@ -11,7 +11,7 @@ fn cook() {
     water = new Water("750ml")
     broth_cube = new BrothCube("1")
     thyme = new Thyme("2 tsp, dried")
-    paprika_powder = new PaprikaPowder("to taste")
+    paprika = new Paprika("to taste")
     long_grain_rice = new LongGrainRice("150g")
     bell_peppers = new BellPepper("2 medium")
     chili_pepper = new ChiliPepper("1 fresh")
@@ -21,11 +21,11 @@ fn cook() {
     pot = new Pot()
     
     // Preparation
-    knife.dice(pork, "pieces")
-    knife.dice(onions)
-    knife.mince(garlic)
-    knife.dice(bell_peppers)
-    knife.mince(chili_pepper)
+    pork = knife.dice(pork, "pieces")
+    onions = knife.dice(onions)
+    garlic = knife.mince(garlic)
+    bell_peppers = knife.dice(bell_peppers)
+    chili_pepper = knife.mince(chili_pepper)
     
     // Cooking
     pot.heat("medium-high")
@@ -35,7 +35,7 @@ fn cook() {
     
     pot.add(onions)
     pot.add(garlic)
-    rinse(long_grain_rice, "until water runs clear")
+    pot.saute("until translucent")
     
     pot.add(tomato_paste)
     pot.stir("1 minute")
@@ -43,9 +43,10 @@ fn cook() {
     pot.add(water)
     pot.add(broth_cube)
     pot.add(thyme)
-    pot.add(paprika_powder)
+    pot.add(paprika)
     pot.boil()
     
+    rinse(long_grain_rice, "until water runs clear")
     pot.add(long_grain_rice)
     pot.add(bell_peppers)
     pot.add(chili_pepper)

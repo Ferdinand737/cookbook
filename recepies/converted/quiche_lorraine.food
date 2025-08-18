@@ -1,0 +1,61 @@
+//quiche_lorraine.food
+
+fn cook() {
+    
+    // Pastry Ingredients
+    flour = new Flour("125g")
+    butter = new Butter("80g")
+    egg = new Egg("1")
+    baking_powder = new BakingPowder("1 tsp")
+    salt = new Salt("to taste")
+    
+    // Filling Ingredients
+    ham = new Ham("150g, cooked")
+    grated_cheese = new GratedCheese("250g")
+    egg_yolks = new EggYolk("2")
+    sour_cream = new SourCream("125ml")
+    paprika = new Paprika("to taste")
+    fat = new Fat("for dish")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    rolling_pin = new RollingPin()
+    baking_dish = new BakingDish()
+    whisk = new Whisk()
+    knife = new Knife()
+    oven = new Oven()
+    
+    // Make pastry
+    mixing_bowl.add(flour)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(egg)
+    mixing_bowl.add(butter)
+    mixing_bowl.add(baking_powder)
+    mixing_bowl.mix("quickly to form smooth shortcrust pastry")
+    
+    wait("rest in refrigerator for 1 hour")
+    
+    // Prepare filling
+    ham = knife.slice(ham, "strips")
+    
+    cheese_bowl = new Bowl()
+    cheese_bowl.add(grated_cheese)
+    cheese_bowl.add(egg_yolks)
+    cheese_bowl.add(sour_cream)
+    whisk.mix(cheese_bowl, "together")
+    season(cheese_bowl, paprika)
+    
+    // Assembly
+    baking_dish.grease(fat)
+    flour.dust("surface")
+    dough = rolling_pin.roll(mixing_bowl, "thinly")
+    baking_dish.place(dough)
+    baking_dish.cover(ham, "strips")
+    baking_dish.pour(cheese_bowl, "cheese mixture")
+    
+    // Baking
+    oven.preheat("180C")
+    oven.bake(baking_dish, "25 minutes")
+    
+    return "Quiche Lorraine - serve immediately, cut into pieces"
+}

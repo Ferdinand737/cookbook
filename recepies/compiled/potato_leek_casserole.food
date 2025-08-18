@@ -1,0 +1,69 @@
+    1	//potato_leek_casserole.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    potatoes = new Potato("500g")
+    7	    leek = new Leek("500g")
+    8	    water = new Water("250ml")
+    9	    instant_broth = new InstantBroth("1 tsp")
+   10	    butter = new Butter("1 tsp")
+   11	    ham = new Ham("50g, cooked or raw")
+   12	    egg = new Egg("1")
+   13	    milk = new Milk("250ml")
+   14	    pepper = new BlackPepper("to taste")
+   15	    salt = new Salt("to taste")
+   16	    nutmeg = new Nutmeg("to taste")
+   17	    grated_cheese = new GratedCheese("50g")
+   18	    
+   19	    // Equipment
+   20	    knife = new Knife()
+   21	    pot = new Pot()
+   22	    casserole_dish = new CasseroleDish()
+   23	    whisk = new Whisk()
+   24	    bowl = new Bowl()
+   25	    oven = new Oven()
+   26	    
+   27	    // Preparation
+   28	    wash(potatoes)
+   29	    peel(potatoes)
+   30	    potatoes = knife.slice(potatoes, "thin slices")
+   31	    
+   32	    leek = knife.chop(leek, "clean and wash, cut into 2cm pieces")
+   33	    ham = knife.dice(ham, "cubes")
+   34	    
+   35	    // Cooking
+   36	    pot.add(water)
+   37	    pot.add(instant_broth)
+   38	    pot.boil()
+   39	    pot.add(potatoes)
+   40	    pot.cook("5 minutes")
+   41	    
+   42	    casserole_dish.grease(butter)
+   43	    oven.preheat("160-180C convection")
+   44	    
+   45	    potatoes = pot.remove("slices")
+   46	    casserole_dish.distribute(potatoes, "evenly")
+   47	    
+   48	    pot.add(leek)
+   49	    pot.cook("3-5 minutes")
+   50	    
+   51	    casserole_dish.distribute(ham, "over potatoes")
+   52	    
+   53	    // Prepare egg mixture
+   54	    bowl.add(egg)
+   55	    bowl.add(milk)
+   56	    bowl.add(pepper)
+   57	    bowl.add(salt)
+   58	    bowl.add(nutmeg)
+   59	    whisk.mix(bowl, "together")
+   60	    
+   61	    casserole_dish.add(pot, "leek vegetables")
+   62	    casserole_dish.pour(bowl, "egg-milk mixture")
+   63	    casserole_dish.sprinkle(grated_cheese)
+   64	    
+   65	    // Baking
+   66	    oven.bake(casserole_dish, "20 minutes")
+   67	    
+   68	    return "Potato Leek Casserole"
+   69	}

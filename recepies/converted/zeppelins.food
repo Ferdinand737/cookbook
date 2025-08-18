@@ -31,21 +31,21 @@ fn cook() {
     
     // Prepare potato dough
     peel(fresh_potatoes)
-    grater.grate(fresh_potatoes)
+    fresh_potatoes = grater.grate(fresh_potatoes)
     drain(fresh_potatoes, "well")
     starch = settle(fresh_potatoes, "let starch settle")
-    knife.add(fresh_potatoes, starch)
+    fresh_potatoes.add(starch)
     
     peel(cooked_potatoes)
-    potato_ricer.press(cooked_potatoes)
+    cooked_potatoes = potato_ricer.press(cooked_potatoes)
     
     mixing_bowl.add(fresh_potatoes)
     mixing_bowl.add(cooked_potatoes)
     mixing_bowl.add(salt_dough)
-    mixing_bowl.knead("until dough doesn't stick")
+    mixing_bowl.mix("until dough doesn't stick")
     
     // Prepare meat filling
-    knife.chop(onion_filling)
+    onion_filling = knife.chop(onion_filling)
     pan.heat("medium")
     pan.add(onion_filling)
     pan.fry("until golden")
@@ -61,7 +61,7 @@ fn cook() {
     // Form dumplings
     dumplings = mixing_bowl.form("palm-sized flat pieces")
     fill(dumplings, filling_bowl)
-    knife.shape(dumplings, "oval dumplings")
+    dumplings = form(dumplings, "oval dumplings")
     
     // Cook dumplings
     pot.boil("large pot of water")
@@ -69,13 +69,13 @@ fn cook() {
     pot.cook("20 minutes")
     
     // Prepare bacon sauce
-    knife.dice(smoked_bacon)
-    knife.slice(onion_sauce)
+    smoked_bacon = knife.dice(smoked_bacon)
+    onion_sauce = knife.slice(onion_sauce)
     
     sauce_pan = new Pan()
     sauce_pan.heat("medium")
     sauce_pan.add(smoked_bacon)
-    sauce_pan.render("until crispy")
+    sauce_pan.fry("until crispy")
     sauce_pan.add(onion_sauce)
     sauce_pan.fry("until golden")
     sauce_pan.add(cream)

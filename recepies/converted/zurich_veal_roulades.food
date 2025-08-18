@@ -1,0 +1,51 @@
+//zurich_veal_roulades.food
+
+fn cook() {
+    
+    // Ingredients
+    veal_schnitzels = new Schnitzel("4 large, thin veal")
+    salt = new Salt("to taste")
+    paprika = new Paprika("to taste")
+    ham = new Ham("4 slices, lean cooked or raw")
+    onions = new Onion("4 tbsp")
+    parsley = new Parsley("chopped")
+    butter = new Butter("10g")
+    hard_boiled_eggs = new HardBoiledEgg("4")
+    
+    // Equipment
+    meat_mallet = new MeatMallet()
+    knife = new Knife()
+    pan = new Pan()
+    kitchen_string = new KitchenString()
+    pot = new Pot()
+    
+    // Preparation
+    meat_mallet.pound(veal_schnitzels)
+    season(veal_schnitzels, salt)
+    sprinkle(veal_schnitzels, paprika)
+    
+    onions = knife.chop(onions)
+    parsley = knife.chop(parsley)
+    peel(hard_boiled_eggs)
+    
+    // Prepare filling
+    pan.heat("medium")
+    pan.add(butter)
+    pan.add(onions)
+    pan.saute("until golden")
+    pan.add(parsley)
+    pan.mix()
+    
+    // Assembly
+    veal_schnitzels.top(ham, "each schnitzel with slice")
+    veal_schnitzels.spread(pan, "sautéed onion and parsley")
+    veal_schnitzels.top(hard_boiled_eggs, "whole or halved lengthwise")
+    
+    roulades = veal_schnitzels.roll("up tightly")
+    kitchen_string.tie(roulades, "securely")
+    
+    // Cooking
+    pot.cook(roulades, "like beef roulades")
+    
+    return "Zurich Veal Roulades"
+}

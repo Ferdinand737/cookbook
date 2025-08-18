@@ -1,0 +1,58 @@
+    1	//pepper_pot.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    beef = new GroundBeef("500g")
+    7	    oil = new Oil("for frying")
+    8	    onions = new Onion("2 medium")
+    9	    salt = new Salt("1 tsp")
+   10	    pepper = new BlackPepper("1/2 tsp")
+   11	    chinese_cabbage = new Cabbage("1kg, Chinese")
+   12	    potatoes = new Potato("3 medium")
+   13	    pepperoni = new ChiliPepper("3 small")
+   14	    instant_broth = new InstantBroth("1-2 tsp")
+   15	    tomato_paste = new TomatoPaste("1 tbsp")
+   16	    water = new Water("1 cup + 750ml")
+   17	    thyme = new Thyme("to taste")
+   18	    
+   19	    // Equipment
+   20	    knife = new Knife()
+   21	    roasting_pot = new RoastingPot()
+   22	    
+   23	    // Preparation
+   24	    rinse(beef, "cold water")
+   25	    dry(beef, "with kitchen paper")
+   26	    beef = knife.dice(beef, "1cm cubes")
+   27	    onions = knife.dice(onions, "large cubes")
+   28	    chinese_cabbage = knife.chop(chinese_cabbage, "remove hard leaves and stem")
+   29	    potatoes = knife.dice(potatoes, "small cubes")
+   30	    
+   31	    // Cooking
+   32	    roasting_pot.heat("high")
+   33	    roasting_pot.add(oil)
+   34	    roasting_pot.add(beef)
+   35	    roasting_pot.brown("vigorously for 10 minutes")
+   36	    
+   37	    roasting_pot.add(onions)
+   38	    roasting_pot.add(water, "1 cup")
+   39	    roasting_pot.cover()
+   40	    roasting_pot.braise("low heat for 30 minutes until almost tender")
+   41	    
+   42	    roasting_pot.add(chinese_cabbage)
+   43	    roasting_pot.add(potatoes)
+   44	    roasting_pot.add(pepperoni, "cored")
+   45	    roasting_pot.add(water, "750ml hot")
+   46	    roasting_pot.add(instant_broth)
+   47	    roasting_pot.add(tomato_paste)
+   48	    
+   49	    roasting_pot.boil("high heat")
+   50	    roasting_pot.cover()
+   51	    roasting_pot.braise("15-20 minutes until tender")
+   52	    
+   53	    season(roasting_pot, thyme)
+   54	    season(roasting_pot, pepper, "freshly ground")
+   55	    season(roasting_pot, salt)
+   56	    
+   57	    return "Pepper Pot"
+   58	}

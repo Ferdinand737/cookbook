@@ -1,0 +1,69 @@
+//potato_leek_casserole.food
+
+fn cook() {
+    
+    // Ingredients
+    potatoes = new Potato("500g")
+    leek = new Leek("500g")
+    water = new Water("250ml")
+    instant_broth = new InstantBroth("1 tsp")
+    butter = new Butter("1 tsp")
+    ham = new Ham("50g, cooked or raw")
+    egg = new Egg("1")
+    milk = new Milk("250ml")
+    pepper = new BlackPepper("to taste")
+    salt = new Salt("to taste")
+    nutmeg = new Nutmeg("to taste")
+    grated_cheese = new GratedCheese("50g")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    casserole_dish = new CasseroleDish()
+    whisk = new Whisk()
+    bowl = new Bowl()
+    oven = new Oven()
+    
+    // Preparation
+    wash(potatoes)
+    peel(potatoes)
+    potatoes = knife.slice(potatoes, "thin slices")
+    
+    leek = knife.chop(leek, "clean and wash, cut into 2cm pieces")
+    ham = knife.dice(ham, "cubes")
+    
+    // Cooking
+    pot.add(water)
+    pot.add(instant_broth)
+    pot.boil()
+    pot.add(potatoes)
+    pot.cook("5 minutes")
+    
+    casserole_dish.grease(butter)
+    oven.preheat("160-180C convection")
+    
+    potatoes = pot.remove("slices")
+    casserole_dish.distribute(potatoes, "evenly")
+    
+    pot.add(leek)
+    pot.cook("3-5 minutes")
+    
+    casserole_dish.distribute(ham, "over potatoes")
+    
+    // Prepare egg mixture
+    bowl.add(egg)
+    bowl.add(milk)
+    bowl.add(pepper)
+    bowl.add(salt)
+    bowl.add(nutmeg)
+    whisk.mix(bowl, "together")
+    
+    casserole_dish.add(pot, "leek vegetables")
+    casserole_dish.pour(bowl, "egg-milk mixture")
+    casserole_dish.sprinkle(grated_cheese)
+    
+    // Baking
+    oven.bake(casserole_dish, "20 minutes")
+    
+    return "Potato Leek Casserole"
+}

@@ -1,0 +1,45 @@
+    1	//bell_pepper_vegetables.food
+    2	
+    3	fn cook() {
+    4	    
+    5	    // Ingredients
+    6	    green_bell_peppers = new BellPepper("250g, green")
+    7	    onions = new Onion("250g")
+    8	    tomatoes = new Tomato("250g")
+    9	    mushrooms = new Mushroom("250g")
+   10	    salt = new Salt("to taste")
+   11	    pepper = new BlackPepper("to taste")
+   12	    paprika = new Paprika("to taste")
+   13	    sour_cream = new SourCream("3 tbsp")
+   14	    parsley = new Parsley("fresh, chopped")
+   15	    
+   16	    // Equipment
+   17	    pan = new Pan()
+   18	    knife = new Knife()
+   19	    
+   20	    // Preparation
+   21	    knife.chop(wash(green_bell_peppers), "small pieces")
+   22	    knife.chop(onions, "small pieces")
+   23	    knife.chop(tomatoes, "small pieces")
+   24	    knife.chop(mushrooms, "small pieces")
+   25	    
+   26	    // Cooking
+   27	    pan.heat("medium")
+   28	    pan.add(dry(green_bell_peppers))
+   29	    pan.add(onions)
+   30	    pan.add(tomatoes)
+   31	    pan.add(mushrooms)
+   32	    pan.saute("until tender")
+   33	    
+   34	    // Seasoning
+   35	    pan.add(salt)
+   36	    pan.add(pepper)
+   37	    pan.add(paprika)
+   38	    pan.add(sour_cream)
+   39	    pan.stir()
+   40	    
+   41	    // Garnish
+   42	    pan.add(parsley)
+   43	    
+   44	    return "Bell Pepper Vegetables"
+   45	}
