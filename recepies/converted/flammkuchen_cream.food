@@ -1,3 +1,5 @@
+//flammkuchen_cream.food
+
 fn cook() {
     // Dough ingredients
     flour = new Flour("375g")
@@ -61,4 +63,6 @@ fn cook() {
     
     // Bake
     oven.bake(baking_sheet, "10 minutes")
+    
+    return "Flammkuchen with Cream"
 }

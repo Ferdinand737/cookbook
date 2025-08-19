@@ -1,60 +1,64 @@
-    1	fn cook() {
-    2	    // Ingredients
-    3	    ground_beef = new GroundBeef("400g")
-    4	    onion = new Onion("1 large")
-    5	    bacon = new SmokedBacon("100g, streaky")
-    6	    cabanassi = new SmokedSausage("150g, cabanassi")
-    7	    potatoes = new Potato("500g")
-    8	    bouillon_cubes = new BrothCube("2")
-    9	    kidney_beans = new KidneyBeans("3 small cans")
-   10	    chili_seasoning = new ChiliSeasoning("2 packets")
-   11	    garlic = new Garlic("5 cloves")
-   12	    red_bell_pepper = new BellPepper("1 red")
-   13	    salt = new Salt("to taste")
-   14	    oil = new Oil("a little")
-   15	    
-   16	    // Utensils
-   17	    knife = new Knife()
-   18	    pan = new Pan()
-   19	    pot = new Pot()
-   20	    
-   21	    // Preparation
-   22	    knife.peel(onion)
-   23	    knife.chop(onion, "roughly")
-   24	    knife.dice(bacon)
-   25	    knife.dice(cabanassi)
-   26	    
-   27	    knife.peel(potatoes)
-   28	    knife.cut(potatoes, "small cubes")
-   29	    
-   30	    knife.peel(garlic)
-   31	    knife.crush(garlic)
-   32	    
-   33	    knife.dice(red_bell_pepper)
-   34	    wash(red_bell_pepper)
-   35	    
-   36	    // Cooking
-   37	    pan.heat(oil)
-   38	    pan.saute(onion)
-   39	    pan.saute(bacon)
-   40	    pan.saute(cabanassi)
-   41	    
-   42	    pan.add(ground_beef)
-   43	    pan.brown(ground_beef, "while stirring")
-   44	    
-   45	    pan.add(potatoes)
-   46	    pan.saute(potatoes, "briefly")
-   47	    
-   48	    transfer(pan, pot)
-   49	    pot.add(bouillon_cubes)
-   50	    pot.add("water")
-   51	    pot.boil()
-   52	    pot.cook("until potatoes are done")
-   53	    
-   54	    pot.add(chili_seasoning)
-   55	    pot.add(kidney_beans)
-   56	    pot.add(garlic)
-   57	    pot.simmer("briefly")
-   58	    
-   59	    season(pot, salt)
-   60	}
+    1	//chilli_con_carne.food
+    2	
+    3	fn cook() {
+    4	    // Ingredients
+    5	    ground_beef = new GroundBeef("400g")
+    6	    onion = new Onion("1 large")
+    7	    bacon = new SmokedBacon("100g, streaky")
+    8	    cabanassi = new SmokedSausage("150g, cabanassi")
+    9	    potatoes = new Potato("500g")
+   10	    bouillon_cubes = new BrothCube("2")
+   11	    kidney_beans = new KidneyBeans("3 small cans")
+   12	    chili_seasoning = new ChiliSeasoning("2 packets")
+   13	    garlic = new Garlic("5 cloves")
+   14	    red_bell_pepper = new BellPepper("1 red")
+   15	    salt = new Salt("to taste")
+   16	    oil = new Oil("a little")
+   17	    
+   18	    // Utensils
+   19	    knife = new Knife()
+   20	    pan = new Pan()
+   21	    pot = new Pot()
+   22	    
+   23	    // Preparation
+   24	    knife.peel(onion)
+   25	    knife.chop(onion, "roughly")
+   26	    knife.dice(bacon)
+   27	    knife.dice(cabanassi)
+   28	    
+   29	    knife.peel(potatoes)
+   30	    knife.cut(potatoes, "small cubes")
+   31	    
+   32	    knife.peel(garlic)
+   33	    knife.crush(garlic)
+   34	    
+   35	    knife.dice(red_bell_pepper)
+   36	    wash(red_bell_pepper)
+   37	    
+   38	    // Cooking
+   39	    pan.heat(oil)
+   40	    pan.saute(onion)
+   41	    pan.saute(bacon)
+   42	    pan.saute(cabanassi)
+   43	    
+   44	    pan.add(ground_beef)
+   45	    pan.brown(ground_beef, "while stirring")
+   46	    
+   47	    pan.add(potatoes)
+   48	    pan.saute(potatoes, "briefly")
+   49	    
+   50	    transfer(pan, pot)
+   51	    pot.add(bouillon_cubes)
+   52	    pot.add("water")
+   53	    pot.boil()
+   54	    pot.cook("until potatoes are done")
+   55	    
+   56	    pot.add(chili_seasoning)
+   57	    pot.add(kidney_beans)
+   58	    pot.add(garlic)
+   59	    pot.simmer("briefly")
+   60	    
+   61	    season(pot, salt)
+   62	    
+   63	    return "Chilli con Carne"
+   64	}

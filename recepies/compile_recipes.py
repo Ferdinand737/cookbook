@@ -115,6 +115,36 @@ def get_grammar_methods(tokens: Dict) -> Set[str]:
     
     return methods
 
+def verify_file_structure(source_dir: Path) -> Tuple[bool, List[str]]:
+    """
+    Verify that all .food files follow proper structure requirements.
+    
+    Args:
+        source_dir: Directory containing .food files
+        
+    Returns:
+        Tuple of (is_valid, error_messages)
+    """
+    errors = []
+    food_files = list(source_dir.glob("*.food"))
+    
+    for file_path in food_files:
+        filename = file_path.name
+        
+        with open(file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+            lines = content.split('\n')
+        
+        # Check for filename comment on first line
+        if not lines or not lines[0].strip().startswith(f"//{filename}"):
+            errors.append(f"{filename}: Missing filename comment on first line (should be '//{filename}')")
+        
+        # Check for return statement
+        if not re.search(r'return\s+"[^"]*"', content):
+            errors.append(f"{filename}: Missing return statement in cook() function")
+    
+    return len(errors) == 0, errors
+
 def verify_grammar_completeness(source_dir: Path, grammar_file: Path) -> Tuple[bool, List[str], List[str]]:
     """
     Verify that all constructors and methods used in recipes are in grammar.
@@ -209,6 +239,23 @@ def main():
     if not grammar_file.exists():
         print(f"❌ Error: Grammar file '{grammar_file}' does not exist")
         return 1
+    
+    # Verify file structure requirements
+    print("🔍 Verifying file structure requirements...")
+    structure_valid, structure_errors = verify_file_structure(source_dir)
+    
+    if not structure_valid:
+        print("❌ File structure verification FAILED!")
+        print("\nStructure errors:")
+        for error in structure_errors:
+            print(f"  - {error}")
+        print(f"\n⚠️  Please fix the file structure issues before compiling.")
+        print("   Each .food file must have:")
+        print("   1. Filename comment on first line: //filename.food")
+        print("   2. Return statement in cook() function: return \"Recipe Name\"")
+        return 1
+    
+    print("✅ File structure verification PASSED!")
     
     # Verify grammar completeness
     print("🔍 Verifying grammar completeness...")

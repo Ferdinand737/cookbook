@@ -35,6 +35,25 @@ There are some built-in functions that can be used in recipes. These are used wh
 
 All variables are snake_case. All constructors and functions/methods are camelCase. All functions and methods must be defined in the `tokens.json` file for proper highlighting. The main function is always called `cook()`.
 
+## File Structure Requirements
+
+Every `.food` file must follow this structure:
+
+1. **Filename comment**: First line must be `//filename.food` matching the actual filename
+2. **cook() function**: Must contain all recipe logic
+3. **Return statement**: The `cook()` function must return the recipe name as a string
+
+Example:
+```food
+//chocolate_chip_cookies.food
+
+fn cook() {
+    // Recipe logic here
+    
+    return "Chocolate Chip Cookies"
+}
+```
+
 ## File Naming Conventions
 
 Recipe files should use descriptive, snake_case names with the `.food` extension. Examples:

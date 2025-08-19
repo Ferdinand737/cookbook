@@ -1,3 +1,5 @@
+//chilli_con_carne.food
+
 fn cook() {
     // Ingredients
     ground_beef = new GroundBeef("400g")
@@ -57,4 +59,6 @@ fn cook() {
     pot.simmer("briefly")
     
     season(pot, salt)
+    
+    return "Chilli con Carne"
 }

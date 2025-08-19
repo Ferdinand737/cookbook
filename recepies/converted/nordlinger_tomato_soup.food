@@ -1,3 +1,5 @@
+//nordlinger_tomato_soup.food
+
 fn cook() {
     // Ingredients
     tomatoes = new Tomato("10-12")
@@ -63,4 +65,6 @@ fn cook() {
     
     pot.remove("from heat")
     pot.stir(heavy_cream)
+    
+    return "Nördlinger Tomato Soup"
 }

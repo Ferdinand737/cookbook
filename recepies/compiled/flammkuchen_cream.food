@@ -1,64 +1,68 @@
-    1	fn cook() {
-    2	    // Dough ingredients
-    3	    flour = new Flour("375g")
-    4	    yeast = new Yeast("20g")
-    5	    water = new Water("125-250ml, lukewarm")
-    6	    salt = new Salt("to taste")
-    7	    oil = new Oil("2 tbsp")
-    8	    
-    9	    // Topping ingredients
-   10	    sour_cream = new SourCream("2 cups")
-   11	    emmental = new Emmental("100g, grated")
-   12	    nutmeg = new Nutmeg("to taste")
-   13	    pepper = new BlackPepper("to taste")
-   14	    onions = new Onion("200g")
-   15	    bacon = new SmokedBacon("100g, diced")
-   16	    
-   17	    // Utensils
-   18	    mixing_bowl = new Bowl()
-   19	    pan = new Pan()
-   20	    rolling_pin = new RollingPin()
-   21	    baking_sheet = new BakingSheet()
-   22	    oven = new Oven()
-   23	    knife = new Knife()
-   24	    
-   25	    // Make dough
-   26	    mixing_bowl.add(flour)
-   27	    mixing_bowl.add(yeast)
-   28	    mixing_bowl.add(water)
-   29	    mixing_bowl.add(salt)
-   30	    mixing_bowl.add(oil)
-   31	    mixing_bowl.knead("until smooth dough forms")
-   32	    
-   33	    // Let rise
-   34	    mixing_bowl.cover()
-   35	    wait("30 minutes, in warm place")
-   36	    
-   37	    // Prepare topping
-   38	    cream_bowl = new Bowl()
-   39	    cream_bowl.add(sour_cream)
-   40	    cream_bowl.add(emmental)
-   41	    cream_bowl.stir()
-   42	    season(cream_bowl, salt)
-   43	    season(cream_bowl, pepper)
-   44	    season(cream_bowl, nutmeg)
-   45	    
-   46	    // Prepare onions and bacon
-   47	    knife.slice(onions, "thin rings")
-   48	    pan.render(bacon)
-   49	    pan.add(onions)
-   50	    pan.saute(onions, "until translucent")
-   51	    
-   52	    // Assemble
-   53	    oven.preheat("230°C")
-   54	    baking_sheet.grease()
-   55	    
-   56	    mixing_bowl.knead("again")
-   57	    rolling_pin.roll(mixing_bowl, "on baking sheet")
-   58	    
-   59	    baking_sheet.spread(cream_bowl)
-   60	    baking_sheet.distribute(pan)
-   61	    
-   62	    // Bake
-   63	    oven.bake(baking_sheet, "10 minutes")
-   64	}
+    1	//flammkuchen_cream.food
+    2	
+    3	fn cook() {
+    4	    // Dough ingredients
+    5	    flour = new Flour("375g")
+    6	    yeast = new Yeast("20g")
+    7	    water = new Water("125-250ml, lukewarm")
+    8	    salt = new Salt("to taste")
+    9	    oil = new Oil("2 tbsp")
+   10	    
+   11	    // Topping ingredients
+   12	    sour_cream = new SourCream("2 cups")
+   13	    emmental = new Emmental("100g, grated")
+   14	    nutmeg = new Nutmeg("to taste")
+   15	    pepper = new BlackPepper("to taste")
+   16	    onions = new Onion("200g")
+   17	    bacon = new SmokedBacon("100g, diced")
+   18	    
+   19	    // Utensils
+   20	    mixing_bowl = new Bowl()
+   21	    pan = new Pan()
+   22	    rolling_pin = new RollingPin()
+   23	    baking_sheet = new BakingSheet()
+   24	    oven = new Oven()
+   25	    knife = new Knife()
+   26	    
+   27	    // Make dough
+   28	    mixing_bowl.add(flour)
+   29	    mixing_bowl.add(yeast)
+   30	    mixing_bowl.add(water)
+   31	    mixing_bowl.add(salt)
+   32	    mixing_bowl.add(oil)
+   33	    mixing_bowl.knead("until smooth dough forms")
+   34	    
+   35	    // Let rise
+   36	    mixing_bowl.cover()
+   37	    wait("30 minutes, in warm place")
+   38	    
+   39	    // Prepare topping
+   40	    cream_bowl = new Bowl()
+   41	    cream_bowl.add(sour_cream)
+   42	    cream_bowl.add(emmental)
+   43	    cream_bowl.stir()
+   44	    season(cream_bowl, salt)
+   45	    season(cream_bowl, pepper)
+   46	    season(cream_bowl, nutmeg)
+   47	    
+   48	    // Prepare onions and bacon
+   49	    knife.slice(onions, "thin rings")
+   50	    pan.render(bacon)
+   51	    pan.add(onions)
+   52	    pan.saute(onions, "until translucent")
+   53	    
+   54	    // Assemble
+   55	    oven.preheat("230°C")
+   56	    baking_sheet.grease()
+   57	    
+   58	    mixing_bowl.knead("again")
+   59	    rolling_pin.roll(mixing_bowl, "on baking sheet")
+   60	    
+   61	    baking_sheet.spread(cream_bowl)
+   62	    baking_sheet.distribute(pan)
+   63	    
+   64	    // Bake
+   65	    oven.bake(baking_sheet, "10 minutes")
+   66	    
+   67	    return "Flammkuchen with Cream"
+   68	}
