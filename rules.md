@@ -68,7 +68,7 @@ The `.food` recipe development follows this workflow:
 
 ### 1. Convert → `recepies/converted/`
 
-Convert raw recipes from various formats into `.food` syntax. Files are placed in the `converted/` directory.
+Convert raw recipes from various formats into `.food` syntax. Files are placed in the `converted/` directory. Recepies may be in documents such as `.docx` files or `.txt` files or `.pdf` files. They may also be in different languages. All should be converted into english `.food` files.
 
 ### 2. Compile → `recepies/compiled/`
 

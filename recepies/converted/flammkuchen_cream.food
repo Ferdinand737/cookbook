@@ -1,0 +1,64 @@
+fn cook() {
+    // Dough ingredients
+    flour = new Flour("375g")
+    yeast = new Yeast("20g")
+    water = new Water("125-250ml, lukewarm")
+    salt = new Salt("to taste")
+    oil = new Oil("2 tbsp")
+    
+    // Topping ingredients
+    sour_cream = new SourCream("2 cups")
+    emmental = new Emmental("100g, grated")
+    nutmeg = new Nutmeg("to taste")
+    pepper = new BlackPepper("to taste")
+    onions = new Onion("200g")
+    bacon = new SmokedBacon("100g, diced")
+    
+    // Utensils
+    mixing_bowl = new Bowl()
+    pan = new Pan()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    knife = new Knife()
+    
+    // Make dough
+    mixing_bowl.add(flour)
+    mixing_bowl.add(yeast)
+    mixing_bowl.add(water)
+    mixing_bowl.add(salt)
+    mixing_bowl.add(oil)
+    mixing_bowl.knead("until smooth dough forms")
+    
+    // Let rise
+    mixing_bowl.cover()
+    wait("30 minutes, in warm place")
+    
+    // Prepare topping
+    cream_bowl = new Bowl()
+    cream_bowl.add(sour_cream)
+    cream_bowl.add(emmental)
+    cream_bowl.stir()
+    season(cream_bowl, salt)
+    season(cream_bowl, pepper)
+    season(cream_bowl, nutmeg)
+    
+    // Prepare onions and bacon
+    knife.slice(onions, "thin rings")
+    pan.render(bacon)
+    pan.add(onions)
+    pan.saute(onions, "until translucent")
+    
+    // Assemble
+    oven.preheat("230°C")
+    baking_sheet.grease()
+    
+    mixing_bowl.knead("again")
+    rolling_pin.roll(mixing_bowl, "on baking sheet")
+    
+    baking_sheet.spread(cream_bowl)
+    baking_sheet.distribute(pan)
+    
+    // Bake
+    oven.bake(baking_sheet, "10 minutes")
+}

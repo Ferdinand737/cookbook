@@ -1,0 +1,66 @@
+    1	fn cook() {
+    2	    // Ingredients
+    3	    tomatoes = new Tomato("10-12")
+    4	    onion = new Onion("1 large, chopped")
+    5	    garlic = new Garlic("2-4 cloves, chopped")
+    6	    heavy_cream = new HeavyCream("1 cup")
+    7	    ground_beef = new GroundBeef("400g")
+    8	    flour = new Flour("2 tbsp")
+    9	    sambal_oelek = new SambalOelek("1/2 tsp")
+   10	    salt = new Salt("to taste")
+   11	    pepper = new BlackPepper("to taste")
+   12	    nutmeg = new Nutmeg("grated, to taste")
+   13	    oregano = new Oregano("dried")
+   14	    basil = new Basil("dried")
+   15	    rosemary = new Rosemary("dried")
+   16	    lovage = new Lovage("dried")
+   17	    oil = new Oil("1 tbsp")
+   18	    soy_sauce = new SoySauce("4-5 tbsp, dark Chinese")
+   19	    red_wine = new RedWine("125-250ml, dry")
+   20	    sherry = new Sherry("4 cl, dry")
+   21	    
+   22	    // Utensils
+   23	    pot = new Pot()
+   24	    knife = new Knife()
+   25	    
+   26	    // Step 1: Soften onion
+   27	    pot.heat(oil)
+   28	    pot.add(onion)
+   29	    pot.saute(onion, "until translucent")
+   30	    
+   31	    pot.dust(flour)
+   32	    pot.cook(flour, "while stirring until lightly golden")
+   33	    pot.add(sherry)
+   34	    
+   35	    // Step 2: Add tomatoes
+   36	    knife.peel(tomatoes)
+   37	    knife.quarter(tomatoes)
+   38	    pot.add(tomatoes)
+   39	    pot.simmer(tomatoes, "gently, stirring occasionally, until reduced")
+   40	    
+   41	    // Step 3: Season
+   42	    season(pot, oregano)
+   43	    season(pot, basil)
+   44	    season(pot, rosemary)
+   45	    season(pot, lovage)
+   46	    season(pot, salt)
+   47	    season(pot, pepper)
+   48	    season(pot, nutmeg)
+   49	    season(pot, sambal_oelek)
+   50	    
+   51	    pot.add("water as needed")
+   52	    pot.simmer("until lightly creamy consistency")
+   53	    
+   54	    // Step 4: Add ground beef
+   55	    pot.add(ground_beef)
+   56	    pot.cook("10 minutes")
+   57	    season(pot, "taste and adjust")
+   58	    
+   59	    // Step 5: Finish
+   60	    pot.add(garlic)
+   61	    pot.add(red_wine)
+   62	    pot.simmer("10 minutes")
+   63	    
+   64	    pot.remove("from heat")
+   65	    pot.stir(heavy_cream)
+   66	}
