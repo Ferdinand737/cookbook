@@ -1,26 +1,29 @@
 //pizza.food
 
-// Ingredients
-flour = new Flour("250g")
-margarine = new Margarine("100g")
-salt = new Salt("1 tsp")
-vinegar = new Vinegar("1 tsp")
-water = new Water("125ml")
-tomato_cans = new TomatoCan("1-2 cans")
-tomato_paste = new TomatoPaste("to taste")
-garlic = new Garlic("to taste")
-spices = new MixedSpices("various")
-salami = new Salami("sliced")
-anchovies = new Anchovies("optional")
-
-// Utensils
-mixing_bowl = new Bowl()
-rolling_pin = new RollingPin()
-baking_sheet = new BakingSheet()
-oven = new Oven()
-knife = new Knife()
-
-fn prepareDough() {
+fn cook() {
+    
+    // Dough Ingredients
+    flour = new Flour("250g")
+    margarine = new Margarine("100g")
+    salt = new Salt("1 tsp")
+    vinegar = new Vinegar("1 tsp")
+    water = new Water("125ml")
+    
+    // Topping Ingredients
+    tomato_cans = new TomatoCan("1-2 cans")
+    tomato_paste = new TomatoPaste("to taste")
+    garlic = new Garlic("to taste")
+    spices = new MixedSpices("various")
+    salami = new Salami("sliced")
+    anchovies = new Anchovies("optional")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    knife = new Knife()
+    
     // Make dough
     mixing_bowl.add(flour)
     mixing_bowl.add(margarine)
@@ -31,9 +34,10 @@ fn prepareDough() {
     
     // Add flour as needed until dough is workable
     wait("refrigerate if possible for better consistency")
-}
-
-fn prepareSauce() {
+    
+    dough = mixing_bowl.get()
+    dough_portions = divide(dough, "4 portions")
+    
     // Prepare topping sauce
     sauce_bowl = new Bowl()
     sauce_bowl.add(tomato_cans)
@@ -41,14 +45,6 @@ fn prepareSauce() {
     sauce_bowl.add(garlic)
     sauce_bowl.add(spices)
     sauce_bowl.mix("into paste")
-}
-
-fn cook() {
-    prepareDough()
-    prepareSauce()
-    
-    dough = mixing_bowl.get()
-    dough_portions = divide(dough, "4 portions")
     
     // Assembly
     rolled_dough = rolling_pin.roll(dough_portions, "thin circles")

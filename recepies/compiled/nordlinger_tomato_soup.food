@@ -1,70 +1,77 @@
     1	//nordlinger_tomato_soup.food
     2	
-    3	fn cook() {
-    4	    // Ingredients
-    5	    tomatoes = new Tomato("10-12")
-    6	    onion = new Onion("1 large, chopped")
-    7	    garlic = new Garlic("2-4 cloves, chopped")
-    8	    heavy_cream = new HeavyCream("1 cup")
-    9	    ground_beef = new GroundBeef("400g")
-   10	    flour = new Flour("2 tbsp")
-   11	    sambal_oelek = new SambalOelek("1/2 tsp")
-   12	    salt = new Salt("to taste")
-   13	    pepper = new BlackPepper("to taste")
-   14	    nutmeg = new Nutmeg("grated, to taste")
-   15	    oregano = new Oregano("dried")
-   16	    basil = new Basil("dried")
-   17	    rosemary = new Rosemary("dried")
-   18	    lovage = new Lovage("dried")
-   19	    oil = new Oil("1 tbsp")
-   20	    soy_sauce = new SoySauce("4-5 tbsp, dark Chinese")
-   21	    red_wine = new RedWine("125-250ml, dry")
-   22	    sherry = new Sherry("4 cl, dry")
-   23	    
-   24	    // Utensils
-   25	    pot = new Pot()
-   26	    knife = new Knife()
-   27	    
-   28	    // Step 1: Soften onion
-   29	    pot.heat(oil)
-   30	    pot.add(onion)
-   31	    pot.saute(onion, "until translucent")
-   32	    
-   33	    pot.dust(flour)
-   34	    pot.cook(flour, "while stirring until lightly golden")
-   35	    pot.add(sherry)
-   36	    
-   37	    // Step 2: Add tomatoes
-   38	    knife.peel(tomatoes)
-   39	    knife.quarter(tomatoes)
-   40	    pot.add(tomatoes)
-   41	    pot.simmer(tomatoes, "gently, stirring occasionally, until reduced")
-   42	    
-   43	    // Step 3: Season
-   44	    season(pot, oregano)
-   45	    season(pot, basil)
-   46	    season(pot, rosemary)
-   47	    season(pot, lovage)
-   48	    season(pot, salt)
-   49	    season(pot, pepper)
-   50	    season(pot, nutmeg)
-   51	    season(pot, sambal_oelek)
-   52	    
-   53	    pot.add("water as needed")
-   54	    pot.simmer("until lightly creamy consistency")
+    3	// Ingredients
+    4	tomatoes = new Tomato("10-12")
+    5	onion = new Onion("1 large, chopped")
+    6	garlic = new Garlic("2-4 cloves, chopped")
+    7	heavy_cream = new HeavyCream("1 cup")
+    8	ground_beef = new GroundBeef("400g")
+    9	flour = new Flour("2 tbsp")
+   10	sambal_oelek = new SambalOelek("1/2 tsp")
+   11	salt = new Salt("to taste")
+   12	pepper = new BlackPepper("to taste")
+   13	nutmeg = new Nutmeg("grated, to taste")
+   14	oregano = new Oregano("dried")
+   15	basil = new Basil("dried")
+   16	rosemary = new Rosemary("dried")
+   17	lovage = new Lovage("dried")
+   18	oil = new Oil("1 tbsp")
+   19	soy_sauce = new SoySauce("4-5 tbsp, dark Chinese")
+   20	red_wine = new RedWine("125-250ml, dry")
+   21	sherry = new Sherry("4 cl, dry")
+   22	
+   23	// Utensils
+   24	pot = new Pot()
+   25	knife = new Knife()
+   26	
+   27	fn prepareTomatoes() {
+   28	    // Step 2: Add tomatoes
+   29	    knife.peel(tomatoes)
+   30	    knife.quarter(tomatoes)
+   31	    pot.add(tomatoes)
+   32	    pot.simmer(tomatoes, "gently, stirring occasionally, until reduced")
+   33	}
+   34	
+   35	fn seasonSoup() {
+   36	    // Step 3: Season
+   37	    season(pot, oregano)
+   38	    season(pot, basil)
+   39	    season(pot, rosemary)
+   40	    season(pot, lovage)
+   41	    season(pot, salt)
+   42	    season(pot, pepper)
+   43	    season(pot, nutmeg)
+   44	    season(pot, sambal_oelek)
+   45	    
+   46	    pot.add("water as needed")
+   47	    pot.simmer("until lightly creamy consistency")
+   48	}
+   49	
+   50	fn cook() {
+   51	    // Step 1: Soften onion
+   52	    pot.heat(oil)
+   53	    pot.add(onion)
+   54	    pot.saute(onion, "until translucent")
    55	    
-   56	    // Step 4: Add ground beef
-   57	    pot.add(ground_beef)
-   58	    pot.cook("10 minutes")
-   59	    season(pot, "taste and adjust")
-   60	    
-   61	    // Step 5: Finish
-   62	    pot.add(garlic)
-   63	    pot.add(red_wine)
-   64	    pot.simmer("10 minutes")
-   65	    
-   66	    pot.remove("from heat")
-   67	    pot.stir(heavy_cream)
-   68	    
-   69	    return "Nördlinger Tomato Soup"
-   70	}
+   56	    pot.dust(flour)
+   57	    pot.cook(flour, "while stirring until lightly golden")
+   58	    pot.add(sherry)
+   59	    
+   60	    prepareTomatoes()
+   61	    seasonSoup()
+   62	    
+   63	    // Step 4: Add ground beef
+   64	    pot.add(ground_beef)
+   65	    pot.cook("10 minutes")
+   66	    season(pot, "taste and adjust")
+   67	    
+   68	    // Step 5: Finish
+   69	    pot.add(garlic)
+   70	    pot.add(red_wine)
+   71	    pot.simmer("10 minutes")
+   72	    
+   73	    pot.remove("from heat")
+   74	    pot.stir(heavy_cream)
+   75	    
+   76	    return "Nördlinger Tomato Soup"
+   77	}

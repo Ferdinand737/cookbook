@@ -1,25 +1,25 @@
 //chilli_con_carne.food
 
-// Ingredients
-ground_beef = new GroundBeef("400g")
-onion = new Onion("1 large")
-bacon = new SmokedBacon("100g, streaky")
-cabanassi = new SmokedSausage("150g, cabanassi")
-potatoes = new Potato("500g")
-bouillon_cubes = new BrothCube("2")
-kidney_beans = new KidneyBeans("3 small cans")
-chili_seasoning = new ChiliSeasoning("2 packets")
-garlic = new Garlic("5 cloves")
-red_bell_pepper = new BellPepper("1 red")
-salt = new Salt("to taste")
-oil = new Oil("a little")
-
-// Utensils
-knife = new Knife()
-pan = new Pan()
-pot = new Pot()
-
-fn prepareIngredients() {
+fn cook() {
+    // Ingredients
+    ground_beef = new GroundBeef("400g")
+    onion = new Onion("1 large")
+    bacon = new SmokedBacon("100g, streaky")
+    cabanassi = new SmokedSausage("150g, cabanassi")
+    potatoes = new Potato("500g")
+    bouillon_cubes = new BrothCube("2")
+    kidney_beans = new KidneyBeans("3 small cans")
+    chili_seasoning = new ChiliSeasoning("2 packets")
+    garlic = new Garlic("5 cloves")
+    red_bell_pepper = new BellPepper("1 red")
+    salt = new Salt("to taste")
+    oil = new Oil("a little")
+    
+    // Utensils
+    knife = new Knife()
+    pan = new Pan()
+    pot = new Pot()
+    
     // Preparation
     knife.peel(onion)
     knife.chop(onion, "roughly")
@@ -34,10 +34,6 @@ fn prepareIngredients() {
     
     knife.dice(red_bell_pepper)
     wash(red_bell_pepper)
-}
-
-fn cook() {
-    prepareIngredients()
     
     // Cooking
     pan.heat(oil)

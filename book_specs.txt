@@ -1,0 +1,14 @@
+Cover:
+    Paper: "100lb Gloss Cover"
+    Format: "5.5 x 8.5 inches portrait"
+    Pages: "2 Pages Prints on Outside Cover"
+    Coating: "Gloss Lamination on Outside"
+
+Inside:
+    Paper: "60lb Uncoated Text"
+    Format: "5.5 x 8.5 inches portrait"
+    Colors: "Color Both Sides"
+    Pages: "20"
+    Binding: "Black"
+
+

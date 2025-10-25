@@ -1,32 +1,47 @@
 //polpetinen.food
 
-fn cook() {
+// Ingredients
+ground_beef = new GroundBeef("250g")
+smoked_bacon = new SmokedBacon("125g")
+garlic = new Garlic("1 clove")
+parsley = new Parsley("fresh, chopped")
+eggs = new Eggs("2")
+emmental = new Emmental("60g, grated")
+bread_roll = new BreadRoll("1, soaked")
+salt = new Salt("to taste")
+pepper = new BlackPepper("to taste")
+mixed_spices = new MixedSpices("oregano, to taste")
+oil = new Oil("2 tbsp")
+onions = new Onion("2 medium")
+tomatoes = new Tomato("500g")
+hot_broth = new Broth("250ml, hot")
+
+// Utensils
+mixing_bowl = new Bowl()
+knife = new Knife()
+pan = new Pan()
+saucepan = new Saucepan()
+sieve = new Sieve()
+
+fn prepareTomatoSauce() {
+    // Prepare tomato sauce
+    onions = knife.chop(onions)
+    saucepan.heat("medium")
+    saucepan.add(oil)
+    saucepan.add(onions)
+    saucepan.brown("until golden")
     
-    // Meat Mixture Ingredients
-    ground_beef = new GroundBeef("250g")
-    smoked_bacon = new SmokedBacon("125g")
-    garlic = new Garlic("1 clove")
-    parsley = new Parsley("fresh, chopped")
-    eggs = new Eggs("2")
-    emmental = new Emmental("60g, grated")
-    bread_roll = new BreadRoll("1, soaked")
-    salt = new Salt("to taste")
-    pepper = new BlackPepper("to taste")
-    mixed_spices = new MixedSpices("oregano, to taste")
+    saucepan.add(tomatoes)
+    saucepan.saute("until soft")
+    saucepan.add(hot_broth)
+    saucepan.simmer("until tender")
     
-    // Sauce Ingredients
-    oil = new Oil("2 tbsp")
-    onions = new Onion("2 medium")
-    tomatoes = new Tomato("500g")
-    hot_broth = new Broth("250ml, hot")
-    
-    // Equipment
-    mixing_bowl = new Bowl()
-    knife = new Knife()
-    pan = new Pan()
-    saucepan = new Saucepan()
-    sieve = new Sieve()
-    
+    // Strain sauce
+    sieve.strain(saucepan)
+    season(saucepan, "salt, pepper, oregano")
+}
+
+fn prepareMeatballs() {
     // Prepare meat mixture
     garlic = knife.mince(garlic)
     smoked_bacon = knife.chop(smoked_bacon, "fine")
@@ -51,22 +66,11 @@ fn cook() {
     pan.heat("medium")
     pan.add(meatballs)
     pan.brown("all sides")
-    
-    // Prepare tomato sauce
-    onions = knife.chop(onions)
-    saucepan.heat("medium")
-    saucepan.add(oil)
-    saucepan.add(onions)
-    saucepan.brown("until golden")
-    
-    saucepan.add(tomatoes)
-    saucepan.saute("until soft")
-    saucepan.add(hot_broth)
-    saucepan.simmer("until tender")
-    
-    // Strain sauce
-    sieve.strain(saucepan)
-    season(saucepan, "salt, pepper, oregano")
+}
+
+fn cook() {
+    prepareMeatballs()
+    prepareTomatoSauce()
     
     // Combine
     saucepan.add(meatballs)

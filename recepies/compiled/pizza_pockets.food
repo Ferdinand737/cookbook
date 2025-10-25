@@ -1,74 +1,78 @@
     1	//pizza_pockets.food
     2	
-    3	fn cook() {
-    4	    
-    5	    // Dough Ingredients
-    6	    flour = new Flour("425g")
-    7	    salt = new Salt("1/2 tsp")
-    8	    dry_yeast = new DryYeast("1 package")
-    9	    olive_oil = new OliveOil("4 tbsp")
-   10	    water = new Water("250ml, lukewarm")
-   11	    
-   12	    // Filling Ingredients
-   13	    cooked_ham = new CookedHam("200g")
-   14	    broccoli = new Broccoli("250g")
-   15	    red_bell_pepper = new BellPepper("1 red")
-   16	    mozzarella = new Mozzarella("125g")
-   17	    salt_filling = new Salt("to taste")
-   18	    pepper = new BlackPepper("to taste")
-   19	    
-   20	    // Equipment
-   21	    mixing_bowl = new Bowl()
-   22	    knife = new Knife()
-   23	    pot = new Pot()
-   24	    rolling_pin = new RollingPin()
-   25	    baking_sheet = new BakingSheet()
-   26	    oven = new Oven()
-   27	    
-   28	    // Make dough
-   29	    mixing_bowl.add(flour)
-   30	    mixing_bowl.add(salt)
-   31	    mixing_bowl.add(dry_yeast)
-   32	    mixing_bowl.mix()
-   33	    mixing_bowl.add(olive_oil)
-   34	    mixing_bowl.add(water)
-   35	    mixing_bowl.knead("until smooth")
-   36	    
-   37	    wait("45 minutes in warm place to rise")
-   38	    mixing_bowl.knead("vigorously again")
-   39	    dough_portions = knife.divide(mixing_bowl, "8 portions")
-   40	    
-   41	    // Prepare filling
-   42	    knife.slice(cooked_ham, "strips")
-   43	    knife.divide(broccoli, "florets")
-   44	    pot.boil("salt water")
-   45	    pot.add(broccoli)
-   46	    pot.cook("1 minute")
-   47	    drain(pot)
-   48	    rinse(broccoli, "cold water")
-   49	    
-   50	    knife.slice(red_bell_pepper, "strips")
-   51	    knife.dice(mozzarella)
-   52	    
-   53	    filling_bowl = new Bowl()
-   54	    filling_bowl.add(broccoli)
-   55	    filling_bowl.add(red_bell_pepper)
-   56	    filling_bowl.add(mozzarella)
-   57	    filling_bowl.add(salt_filling)
-   58	    filling_bowl.add(pepper)
-   59	    filling_bowl.mix()
-   60	    
-   61	    // Assembly
-   62	    rolling_pin.roll(dough_portions, "20cm rounds on flour")
-   63	    fill(dough_portions, filling_bowl, "half of each round")
-   64	    knife.fold(dough_portions, "other half over")
-   65	    knife.press(dough_portions, "edges firmly")
-   66	    
-   67	    // Baking
-   68	    baking_sheet.line("parchment paper")
-   69	    baking_sheet.add(dough_portions)
-   70	    oven.preheat("250C")
-   71	    oven.bake(baking_sheet, "15 minutes until golden brown")
-   72	    
-   73	    return "Pizza Pockets - serve with tzatziki"
-   74	}
+    3	// Ingredients
+    4	flour = new Flour("425g")
+    5	salt = new Salt("1/2 tsp")
+    6	dry_yeast = new DryYeast("1 package")
+    7	olive_oil = new OliveOil("4 tbsp")
+    8	water = new Water("250ml, lukewarm")
+    9	cooked_ham = new CookedHam("200g")
+   10	broccoli = new Broccoli("250g")
+   11	red_bell_pepper = new BellPepper("1 red")
+   12	mozzarella = new Mozzarella("125g")
+   13	salt_filling = new Salt("to taste")
+   14	pepper = new BlackPepper("to taste")
+   15	
+   16	// Utensils
+   17	mixing_bowl = new Bowl()
+   18	knife = new Knife()
+   19	pot = new Pot()
+   20	rolling_pin = new RollingPin()
+   21	baking_sheet = new BakingSheet()
+   22	oven = new Oven()
+   23	
+   24	fn prepareDough() {
+   25	    // Make dough
+   26	    mixing_bowl.add(flour)
+   27	    mixing_bowl.add(salt)
+   28	    mixing_bowl.add(dry_yeast)
+   29	    mixing_bowl.mix()
+   30	    mixing_bowl.add(olive_oil)
+   31	    mixing_bowl.add(water)
+   32	    mixing_bowl.knead("until smooth")
+   33	    
+   34	    wait("45 minutes in warm place to rise")
+   35	    mixing_bowl.knead("vigorously again")
+   36	    dough_portions = knife.divide(mixing_bowl, "8 portions")
+   37	}
+   38	
+   39	fn prepareFilling() {
+   40	    // Prepare filling
+   41	    knife.slice(cooked_ham, "strips")
+   42	    knife.divide(broccoli, "florets")
+   43	    pot.boil("salt water")
+   44	    pot.add(broccoli)
+   45	    pot.cook("1 minute")
+   46	    drain(pot)
+   47	    rinse(broccoli, "cold water")
+   48	    
+   49	    knife.slice(red_bell_pepper, "strips")
+   50	    knife.dice(mozzarella)
+   51	    
+   52	    filling_bowl = new Bowl()
+   53	    filling_bowl.add(broccoli)
+   54	    filling_bowl.add(red_bell_pepper)
+   55	    filling_bowl.add(mozzarella)
+   56	    filling_bowl.add(salt_filling)
+   57	    filling_bowl.add(pepper)
+   58	    filling_bowl.mix()
+   59	}
+   60	
+   61	fn cook() {
+   62	    prepareDough()
+   63	    prepareFilling()
+   64	    
+   65	    // Assembly
+   66	    rolling_pin.roll(dough_portions, "20cm rounds on flour")
+   67	    fill(dough_portions, filling_bowl, "half of each round")
+   68	    knife.fold(dough_portions, "other half over")
+   69	    knife.press(dough_portions, "edges firmly")
+   70	    
+   71	    // Baking
+   72	    baking_sheet.line("parchment paper")
+   73	    baking_sheet.add(dough_portions)
+   74	    oven.preheat("250C")
+   75	    oven.bake(baking_sheet, "15 minutes until golden brown")
+   76	    
+   77	    return "Pizza Pockets - serve with tzatziki"
+   78	}

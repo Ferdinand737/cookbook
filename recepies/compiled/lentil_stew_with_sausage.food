@@ -1,66 +1,69 @@
     1	//lentil_stew_with_sausage.food
     2	
-    3	fn cook() {
-    4	    
-    5	    // Ingredients
-    6	    lentils = new Lentils("500g")
-    7	    smoked_bacon = new SmokedBacon("100g")
-    8	    onions = new Onion("2 medium")
-    9	    carrots = new Carrot("3 medium")
-   10	    celery_root = new CeleryRoot("1/4")
-   11	    potatoes = new Potato("700g")
-   12	    water = new Water("1l")
-   13	    smoked_sausages = new SmokedSausage("4 small")
-   14	    chives = new Chives("1 bunch")
-   15	    parsley = new Parsley("1 bunch")
-   16	    salt = new Salt("to taste")
-   17	    pepper = new BlackPepper("to taste")
-   18	    
-   19	    // Equipment
-   20	    knife = new Knife()
-   21	    pot = new Pot()
-   22	    
-   23	    // Preparation
-   24	    knife.slice(smoked_bacon)
-   25	    knife.dice(onions, "fine")
-   26	    knife.slice(carrots, "sticks")
-   27	    knife.dice(celery_root)
-   28	    knife.dice(potatoes)
-   29	    rinse(lentils, "cold water")
-   30	    drain(lentils)
-   31	    
-   32	    // Cooking
-   33	    pot.heat("medium")
-   34	    pot.add(smoked_bacon)
-   35	    pot.render("until crispy")
-   36	    
-   37	    pot.add(onions)
-   38	    pot.fry("golden brown with bacon")
+    3	// Ingredients
+    4	lentils = new Lentils("500g")
+    5	smoked_bacon = new SmokedBacon("100g")
+    6	onions = new Onion("2 medium")
+    7	carrots = new Carrot("3 medium")
+    8	celery_root = new CeleryRoot("1/4")
+    9	potatoes = new Potato("700g")
+   10	water = new Water("1l")
+   11	smoked_sausages = new SmokedSausage("4 small")
+   12	chives = new Chives("1 bunch")
+   13	parsley = new Parsley("1 bunch")
+   14	salt = new Salt("to taste")
+   15	pepper = new BlackPepper("to taste")
+   16	
+   17	// Utensils
+   18	knife = new Knife()
+   19	pot = new Pot()
+   20	
+   21	fn prepareIngredients() {
+   22	    // Preparation
+   23	    knife.slice(smoked_bacon)
+   24	    knife.dice(onions, "fine")
+   25	    knife.slice(carrots, "sticks")
+   26	    knife.dice(celery_root)
+   27	    knife.dice(potatoes)
+   28	    rinse(lentils, "cold water")
+   29	    drain(lentils)
+   30	}
+   31	
+   32	fn cook() {
+   33	    prepareIngredients()
+   34	    
+   35	    // Cooking
+   36	    pot.heat("medium")
+   37	    pot.add(smoked_bacon)
+   38	    pot.render("until crispy")
    39	    
-   40	    pot.add(carrots)
-   41	    pot.add(potatoes)
-   42	    pot.add(celery_root)
-   43	    pot.fry("briefly")
-   44	    
-   45	    pot.add(lentils)
-   46	    pot.add(water)
-   47	    pot.stir()
-   48	    pot.boil()
-   49	    
-   50	    pot.add(smoked_sausages)
-   51	    pot.cover()
-   52	    pot.simmer("1 hour on low heat")
-   53	    
-   54	    // Finish
-   55	    knife.chop(parsley, "fine")
-   56	    knife.chop(chives, "fine")
-   57	    
-   58	    pot.add(parsley)
-   59	    pot.add(chives)
-   60	    pot.stir()
-   61	    
-   62	    pot.add(salt)
-   63	    pot.add(pepper)
+   40	    pot.add(onions)
+   41	    pot.fry("golden brown with bacon")
+   42	    
+   43	    pot.add(carrots)
+   44	    pot.add(potatoes)
+   45	    pot.add(celery_root)
+   46	    pot.fry("briefly")
+   47	    
+   48	    pot.add(lentils)
+   49	    pot.add(water)
+   50	    pot.stir()
+   51	    pot.boil()
+   52	    
+   53	    pot.add(smoked_sausages)
+   54	    pot.cover()
+   55	    pot.simmer("1 hour on low heat")
+   56	    
+   57	    // Finish
+   58	    knife.chop(parsley, "fine")
+   59	    knife.chop(chives, "fine")
+   60	    
+   61	    pot.add(parsley)
+   62	    pot.add(chives)
+   63	    pot.stir()
    64	    
-   65	    return "Lentil Stew with Smoked Sausage - pressure cooker reduces time to 20 min"
-   66	}
+   65	    pot.add(salt)
+   66	    pot.add(pepper)
+   67	    
+   68	    return "Lentil Stew with Smoked Sausage - pressure cooker reduces time to 20 min"
+   69	}

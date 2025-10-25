@@ -1,24 +1,25 @@
 //curry_meat.food
 
-// Ingredients
-pork_tenderloin = new PorkTenderloin("500g")
-pepper = new BlackPepper("to taste")
-salt = new Salt("to taste")
-curry = new Curry("to taste")
-oil = new Oil("for frying")
-onion = new Onion("1 medium")
-garlic = new Garlic("1 clove")
-apple = new Apple("1 large")
-red_bell_pepper = new BellPepper("1 red")
-pineapple = new Pineapple("2 slices")
-water = new Water("250ml")
-curry_sauce_mix = new CurrySauceMix("1 box")
-
-// Utensils
-knife = new Knife()
-roasting_pot = new RoastingPot()
-
-fn prepareIngredients() {
+fn cook() {
+    
+    // Ingredients
+    pork_tenderloin = new PorkTenderloin("500g")
+    pepper = new BlackPepper("to taste")
+    salt = new Salt("to taste")
+    curry = new Curry("to taste")
+    oil = new Oil("for frying")
+    onion = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    apple = new Apple("1 large")
+    red_bell_pepper = new BellPepper("1 red")
+    pineapple = new Pineapple("2 slices")
+    water = new Water("250ml")
+    curry_sauce_mix = new CurrySauceMix("1 box")
+    
+    // Equipment
+    knife = new Knife()
+    roasting_pot = new RoastingPot()
+    
     // Preparation
     rinse(pork_tenderloin, "cold water")
     dry(pork_tenderloin, "with kitchen paper")
@@ -37,10 +38,6 @@ fn prepareIngredients() {
     apple = knife.dice(apple)
     red_bell_pepper = knife.dice(red_bell_pepper)
     pineapple = knife.dice(pineapple, "small pieces")
-}
-
-fn cook() {
-    prepareIngredients()
     
     // Cooking
     roasting_pot.heat("medium")

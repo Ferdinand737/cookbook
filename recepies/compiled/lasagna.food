@@ -1,96 +1,95 @@
     1	//lasagna.food
     2	
-    3	fn cook() {
-    4	    
-    5	    // Meat Sauce Ingredients
-    6	    ground_meat = new GroundMeat("500g")
-    7	    peas = new Peas("1 small can")
-    8	    tomatoes = new Tomato("1 large can")
-    9	    onion_meat = new Onion("1 medium")
-   10	    garlic = new Garlic("1 clove")
-   11	    italian_herbs = new ItalianHerbs("to taste")
-   12	    tomato_paste = new TomatoPaste("to taste")
-   13	    cream_meat = new Cream("some")
-   14	    
-   15	    // Béchamel Sauce Ingredients
-   16	    butter = new Butter("40g")
-   17	    ham = new Ham("50g, cooked")
-   18	    onion_bechamel = new Onion("1 small")
-   19	    flour = new Flour("for roux")
-   20	    meat_broth = new MeatBroth("250ml")
-   21	    milk = new Milk("250ml")
-   22	    salt = new Salt("to taste")
-   23	    pepper = new BlackPepper("to taste")
-   24	    parmesan = new Parmesan("grated")
-   25	    
-   26	    // Other
-   27	    lasagna_noodles = new LasagnaNoodles("1 package")
-   28	    grated_cheese = new GratedCheese("for topping")
-   29	    
-   30	    // Equipment
-   31	    pot = new Pot()
-   32	    pan = new Pan()
-   33	    saucepan = new Saucepan()
-   34	    knife = new Knife()
-   35	    baking_dish = new BakingDish()
-   36	    oven = new Oven()
-   37	    
-   38	    // Cook lasagna noodles
-   39	    pot.boil("salted water")
-   40	    pot.add(lasagna_noodles)
-   41	    pot.cook("according to package directions")
-   42	    lasagna_noodles = pot.drain()
-   43	    
-   44	    // Prepare meat sauce
-   45	    onion_meat = knife.chop(onion_meat)
-   46	    garlic = knife.mince(garlic)
-   47	    
-   48	    pan.heat("medium")
-   49	    pan.add(onion_meat)
-   50	    pan.brown("until golden")
-   51	    pan.add(ground_meat)
-   52	    pan.brown("until crumbly")
-   53	    pan.add(garlic)
-   54	    pan.add(tomatoes)
-   55	    pan.add(peas)
-   56	    pan.boil()
-   57	    pan.add(italian_herbs)
-   58	    pan.add(tomato_paste)
-   59	    pan.add(cream_meat)
-   60	    pan.simmer("to blend flavors")
-   61	    
-   62	    // Prepare béchamel sauce
-   63	    ham = knife.chop(ham)
-   64	    onion_bechamel = knife.chop(onion_bechamel)
-   65	    
-   66	    saucepan.heat("medium")
-   67	    saucepan.add(butter)
-   68	    saucepan.add(ham)
-   69	    saucepan.add(onion_bechamel)
-   70	    saucepan.fry("until golden")
-   71	    saucepan.add(flour)
-   72	    saucepan.stir("to make roux")
-   73	    saucepan.add(meat_broth)
-   74	    saucepan.add(milk)
-   75	    saucepan.stir("until smooth")
-   76	    saucepan.add(salt)
-   77	    saucepan.add(pepper)
-   78	    saucepan.add(parmesan)
-   79	    saucepan.simmer("5 minutes")
-   80	    
-   81	    // Assembly
-   82	    baking_dish.grease()
-   83	    baking_dish.layer(pan, "meat sauce")
-   84	    baking_dish.layer(lasagna_noodles)
-   85	    baking_dish.layer(saucepan, "béchamel sauce")
-   86	    baking_dish.layer(pan, "meat sauce")
-   87	    baking_dish.layer(lasagna_noodles)
-   88	    baking_dish.layer(saucepan, "béchamel sauce")
-   89	    baking_dish.top(grated_cheese)
-   90	    
-   91	    // Baking
-   92	    oven.preheat("200C")
-   93	    oven.bake(baking_dish, "25 minutes")
-   94	    
-   95	    return "Lasagna"
-   96	}
+    3	// Ingredients
+    4	ground_meat = new GroundMeat("500g")
+    5	peas = new Peas("1 small can")
+    6	tomatoes = new Tomato("1 large can")
+    7	onion_meat = new Onion("1 medium")
+    8	garlic = new Garlic("1 clove")
+    9	italian_herbs = new ItalianHerbs("to taste")
+   10	tomato_paste = new TomatoPaste("to taste")
+   11	cream_meat = new Cream("some")
+   12	butter = new Butter("40g")
+   13	ham = new Ham("50g, cooked")
+   14	onion_bechamel = new Onion("1 small")
+   15	flour = new Flour("for roux")
+   16	meat_broth = new MeatBroth("250ml")
+   17	milk = new Milk("250ml")
+   18	salt = new Salt("to taste")
+   19	pepper = new BlackPepper("to taste")
+   20	parmesan = new Parmesan("grated")
+   21	lasagna_noodles = new LasagnaNoodles("1 package")
+   22	grated_cheese = new GratedCheese("for topping")
+   23	
+   24	// Utensils
+   25	pot = new Pot()
+   26	pan = new Pan()
+   27	saucepan = new Saucepan()
+   28	knife = new Knife()
+   29	baking_dish = new BakingDish()
+   30	oven = new Oven()
+   31	
+   32	fn prepareMeatSauce() {
+   33	    onion_meat = knife.chop(onion_meat)
+   34	    garlic = knife.mince(garlic)
+   35	    
+   36	    pan.heat("medium")
+   37	    pan.add(onion_meat)
+   38	    pan.brown("until golden")
+   39	    pan.add(ground_meat)
+   40	    pan.brown("until crumbly")
+   41	    pan.add(garlic)
+   42	    pan.add(tomatoes)
+   43	    pan.add(peas)
+   44	    pan.boil()
+   45	    pan.add(italian_herbs)
+   46	    pan.add(tomato_paste)
+   47	    pan.add(cream_meat)
+   48	    pan.simmer("to blend flavors")
+   49	}
+   50	fn prepareBechamelSauce() {
+   51	    ham = knife.chop(ham)
+   52	    onion_bechamel = knife.chop(onion_bechamel)
+   53	    
+   54	    saucepan.heat("medium")
+   55	    saucepan.add(butter)
+   56	    saucepan.add(ham)
+   57	    saucepan.add(onion_bechamel)
+   58	    saucepan.fry("until golden")
+   59	    saucepan.add(flour)
+   60	    saucepan.stir("to make roux")
+   61	    saucepan.add(meat_broth)
+   62	    saucepan.add(milk)
+   63	    saucepan.stir("until smooth")
+   64	    saucepan.add(salt)
+   65	    saucepan.add(pepper)
+   66	    saucepan.add(parmesan)
+   67	    saucepan.simmer("5 minutes")
+   68	}
+   69	
+   70	fn cook() {
+   71	    // Cook lasagna noodles
+   72	    pot.boil("salted water")
+   73	    pot.add(lasagna_noodles)
+   74	    pot.cook("according to package directions")
+   75	    lasagna_noodles = pot.drain()
+   76	    
+   77	    prepareMeatSauce()
+   78	    prepareBechamelSauce()
+   79	    
+   80	    // Assembly
+   81	    baking_dish.grease()
+   82	    baking_dish.layer(pan, "meat sauce")
+   83	    baking_dish.layer(lasagna_noodles)
+   84	    baking_dish.layer(saucepan, "béchamel sauce")
+   85	    baking_dish.layer(pan, "meat sauce")
+   86	    baking_dish.layer(lasagna_noodles)
+   87	    baking_dish.layer(saucepan, "béchamel sauce")
+   88	    baking_dish.top(grated_cheese)
+   89	    
+   90	    // Baking
+   91	    oven.preheat("200C")
+   92	    oven.bake(baking_dish, "25 minutes")
+   93	    
+   94	    return "Lasagna"
+   95	}

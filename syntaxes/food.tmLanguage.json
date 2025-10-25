@@ -96,7 +96,7 @@
       "patterns": [
         {
           "name": "support.function.method.food",
-          "match": "\\.\\b(?:add|mix|stir|fold|whisk|pour|form|drain|sprinkle|get|layer|top|grease|cover|strain|arrange|beat|coat|cut|dip|divide|drop|garnish|knead|line|pound|prepare|prick|puree|render|reserve|tie|wash|preheat|bake|roast|broil|heatTo|heat|boil|simmer|saute|fry|brown|cook|braise|chop|dice|slice|mince|crush|set|start|stop|press|roll|grate|press|strain|spread|sift|dust|crumble|dissolve|place|fold|seal|brush|wrap|spread|roll|unfold|makeWell|removeSteams|pick|melt|quarter|arrange|pour|smooth|top|uncover|place|distribute|remove|set|heat|fry|saute|brown|cook|boil|simmer|cook|heat|mix|beat|whisk|combine|stir|mix|fold|pound|tie|grease|layer|bake|layer|bake|cover|roast|place|braise|cook|layer|bake|fry|heat|puree|blend)\\b(?=\\s*\\()"
+          "match": "\\.\\b(?:add|mix|stir|fold|whisk|pour|form|drain|sprinkle|get|layer|top|grease|cover|strain|arrange|beat|coat|cut|dip|divide|drop|garnish|knead|line|pound|prepare|prick|puree|render|reserve|tie|wash|preheat|bake|roast|broil|heatTo|heat|boil|simmer|saute|fry|brown|cook|braise|chop|dice|slice|mince|crush|peel|set|start|stop|press|roll|grate|press|strain|spread|sift|dust|crumble|dissolve|place|fold|seal|brush|wrap|spread|roll|unfold|makeWell|removeSteams|pick|melt|quarter|arrange|pour|smooth|top|uncover|place|distribute|remove|set|heat|fry|saute|brown|cook|boil|simmer|cook|heat|mix|beat|whisk|combine|stir|mix|fold|pound|tie|grease|layer|bake|layer|bake|cover|roast|place|braise|cook|layer|bake|fry|heat|puree|blend)\\b(?=\\s*\\()"
         }
       ]
     },

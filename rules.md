@@ -1,72 +1,178 @@
-# .food Recipe Language Guide
+# 🍳 .food Recipe Language Guide
 
-## Objects
+## 📦 Core Objects
 
-There are only two types of objects:
+The `.food` language has exactly **two object types**:
 
-- ingredients
-- utensils
+- 🥕 **Ingredients** - Food items with quantities
+- 🔧 **Utensils** - Cooking tools with methods
 
-All objects are initialized with the `new` keyword and a constructor. Ingredient constructors often contain amount information, such as `emmental = new Emmental("200g, grated")`. All units must be in metric.
+### Object Initialization
+All objects use the `new` keyword with constructors:
+```food
+emmental = new Emmental("200g, grated")  // Ingredient with amount
+knife = new Knife()                      // Utensil
+```
+**⚠️ Important:** All measurements must be in metric units.
 
-### Ingredients
+---
 
-Ingredients are objects that can be used in recipes. Ingredients do not have any properties or methods.
+## 🥕 Ingredients
+- Objects representing food items
+- **No properties or methods**
+- Must include quantity information in constructor
+- Examples: `flour = new Flour("500g")`, `eggs = new Eggs("3 large")`
 
-### Utensils
+---
 
-Utensils are objects that can be used in recipes. Utensils have methods.
+## 🔧 Utensils  
+- Objects representing cooking tools
+- **Have methods for actions**
+- Examples: `pot = new Pot()`, `oven = new Oven()`
 
-### Actions
+---
 
-Actions are anything the user does when cooking. They are methods in the `.food` language. Almost all actions _should_ be methods; only when it doesn’t make sense should they be built-in functions.
+## ⚡ Actions
 
-Sometimes actions contain arguments. For example, `spatzle_maker.press(mixing_bowl, pot)` and `mixing_bowl.mix("until smooth")` and `rinse(spatzle, "cold water")`. There is room for artistic freedom here, but avoid making things confusing.
+Actions represent cooking steps and come in two forms:
 
-#### Methods
+### 🔨 Methods (Preferred)
+Actions performed **on utensils**:
+```food
+pot.boil()
+pan.fry(chicken)
+oven.bake("180°C, 25 minutes")
+```
 
-Methods are actions that can be performed on utensils. Methods are called on utensils. Examples include `pot.boil()`, `pan.fry()`, and `oven.bake()`.
+### 🛠️ Built-in Functions (When Necessary)
+Actions that don't fit specific utensils:
+```food
+wait("10 minutes")
+transfer(pan, pot)
+rinse(vegetables, "cold water")
+```
 
-#### Functions
+**💡 Rule:** Use methods whenever possible. Only use functions when the action doesn't logically belong to a utensil.
 
-There are some built-in functions that can be used in recipes. These are used when it doesn’t make sense to make the action a method of the utensil. Examples include `wait()` and `transfer()`.
+---
 
-## Style
+## 📝 Code Style Rules
 
-All variables are snake_case. All constructors and functions/methods are camelCase. All functions and methods must be defined in the `tokens.json` file for proper highlighting. The main function is always called `cook()`.
+| Element | Style | Example |
+|---------|-------|---------|
+| Variables | `snake_case` | `ground_beef`, `red_pepper` |
+| Constructors | `camelCase` | `GroundBeef()`, `RedPepper()` |
+| Functions/Methods | `camelCase` | `cook()`, `boil()`, `transfer()` |
+| Main Function | Always `cook()` | `fn cook() { ... }` |
 
-## File Structure Requirements
+**⚠️ Critical:** All functions and methods must be defined in `tokens.json` for syntax highlighting.
 
-Every `.food` file must follow this structure:
+### 📐 Long Function Call Formatting
 
-1. **Filename comment**: First line must be `//filename.food` matching the actual filename
-2. **cook() function**: Must contain all recipe logic
-3. **Return statement**: The `cook()` function must return the recipe name as a string
+When function calls become long, split them across multiple lines:
 
-Example:
+✅ **Correct formatting:**
+```food
+dough = rolling_pin.roll(mixing_bowl,
+                        "large sheet on baking sheet")
+```
+
+❌ **Avoid:**
+```food
+dough = rolling_pin.roll(
+    mixing_bowl,
+    "large sheet on baking sheet"
+)
+```
+
+**Rules:**
+- Keep the **first argument** on the same line as the function
+- **Align subsequent arguments** under the first argument
+- **Closing parenthesis** stays with the last argument (no separate line)
+
+---
+
+## 📋 File Structure Requirements
+
+Every `.food` file **must** follow this exact structure:
+
+### 1️⃣ Filename Comment
+```food
+//recipe_name.food
+```
+
+### 2️⃣ Ingredient Declarations
+```food
+// Ingredients
+flour = new Flour("500g")
+eggs = new Eggs("2 large")
+```
+
+### 3️⃣ Utensil Declarations  
+```food
+// Utensils
+mixing_bowl = new MixingBowl()
+oven = new Oven()
+```
+
+### 4️⃣ Helper Functions (Optional)
+```food
+fn prepareIngredients() {
+    // Prep work here
+}
+```
+
+### 5️⃣ Main cook() Function
+```food
+fn cook() {
+    // Recipe logic
+    return "Recipe Name"
+}
+```
+
+### 6️⃣ Return Statement
+The `cook()` function **must** return the recipe name as a string.
+
+### 📄 Complete Example
 ```food
 //chocolate_chip_cookies.food
 
+// Ingredients
+flour = new Flour("2 cups")
+sugar = new Sugar("1 cup")
+chocolate_chips = new ChocolateChips("1 cup")
+
+// Utensils
+mixing_bowl = new MixingBowl()
+oven = new Oven()
+
 fn cook() {
-    // Recipe logic here
+    mixing_bowl.mix(flour, sugar)
+    mixing_bowl.add(chocolate_chips)
+    oven.bake("180°C, 12 minutes")
     
     return "Chocolate Chip Cookies"
 }
 ```
 
-## File Naming Conventions
+---
 
-Recipe files should use descriptive, snake_case names with the `.food` extension. Examples:
+## 📁 File Naming Conventions
 
+**Format:** `snake_case` with `.food` extension
+
+✅ **Correct:**
 - `chocolate_chip_cookies.food`
-- `beef_stir_fry.food`
+- `beef_stir_fry.food` 
 - `tomato_basil_soup.food`
 
-Avoid spaces, special characters, or camelCase in filenames.
+❌ **Avoid:** Spaces, special characters, or camelCase
 
-## Comments
+---
 
-Comments in `.food` files use `//` for single-line comments:
+## 💬 Comments
+
+Use `//` for single-line comments:
 
 ```food
 // This is a comment explaining the next step
@@ -77,45 +183,85 @@ flour.sift()
 mixing_bowl.mix("until smooth")
 ```
 
-Use comments to:
+**Purpose:** Use comments **only** to separate cooking steps.
 
-- Only to separate steps
+---
 
-## Development Workflow
+## 🔄 Development Workflow
 
-The `.food` recipe development follows this workflow:
+### 1️⃣ Convert → `recepies/converted/`
+Convert raw recipes from various formats (`.docx`, `.txt`, `.pdf`) into `.food` syntax. All recipes must be converted to English `.food` files.
 
-### 1. Convert → `recepies/converted/`
-
-Convert raw recipes from various formats into `.food` syntax. Files are placed in the `converted/` directory. Recepies may be in documents such as `.docx` files or `.txt` files or `.pdf` files. They may also be in different languages. All should be converted into english `.food` files.
-
-### 2. Compile → `recepies/compiled/`
-
-Run the compilation script to add line numbers and verify grammar:
-
+### 2️⃣ Compile → `recepies/compiled/`
+Run compilation to add line numbers and verify grammar:
 ```bash
 cd recepies/
 python3 compile_recipes.py
 ```
 
-### 3. Update Tokens → `grammar/tokens.json`
+### 3️⃣ Update Tokens → `grammar/tokens.json`
+If compilation fails, add missing elements:
+- **Constructors** → `types.ingredients` or `types.utensils`
+- **Methods** → appropriate `actions` categories  
+- **Functions** → `builtins` array
 
-If compilation fails due to missing constructors or methods:
-
-- Add missing constructors to `types.ingredients` or `types.utensils`
-- Add missing methods to appropriate `actions` categories
-- Add new built-in functions to `builtins` array
-
-### 4. Re-compile → Verification
-
-Re-run the compilation script to verify all tokens are properly defined:
-
+### 4️⃣ Re-compile → Verification
+Verify all tokens are properly defined:
 ```bash
 python3 compile_recipes.py
 ```
 
-### 5. Done ✅
+### 5️⃣ Done ✅
+Recipes are ready with proper syntax highlighting.
 
-Once compilation succeeds with grammar verification, recipes are ready for use with proper syntax highlighting.
+---
 
-**Important:** The compilation script will **not compile** recipes if any constructors or methods are missing from the grammar. This ensures syntax highlighting works correctly for all recipe elements.
+## 📖 Long Recipe Management
+
+**Rule:** When `cook()` exceeds **45 lines**, reorganize for book pagination.
+
+### 🔧 Function Extraction Process
+
+1. **Extract logical steps** into separate functions:
+   - `prepareIngredients()` - All prep work
+   - `makeSauce()` - Sauce preparation  
+   - `assembleDish()` - Final assembly
+
+2. **Keep `cook()` concise** by calling helper functions
+
+3. **Maintain readability** - each function = one cooking phase
+
+### 📄 Reorganized Recipe Example
+```food
+//complex_dish.food
+
+// Ingredients
+ingredient1 = new Ingredient1("amount")
+ingredient2 = new Ingredient2("amount")
+
+// Utensils
+utensil1 = new Utensil1()
+utensil2 = new Utensil2()
+
+fn prepareIngredients() {
+    // All prep work here
+}
+
+fn makeSauce() {
+    // Sauce preparation
+}
+
+fn cook() {
+    prepareIngredients()
+    makeSauce()
+    // Final assembly and cooking
+    
+    return "Complex Dish"
+}
+```
+
+---
+
+## ⚠️ Compilation Requirements
+
+**Critical:** The compilation script will **not compile** recipes if any constructors or methods are missing from `grammar/tokens.json`. This ensures proper syntax highlighting for all recipe elements.

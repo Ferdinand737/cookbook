@@ -1,34 +1,31 @@
 //vegetable_soup_with_sausages.food
 
-// Ingredients
-onions = new Onion("200g")
-leek = new Leek("1 stalk")
-yellow_turnips = new YellowTurnip("200g")
-potatoes = new Potato("400g")
-butter = new Butter("30g")
-broth = new Broth("1l")
-salt = new Salt("to taste")
-pepper = new BlackPepper("to taste")
-heavy_cream = new HeavyCream("100g")
-sausages = new Sausage("200g")
-chives = new Chives("1 bunch")
-
-// Utensils
-knife = new Knife()
-pot = new Pot()
-immersion_blender = new ImmersionBlender()
-
-fn prepareIngredients() {
+fn cook() {
+    
+    // Ingredients
+    onions = new Onion("200g")
+    leek = new Leek("1 stalk")
+    yellow_turnips = new YellowTurnip("200g")
+    potatoes = new Potato("400g")
+    butter = new Butter("30g")
+    broth = new Broth("1l")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    heavy_cream = new HeavyCream("100g")
+    sausages = new Sausage("200g")
+    chives = new Chives("1 bunch")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    immersion_blender = new ImmersionBlender()
+    
     // Preparation
     knife.dice(onions)
     knife.slice(leek, "rings")
     knife.dice(yellow_turnips)
     knife.dice(potatoes)
     knife.chop(chives)
-}
-
-fn cook() {
-    prepareIngredients()
     
     // Cooking
     pot.heat("medium")

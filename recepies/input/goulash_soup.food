@@ -1,24 +1,25 @@
 //goulash_soup.food
 
-// Ingredients
-goulash_meat = new GoulashMeat("500g")
-onion = new Onion("1 medium")
-garlic = new Garlic("1 clove")
-bell_pepper = new BellPepper("1 medium")
-tomatoes = new Tomato("2 medium")
-potatoes = new Potato("500g")
-carrots = new Carrot("2-3 medium")
-celery = new Celery("1 slice")
-salt = new Salt("to taste")
-caraway_seeds = new CarawaySeeds("1/2 tsp")
-paprika = new Paprika("2 tsp")
-water = new Water("as needed")
-
-// Utensils
-knife = new Knife()
-pot = new Pot()
-
-fn prepareIngredients() {
+fn cook() {
+    
+    // Ingredients
+    goulash_meat = new GoulashMeat("500g")
+    onion = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    bell_pepper = new BellPepper("1 medium")
+    tomatoes = new Tomato("2 medium")
+    potatoes = new Potato("500g")
+    carrots = new Carrot("2-3 medium")
+    celery = new Celery("1 slice")
+    salt = new Salt("to taste")
+    caraway_seeds = new CarawaySeeds("1/2 tsp")
+    paprika = new Paprika("2 tsp")
+    water = new Water("as needed")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
     // Preparation
     goulash_meat = knife.dice(goulash_meat, "pieces")
     onion = knife.chop(onion)
@@ -28,10 +29,6 @@ fn prepareIngredients() {
     potatoes = knife.dice(potatoes)
     carrots = knife.slice(carrots)
     celery = knife.dice(celery)
-}
-
-fn cook() {
-    prepareIngredients()
     
     // Cooking
     pot.heat("medium-high")

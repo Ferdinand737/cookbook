@@ -1,25 +1,25 @@
     1	//chilli_con_carne.food
     2	
-    3	fn cook() {
-    4	    // Ingredients
-    5	    ground_beef = new GroundBeef("400g")
-    6	    onion = new Onion("1 large")
-    7	    bacon = new SmokedBacon("100g, streaky")
-    8	    cabanassi = new SmokedSausage("150g, cabanassi")
-    9	    potatoes = new Potato("500g")
-   10	    bouillon_cubes = new BrothCube("2")
-   11	    kidney_beans = new KidneyBeans("3 small cans")
-   12	    chili_seasoning = new ChiliSeasoning("2 packets")
-   13	    garlic = new Garlic("5 cloves")
-   14	    red_bell_pepper = new BellPepper("1 red")
-   15	    salt = new Salt("to taste")
-   16	    oil = new Oil("a little")
-   17	    
-   18	    // Utensils
-   19	    knife = new Knife()
-   20	    pan = new Pan()
-   21	    pot = new Pot()
-   22	    
+    3	// Ingredients
+    4	ground_beef = new GroundBeef("400g")
+    5	onion = new Onion("1 large")
+    6	bacon = new SmokedBacon("100g, streaky")
+    7	cabanassi = new SmokedSausage("150g, cabanassi")
+    8	potatoes = new Potato("500g")
+    9	bouillon_cubes = new BrothCube("2")
+   10	kidney_beans = new KidneyBeans("3 small cans")
+   11	chili_seasoning = new ChiliSeasoning("2 packets")
+   12	garlic = new Garlic("5 cloves")
+   13	red_bell_pepper = new BellPepper("1 red")
+   14	salt = new Salt("to taste")
+   15	oil = new Oil("a little")
+   16	
+   17	// Utensils
+   18	knife = new Knife()
+   19	pan = new Pan()
+   20	pot = new Pot()
+   21	
+   22	fn prepareIngredients() {
    23	    // Preparation
    24	    knife.peel(onion)
    25	    knife.chop(onion, "roughly")
@@ -34,31 +34,35 @@
    34	    
    35	    knife.dice(red_bell_pepper)
    36	    wash(red_bell_pepper)
-   37	    
-   38	    // Cooking
-   39	    pan.heat(oil)
-   40	    pan.saute(onion)
-   41	    pan.saute(bacon)
-   42	    pan.saute(cabanassi)
-   43	    
-   44	    pan.add(ground_beef)
-   45	    pan.brown(ground_beef, "while stirring")
-   46	    
-   47	    pan.add(potatoes)
-   48	    pan.saute(potatoes, "briefly")
-   49	    
-   50	    transfer(pan, pot)
-   51	    pot.add(bouillon_cubes)
-   52	    pot.add("water")
-   53	    pot.boil()
-   54	    pot.cook("until potatoes are done")
-   55	    
-   56	    pot.add(chili_seasoning)
-   57	    pot.add(kidney_beans)
-   58	    pot.add(garlic)
-   59	    pot.simmer("briefly")
-   60	    
-   61	    season(pot, salt)
-   62	    
-   63	    return "Chilli con Carne"
-   64	}
+   37	}
+   38	
+   39	fn cook() {
+   40	    prepareIngredients()
+   41	    
+   42	    // Cooking
+   43	    pan.heat(oil)
+   44	    pan.saute(onion)
+   45	    pan.saute(bacon)
+   46	    pan.saute(cabanassi)
+   47	    
+   48	    pan.add(ground_beef)
+   49	    pan.brown(ground_beef, "while stirring")
+   50	    
+   51	    pan.add(potatoes)
+   52	    pan.saute(potatoes, "briefly")
+   53	    
+   54	    transfer(pan, pot)
+   55	    pot.add(bouillon_cubes)
+   56	    pot.add("water")
+   57	    pot.boil()
+   58	    pot.cook("until potatoes are done")
+   59	    
+   60	    pot.add(chili_seasoning)
+   61	    pot.add(kidney_beans)
+   62	    pot.add(garlic)
+   63	    pot.simmer("briefly")
+   64	    
+   65	    season(pot, salt)
+   66	    
+   67	    return "Chilli con Carne"
+   68	}

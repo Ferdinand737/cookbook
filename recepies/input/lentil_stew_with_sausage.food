@@ -1,24 +1,25 @@
 //lentil_stew_with_sausage.food
 
-// Ingredients
-lentils = new Lentils("500g")
-smoked_bacon = new SmokedBacon("100g")
-onions = new Onion("2 medium")
-carrots = new Carrot("3 medium")
-celery_root = new CeleryRoot("1/4")
-potatoes = new Potato("700g")
-water = new Water("1l")
-smoked_sausages = new SmokedSausage("4 small")
-chives = new Chives("1 bunch")
-parsley = new Parsley("1 bunch")
-salt = new Salt("to taste")
-pepper = new BlackPepper("to taste")
-
-// Utensils
-knife = new Knife()
-pot = new Pot()
-
-fn prepareIngredients() {
+fn cook() {
+    
+    // Ingredients
+    lentils = new Lentils("500g")
+    smoked_bacon = new SmokedBacon("100g")
+    onions = new Onion("2 medium")
+    carrots = new Carrot("3 medium")
+    celery_root = new CeleryRoot("1/4")
+    potatoes = new Potato("700g")
+    water = new Water("1l")
+    smoked_sausages = new SmokedSausage("4 small")
+    chives = new Chives("1 bunch")
+    parsley = new Parsley("1 bunch")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    knife = new Knife()
+    pot = new Pot()
+    
     // Preparation
     knife.slice(smoked_bacon)
     knife.dice(onions, "fine")
@@ -27,10 +28,6 @@ fn prepareIngredients() {
     knife.dice(potatoes)
     rinse(lentils, "cold water")
     drain(lentils)
-}
-
-fn cook() {
-    prepareIngredients()
     
     // Cooking
     pot.heat("medium")

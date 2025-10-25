@@ -1,27 +1,30 @@
 //pizza_pockets.food
 
-// Ingredients
-flour = new Flour("425g")
-salt = new Salt("1/2 tsp")
-dry_yeast = new DryYeast("1 package")
-olive_oil = new OliveOil("4 tbsp")
-water = new Water("250ml, lukewarm")
-cooked_ham = new CookedHam("200g")
-broccoli = new Broccoli("250g")
-red_bell_pepper = new BellPepper("1 red")
-mozzarella = new Mozzarella("125g")
-salt_filling = new Salt("to taste")
-pepper = new BlackPepper("to taste")
-
-// Utensils
-mixing_bowl = new Bowl()
-knife = new Knife()
-pot = new Pot()
-rolling_pin = new RollingPin()
-baking_sheet = new BakingSheet()
-oven = new Oven()
-
-fn prepareDough() {
+fn cook() {
+    
+    // Dough Ingredients
+    flour = new Flour("425g")
+    salt = new Salt("1/2 tsp")
+    dry_yeast = new DryYeast("1 package")
+    olive_oil = new OliveOil("4 tbsp")
+    water = new Water("250ml, lukewarm")
+    
+    // Filling Ingredients
+    cooked_ham = new CookedHam("200g")
+    broccoli = new Broccoli("250g")
+    red_bell_pepper = new BellPepper("1 red")
+    mozzarella = new Mozzarella("125g")
+    salt_filling = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    knife = new Knife()
+    pot = new Pot()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    
     // Make dough
     mixing_bowl.add(flour)
     mixing_bowl.add(salt)
@@ -34,9 +37,7 @@ fn prepareDough() {
     wait("45 minutes in warm place to rise")
     mixing_bowl.knead("vigorously again")
     dough_portions = knife.divide(mixing_bowl, "8 portions")
-}
-
-fn prepareFilling() {
+    
     // Prepare filling
     knife.slice(cooked_ham, "strips")
     knife.divide(broccoli, "florets")
@@ -56,11 +57,6 @@ fn prepareFilling() {
     filling_bowl.add(salt_filling)
     filling_bowl.add(pepper)
     filling_bowl.mix()
-}
-
-fn cook() {
-    prepareDough()
-    prepareFilling()
     
     // Assembly
     rolling_pin.roll(dough_portions, "20cm rounds on flour")

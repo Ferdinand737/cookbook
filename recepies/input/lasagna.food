@@ -1,35 +1,47 @@
 //lasagna.food
 
-// Ingredients
-ground_meat = new GroundMeat("500g")
-peas = new Peas("1 small can")
-tomatoes = new Tomato("1 large can")
-onion_meat = new Onion("1 medium")
-garlic = new Garlic("1 clove")
-italian_herbs = new ItalianHerbs("to taste")
-tomato_paste = new TomatoPaste("to taste")
-cream_meat = new Cream("some")
-butter = new Butter("40g")
-ham = new Ham("50g, cooked")
-onion_bechamel = new Onion("1 small")
-flour = new Flour("for roux")
-meat_broth = new MeatBroth("250ml")
-milk = new Milk("250ml")
-salt = new Salt("to taste")
-pepper = new BlackPepper("to taste")
-parmesan = new Parmesan("grated")
-lasagna_noodles = new LasagnaNoodles("1 package")
-grated_cheese = new GratedCheese("for topping")
-
-// Utensils
-pot = new Pot()
-pan = new Pan()
-saucepan = new Saucepan()
-knife = new Knife()
-baking_dish = new BakingDish()
-oven = new Oven()
-
-fn prepareMeatSauce() {
+fn cook() {
+    
+    // Meat Sauce Ingredients
+    ground_meat = new GroundMeat("500g")
+    peas = new Peas("1 small can")
+    tomatoes = new Tomato("1 large can")
+    onion_meat = new Onion("1 medium")
+    garlic = new Garlic("1 clove")
+    italian_herbs = new ItalianHerbs("to taste")
+    tomato_paste = new TomatoPaste("to taste")
+    cream_meat = new Cream("some")
+    
+    // Béchamel Sauce Ingredients
+    butter = new Butter("40g")
+    ham = new Ham("50g, cooked")
+    onion_bechamel = new Onion("1 small")
+    flour = new Flour("for roux")
+    meat_broth = new MeatBroth("250ml")
+    milk = new Milk("250ml")
+    salt = new Salt("to taste")
+    pepper = new BlackPepper("to taste")
+    parmesan = new Parmesan("grated")
+    
+    // Other
+    lasagna_noodles = new LasagnaNoodles("1 package")
+    grated_cheese = new GratedCheese("for topping")
+    
+    // Equipment
+    pot = new Pot()
+    pan = new Pan()
+    saucepan = new Saucepan()
+    knife = new Knife()
+    baking_dish = new BakingDish()
+    oven = new Oven()
+    
+    // Cook lasagna noodles
+    pot.boil("salted water")
+    pot.add(lasagna_noodles)
+    pot.cook("according to package directions")
+    lasagna_noodles = pot.drain()
+    
+    // Prepare meat sauce
     onion_meat = knife.chop(onion_meat)
     garlic = knife.mince(garlic)
     
@@ -46,8 +58,8 @@ fn prepareMeatSauce() {
     pan.add(tomato_paste)
     pan.add(cream_meat)
     pan.simmer("to blend flavors")
-}
-fn prepareBechamelSauce() {
+    
+    // Prepare béchamel sauce
     ham = knife.chop(ham)
     onion_bechamel = knife.chop(onion_bechamel)
     
@@ -65,17 +77,6 @@ fn prepareBechamelSauce() {
     saucepan.add(pepper)
     saucepan.add(parmesan)
     saucepan.simmer("5 minutes")
-}
-
-fn cook() {
-    // Cook lasagna noodles
-    pot.boil("salted water")
-    pot.add(lasagna_noodles)
-    pot.cook("according to package directions")
-    lasagna_noodles = pot.drain()
-    
-    prepareMeatSauce()
-    prepareBechamelSauce()
     
     // Assembly
     baking_dish.grease()

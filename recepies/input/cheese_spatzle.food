@@ -1,22 +1,24 @@
 //cheese_spatzle.food
 
-// Ingredients
-flour = new Flour("500g")
-water = new Water("125ml")
-salt = new Salt("to taste")
-eggs = new Eggs("4")
-emmental = new Emmental("200g, grated")
-onions = new Onion("for topping")
-butter = new Butter("for frying")
-// Utensils
-mixing_bowl = new Bowl()
-spatzle_maker = new SpatzleMaker()
-pot = new Pot()
-casserole_dish = new CasseroleDish()
-pan = new Pan()
-knife = new Knife()
-
 fn cook() {
+    
+    // Ingredients
+    flour = new Flour("500g")
+    water = new Water("125ml")
+    salt = new Salt("to taste")
+    eggs = new Eggs("4")
+    emmental = new Emmental("200g, grated")
+    onions = new Onion("for topping")
+    butter = new Butter("for frying")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    spatzle_maker = new SpatzleMaker()
+    pot = new Pot()
+    casserole_dish = new CasseroleDish()
+    pan = new Pan()
+    knife = new Knife()
+    
     // Make spatzle dough
     mixing_bowl.add(flour)
     mixing_bowl.add(water)

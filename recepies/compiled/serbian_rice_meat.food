@@ -1,58 +1,61 @@
     1	//serbian_rice_meat.food
     2	
-    3	fn cook() {
-    4	    
-    5	    // Ingredients
-    6	    pork = new Pork("500g")
-    7	    oil = new Oil("for frying")
-    8	    onions = new Onion("3 medium")
-    9	    garlic = new Garlic("1 clove")
-   10	    tomato_paste = new TomatoPaste("40g")
-   11	    water = new Water("750ml")
-   12	    broth_cube = new BrothCube("1")
-   13	    thyme = new Thyme("2 tsp, dried")
-   14	    paprika = new Paprika("to taste")
-   15	    long_grain_rice = new LongGrainRice("150g")
-   16	    bell_peppers = new BellPepper("2 medium")
-   17	    chili_pepper = new ChiliPepper("1 fresh")
-   18	    
-   19	    // Equipment
-   20	    knife = new Knife()
-   21	    pot = new Pot()
-   22	    
-   23	    // Preparation
-   24	    pork = knife.dice(pork, "pieces")
-   25	    onions = knife.dice(onions)
-   26	    garlic = knife.mince(garlic)
-   27	    bell_peppers = knife.dice(bell_peppers)
-   28	    chili_pepper = knife.mince(chili_pepper)
-   29	    
-   30	    // Cooking
-   31	    pot.heat("medium-high")
-   32	    pot.add(oil)
-   33	    pot.add(pork)
-   34	    pot.brown("until seared")
-   35	    
-   36	    pot.add(onions)
-   37	    pot.add(garlic)
-   38	    pot.saute("until translucent")
-   39	    
-   40	    pot.add(tomato_paste)
-   41	    pot.stir("1 minute")
+    3	// Ingredients
+    4	pork = new Pork("500g")
+    5	oil = new Oil("for frying")
+    6	onions = new Onion("3 medium")
+    7	garlic = new Garlic("1 clove")
+    8	tomato_paste = new TomatoPaste("40g")
+    9	water = new Water("750ml")
+   10	broth_cube = new BrothCube("1")
+   11	thyme = new Thyme("2 tsp, dried")
+   12	paprika = new Paprika("to taste")
+   13	long_grain_rice = new LongGrainRice("150g")
+   14	bell_peppers = new BellPepper("2 medium")
+   15	chili_pepper = new ChiliPepper("1 fresh")
+   16	
+   17	// Utensils
+   18	knife = new Knife()
+   19	pot = new Pot()
+   20	
+   21	fn prepareIngredients() {
+   22	    // Preparation
+   23	    pork = knife.dice(pork, "pieces")
+   24	    onions = knife.dice(onions)
+   25	    garlic = knife.mince(garlic)
+   26	    bell_peppers = knife.dice(bell_peppers)
+   27	    chili_pepper = knife.mince(chili_pepper)
+   28	}
+   29	
+   30	fn cook() {
+   31	    prepareIngredients()
+   32	    
+   33	    // Cooking
+   34	    pot.heat("medium-high")
+   35	    pot.add(oil)
+   36	    pot.add(pork)
+   37	    pot.brown("until seared")
+   38	    
+   39	    pot.add(onions)
+   40	    pot.add(garlic)
+   41	    pot.saute("until translucent")
    42	    
-   43	    pot.add(water)
-   44	    pot.add(broth_cube)
-   45	    pot.add(thyme)
-   46	    pot.add(paprika)
-   47	    pot.boil()
-   48	    
-   49	    rinse(long_grain_rice, "until water runs clear")
-   50	    pot.add(long_grain_rice)
-   51	    pot.add(bell_peppers)
-   52	    pot.add(chili_pepper)
-   53	    pot.stir()
-   54	    
-   55	    pot.simmer("20-25 minutes until rice is tender and liquid absorbed")
-   56	    
-   57	    return "Serbian Rice Meat"
-   58	}
+   43	    pot.add(tomato_paste)
+   44	    pot.stir("1 minute")
+   45	    
+   46	    pot.add(water)
+   47	    pot.add(broth_cube)
+   48	    pot.add(thyme)
+   49	    pot.add(paprika)
+   50	    pot.boil()
+   51	    
+   52	    rinse(long_grain_rice, "until water runs clear")
+   53	    pot.add(long_grain_rice)
+   54	    pot.add(bell_peppers)
+   55	    pot.add(chili_pepper)
+   56	    pot.stir()
+   57	    
+   58	    pot.simmer("20-25 minutes until rice is tender and liquid absorbed")
+   59	    
+   60	    return "Serbian Rice Meat"
+   61	}

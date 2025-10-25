@@ -11,27 +11,34 @@ Features:
 - Verifies they exist in grammar/tokens.json
 - Only compiles if grammar is complete
 - Adds line numbers and tabs to compiled recipes
+- Accepts file or folder arguments for input and output
+- Always overwrites existing files in output directory
 """
 
 import os
 import json
 import re
 import glob
+import argparse
 from pathlib import Path
 from typing import Set, Dict, List, Tuple
 
-def extract_constructors_from_files(source_dir: Path) -> Set[str]:
+def extract_constructors_from_files(source_path: Path) -> Set[str]:
     """
     Extract all constructor names from .food files.
     
     Args:
-        source_dir: Directory containing .food files
+        source_path: File or directory containing .food files
         
     Returns:
         Set of constructor names found in files
     """
     constructors = set()
-    food_files = list(source_dir.glob("*.food"))
+    
+    if source_path.is_file():
+        food_files = [source_path] if source_path.suffix == '.food' else []
+    else:
+        food_files = list(source_path.glob("*.food"))
     
     for file_path in food_files:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -42,18 +49,22 @@ def extract_constructors_from_files(source_dir: Path) -> Set[str]:
     
     return constructors
 
-def extract_methods_from_files(source_dir: Path) -> Set[str]:
+def extract_methods_from_files(source_path: Path) -> Set[str]:
     """
     Extract all method names from .food files.
     
     Args:
-        source_dir: Directory containing .food files
+        source_path: File or directory containing .food files
         
     Returns:
         Set of method names found in files
     """
     methods = set()
-    food_files = list(source_dir.glob("*.food"))
+    
+    if source_path.is_file():
+        food_files = [source_path] if source_path.suffix == '.food' else []
+    else:
+        food_files = list(source_path.glob("*.food"))
     
     for file_path in food_files:
         with open(file_path, 'r', encoding='utf-8') as f:
@@ -115,18 +126,22 @@ def get_grammar_methods(tokens: Dict) -> Set[str]:
     
     return methods
 
-def verify_file_structure(source_dir: Path) -> Tuple[bool, List[str]]:
+def verify_file_structure(source_path: Path) -> Tuple[bool, List[str]]:
     """
     Verify that all .food files follow proper structure requirements.
     
     Args:
-        source_dir: Directory containing .food files
+        source_path: File or directory containing .food files
         
     Returns:
         Tuple of (is_valid, error_messages)
     """
     errors = []
-    food_files = list(source_dir.glob("*.food"))
+    
+    if source_path.is_file():
+        food_files = [source_path] if source_path.suffix == '.food' else []
+    else:
+        food_files = list(source_path.glob("*.food"))
     
     for file_path in food_files:
         filename = file_path.name
@@ -145,20 +160,20 @@ def verify_file_structure(source_dir: Path) -> Tuple[bool, List[str]]:
     
     return len(errors) == 0, errors
 
-def verify_grammar_completeness(source_dir: Path, grammar_file: Path) -> Tuple[bool, List[str], List[str]]:
+def verify_grammar_completeness(source_path: Path, grammar_file: Path) -> Tuple[bool, List[str], List[str]]:
     """
     Verify that all constructors and methods used in recipes are in grammar.
     
     Args:
-        source_dir: Directory containing .food files
+        source_path: File or directory containing .food files
         grammar_file: Path to tokens.json file
         
     Returns:
         Tuple of (is_complete, missing_constructors, missing_methods)
     """
     # Extract from files
-    file_constructors = extract_constructors_from_files(source_dir)
-    file_methods = extract_methods_from_files(source_dir)
+    file_constructors = extract_constructors_from_files(source_path)
+    file_methods = extract_methods_from_files(source_path)
     
     # Load grammar
     tokens = load_grammar_tokens(grammar_file)
@@ -191,49 +206,75 @@ def add_line_numbers_to_file(input_file: Path, output_file: Path):
             numbered_line = f"{line_num:>5}\t{line_content}\n"
             outfile.write(numbered_line)
 
-def compile_recipes(source_dir: Path, output_dir: Path) -> int:
+def compile_recipes(source_path: Path, output_path: Path) -> int:
     """
-    Compile all .food files by adding line numbers.
+    Compile .food files by adding line numbers.
     
     Args:
-        source_dir: Directory containing source .food files
-        output_dir: Directory for compiled output files
+        source_path: File or directory containing source .food files
+        output_path: File or directory for compiled output files
         
     Returns:
         Number of files compiled
     """
-    # Create output directory if it doesn't exist
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    # Get all .food files from source directory
-    food_files = list(source_dir.glob("*.food"))
-    
-    if not food_files:
-        print(f"No .food files found in {source_dir}")
-        return 0
-    
-    print(f"Compiling {len(food_files)} recipe files...")
-    
-    # Process each file
-    for input_file in food_files:
-        output_file = output_dir / input_file.name
-        add_line_numbers_to_file(input_file, output_file)
-        print(f"  Compiled: {input_file.name}")
-    
-    return len(food_files)
+    if source_path.is_file():
+        # Single file compilation
+        if source_path.suffix != '.food':
+            print(f"Error: {source_path} is not a .food file")
+            return 0
+            
+        if output_path.is_dir():
+            output_file = output_path / source_path.name
+        else:
+            output_file = output_path
+            output_file.parent.mkdir(parents=True, exist_ok=True)
+            
+        add_line_numbers_to_file(source_path, output_file)
+        print(f"  Compiled: {source_path.name} -> {output_file}")
+        return 1
+    else:
+        # Directory compilation
+        output_path.mkdir(parents=True, exist_ok=True)
+        
+        # Get all .food files from source directory
+        food_files = list(source_path.glob("*.food"))
+        
+        if not food_files:
+            print(f"No .food files found in {source_path}")
+            return 0
+        
+        print(f"Compiling {len(food_files)} recipe files...")
+        
+        # Process each file (always overwrite existing)
+        for input_file in food_files:
+            output_file = output_path / input_file.name
+            add_line_numbers_to_file(input_file, output_file)
+            print(f"  Compiled: {input_file.name}")
+        
+        return len(food_files)
 
 def main():
     """Main function to verify grammar and compile recipes."""
-    # Define paths
-    source_dir = Path("converted")
-    output_dir = Path("compiled")
-    grammar_file = Path("../grammar/tokens.json")
+    parser = argparse.ArgumentParser(description='Compile .food recipe files with grammar verification')
+    parser.add_argument('input', nargs='?', default='converted', 
+                       help='Input file or directory (default: converted)')
+    parser.add_argument('output', nargs='?', default='compiled',
+                       help='Output file or directory (default: compiled)')
+    parser.add_argument('--grammar', default='../grammar/tokens.json',
+                       help='Path to grammar tokens file (default: ../grammar/tokens.json)')
+    
+    args = parser.parse_args()
+    
+    # Convert to Path objects
+    source_path = Path(args.input)
+    output_path = Path(args.output)
+    grammar_file = Path(args.grammar)
     
     print("=== Recipe Compilation with Grammar Verification ===\n")
     
-    # Check if required directories and files exist
-    if not source_dir.exists():
-        print(f"❌ Error: Source directory '{source_dir}' does not exist")
+    # Check if required paths and files exist
+    if not source_path.exists():
+        print(f"❌ Error: Source path '{source_path}' does not exist")
         return 1
     
     if not grammar_file.exists():
@@ -242,7 +283,7 @@ def main():
     
     # Verify file structure requirements
     print("🔍 Verifying file structure requirements...")
-    structure_valid, structure_errors = verify_file_structure(source_dir)
+    structure_valid, structure_errors = verify_file_structure(source_path)
     
     if not structure_valid:
         print("❌ File structure verification FAILED!")
@@ -259,7 +300,7 @@ def main():
     
     # Verify grammar completeness
     print("🔍 Verifying grammar completeness...")
-    is_complete, missing_constructors, missing_methods = verify_grammar_completeness(source_dir, grammar_file)
+    is_complete, missing_constructors, missing_methods = verify_grammar_completeness(source_path, grammar_file)
     
     if not is_complete:
         print("❌ Grammar verification FAILED!")
@@ -280,11 +321,11 @@ def main():
     
     # Proceed with compilation
     print("🔨 Starting recipe compilation...")
-    compiled_count = compile_recipes(source_dir, output_dir)
+    compiled_count = compile_recipes(source_path, output_path)
     
     if compiled_count > 0:
         print(f"\n✅ Successfully compiled {compiled_count} recipe files!")
-        print(f"   Output saved to: {output_dir}")
+        print(f"   Output saved to: {output_path}")
         
         # Display summary statistics
         tokens = load_grammar_tokens(grammar_file)

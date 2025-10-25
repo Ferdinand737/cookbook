@@ -1,28 +1,31 @@
 //flammkuchen_with_cream.food
 
-// Ingredients
-flour = new Flour("375g")
-yeast = new DryYeast("20g")
-water = new Water("125-250ml, lukewarm")
-salt = new Salt("to taste")
-oil = new Oil("2 tbsp")
-sour_cream = new SourCream("2 cups")
-emmental = new Emmental("100g, grated")
-nutmeg = new Nutmeg("to taste")
-pepper = new BlackPepper("to taste")
-onions = new Onion("200g")
-ham = new Ham("100g, cubes")
-smoked_bacon = new SmokedBacon("100g, cubes")
-
-// Utensils
-mixing_bowl = new Bowl()
-pan = new Pan()
-rolling_pin = new RollingPin()
-baking_sheet = new BakingSheet()
-oven = new Oven()
-knife = new Knife()
-
-fn prepareDough() {
+fn cook() {
+    
+    // Dough Ingredients
+    flour = new Flour("375g")
+    yeast = new DryYeast("20g")
+    water = new Water("125-250ml, lukewarm")
+    salt = new Salt("to taste")
+    oil = new Oil("2 tbsp")
+    
+    // Topping Ingredients
+    sour_cream = new SourCream("2 cups")
+    emmental = new Emmental("100g, grated")
+    nutmeg = new Nutmeg("to taste")
+    pepper = new BlackPepper("to taste")
+    onions = new Onion("200g")
+    ham = new Ham("100g, cubes")
+    smoked_bacon = new SmokedBacon("100g, cubes")
+    
+    // Equipment
+    mixing_bowl = new Bowl()
+    pan = new Pan()
+    rolling_pin = new RollingPin()
+    baking_sheet = new BakingSheet()
+    oven = new Oven()
+    knife = new Knife()
+    
     // Make yeast dough
     mixing_bowl.add(flour)
     mixing_bowl.add(yeast)
@@ -32,9 +35,7 @@ fn prepareDough() {
     mixing_bowl.mix("until smooth dough forms")
     
     wait("let rise covered in warm place for 30 minutes")
-}
-
-fn prepareTopping() {
+    
     // Prepare topping
     cream_bowl = new Bowl()
     cream_bowl.add(sour_cream)
@@ -52,11 +53,6 @@ fn prepareTopping() {
     pan.fry("render fat")
     pan.add(onions)
     pan.saute("until translucent")
-}
-
-fn cook() {
-    prepareDough()
-    prepareTopping()
     
     // Assembly
     mixing_bowl.mix("knead dough again")

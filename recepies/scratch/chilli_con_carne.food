@@ -20,6 +20,7 @@ pan = new Pan()
 pot = new Pot()
 
 fn prepareIngredients() {
+
     // Preparation
     knife.peel(onion)
     knife.chop(onion, "roughly")
@@ -36,9 +37,11 @@ fn prepareIngredients() {
     wash(red_bell_pepper)
 }
 
+
 fn cook() {
+
     prepareIngredients()
-    
+
     // Cooking
     pan.heat(oil)
     pan.saute(onion)
@@ -50,8 +53,9 @@ fn cook() {
     
     pan.add(potatoes)
     pan.saute(potatoes, "briefly")
-    
+
     transfer(pan, pot)
+
     pot.add(bouillon_cubes)
     pot.add("water")
     pot.boil()
