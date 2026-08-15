@@ -1,0 +1,24 @@
+{
+  "name": "@cookbook/food-lang",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./grammar": { "types": "./dist/grammar.d.ts", "import": "./dist/grammar.js" }
+  },
+  "scripts": {
+    "build": "node genRules.mjs && tsc -p tsconfig.json",
+    "typecheck": "node genRules.mjs && tsc -p tsconfig.json --noEmit",
+    "build:grammar": "node dist/buildGrammar.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
+  }
+}

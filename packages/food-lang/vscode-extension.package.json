@@ -1,0 +1,39 @@
+{
+  "name": "food",
+  "displayName": "Food Programming Language",
+  "description": "A programming language for writing recipes as code",
+  "version": "0.0.1",
+  "publisher": "food-lang",
+  "engines": {
+    "vscode": "^1.103.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "food",
+        "aliases": [
+          "Food",
+          "food"
+        ],
+        "extensions": [
+          ".food"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "food",
+        "scopeName": "source.food",
+        "path": "./syntaxes/food.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build-grammar": "node scripts/build-grammar.mjs",
+    "watch-grammar": "node scripts/build-grammar.mjs --watch"
+  }
+}

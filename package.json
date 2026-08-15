@@ -1,39 +1,22 @@
 {
-  "name": "food",
-  "displayName": "Food Programming Language",
-  "description": "A programming language for writing recipes as code",
-  "version": "0.0.1",
-  "publisher": "food-lang",
-  "engines": {
-    "vscode": "^1.103.0"
-  },
-  "categories": [
-    "Programming Languages"
-  ],
-  "contributes": {
-    "languages": [
-      {
-        "id": "food",
-        "aliases": [
-          "Food",
-          "food"
-        ],
-        "extensions": [
-          ".food"
-        ],
-        "configuration": "./language-configuration.json"
-      }
-    ],
-    "grammars": [
-      {
-        "language": "food",
-        "scopeName": "source.food",
-        "path": "./syntaxes/food.tmLanguage.json"
-      }
-    ]
-  },
+  "name": "cookbook",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
-    "build-grammar": "node scripts/build-grammar.mjs",
-    "watch-grammar": "node scripts/build-grammar.mjs --watch"
+    "dev": "npm run dev --workspace apps/web",
+    "build": "npm run build --workspace packages/food-lang && npm run build --workspace apps/web",
+    "build:grammar": "npm run build --workspace packages/food-lang",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "db:push": "npm run db:push --workspace apps/web",
+    "db:migrate": "npm run db:migrate --workspace apps/web",
+    "db:studio": "npm run db:studio --workspace apps/web",
+    "extension:build": "npm run build --workspace apps/extension"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  },
+  "overrides": {
+    "@prisma/client": "5.22.0",
+    "prisma": "5.22.0"
   }
 }

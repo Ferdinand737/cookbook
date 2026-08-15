@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root { color-scheme: dark; }
+      body {
+        width: 280px;
+        margin: 0;
+        padding: 14px;
+        font-family: "JetBrains Mono", ui-monospace, Menlo, monospace;
+        background: #0d1117;
+        color: #e6edf3;
+      }
+      h1 { font-size: 13px; margin: 0 0 4px 0; }
+      .muted { color: #8b949e; }
+      .bad { color: #f85149; }
+      .ok { color: #3fb950; }
+      .page { font-size: 11px; color: #8b949e; margin-bottom: 12px; word-break: break-all; }
+      button {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 8px 10px;
+        margin-top: 6px;
+        background: #161b22;
+        color: #e6edf3;
+        border: 1px solid #30363d;
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      button:hover:not(:disabled) { border-color: #79c0ff; color: #79c0ff; }
+      button:disabled { opacity: 0.4; cursor: default; }
+      a { color: #79c0ff; font-size: 11px; }
+      .status { margin-top: 8px; font-size: 11px; min-height: 14px; }
+    </style>
+  </head>
+  <body>
+    <h1><span class="muted">//</span> cookbook</h1>
+    <div id="page" class="page">…</div>
+    <button id="save">Save to my recipes</button>
+    <button id="open" disabled>Open in app</button>
+    <div id="status" class="status"></div>
+    <p class="muted" style="margin-top:10px">logged in at <a href="http://localhost:3000/login" target="_blank">localhost:3000</a></p>
+    <script src="popup.js"></script>
+  </body>
+</html>

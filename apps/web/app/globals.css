@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: "JetBrains Mono", "Fira Code", ui-monospace, Menlo, monospace;
+}
+
+::selection {
+  background: #1f6feb44;
+}
+
+/* shiki */
+.shiki, .shiki span {
+  background: transparent !important;
+  white-space: pre;
+}
+pre.code-block {
+  font-size: 13px;
+  line-height: 1.6;
+  overflow: auto;
+  padding: 16px;
+  background: #010409;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@cookbook/extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Convert any recipe page into .food code and save to your Cookbook.",
+  "scripts": {
+    "build": "node build.js",
+    "typecheck": "echo 'no typecheck for extension'"
+  }
+}
