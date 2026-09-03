@@ -11,4 +11,4 @@ jobs:
       - name: Deploy to VM 104
         run: |
           ssh -o StrictHostKeyChecking=no ferdinand@192.168.1.70 \
-            'cd ~/cookbook && ./deploy.sh'
+            'cd ~/cookbook && git pull origin main && ./deploy.sh'
