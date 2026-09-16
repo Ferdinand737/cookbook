@@ -145,7 +145,6 @@ export default function FoodViewer({
         fontSize: 13,
         minimap: { enabled: false },
         scrollBeyondLastLine: false,
-        scrollbar: { vertical: "hidden", horizontal: "hidden" },
         tabSize: 4,
         automaticLayout: true,
         wordWrap: "off",
