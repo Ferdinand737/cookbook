@@ -17,5 +17,22 @@ services:
       timeout: 3s
       retries: 10
 
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: cookbook-web
+    restart: unless-stopped
+    ports:
+      - "3006:3000"
+    environment:
+      DATABASE_URL: postgresql://cookbook:cookbook@db:5432/cookbook
+      NEXTAUTH_SECRET: ${NEXTAUTH_SECRET:?Set NEXTAUTH_SECRET in .env}
+      NEXTAUTH_URL: ${NEXTAUTH_URL:-http://192.168.1.70:3006}
+      NODE_ENV: production
+    depends_on:
+      db:
+        condition: service_healthy
+
 volumes:
   cookbook-db:
