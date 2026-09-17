@@ -54,7 +54,7 @@ export async function POST(req: Request) {
   }
 
   const apiKey = process.env.OPENROUTER_API_KEY;
-  const model = process.env.OPENROUTER_MODEL ?? "z-ai/glm-5.2";
+  const model = process.env.OPENROUTER_MODEL ?? "z-ai/glm-5.3-flash";
   if (!apiKey) return NextResponse.json({ error: "OPENROUTER_API_KEY not set" }, { status: 500 });
 
   const tokens = loadTokens();

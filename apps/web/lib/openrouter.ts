@@ -1,6 +1,6 @@
 import type { AiRecipeJsonEnvelope } from "@cookbook/food-lang";
 
-const ENDPOINT = "https://openrouter.ai/api/v1/chat/completions";
+const ENDPOINT = `${process.env.OPENROUTER_BASE_URL ?? "http://ai.netbird.selfhosted:4000/v1"}/chat/completions`;
 
 export interface ChatMessage {
   role: "system" | "user" | "assistant";
@@ -30,7 +30,7 @@ export async function chatCompletionJson(
 
   if (!res.ok) {
     const text = await res.text();
-    throw new Error(`OpenRouter ${res.status}: ${text}`);
+    throw new Error(`AI gateway ${res.status}: ${text}`);
   }
   const data = (await res.json()) as {
     choices: { message: { content: string } }[];
