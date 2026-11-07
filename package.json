@@ -1,7 +1,10 @@
 {
   "name": "cookbook",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "npm run dev --workspace apps/web",
     "build": "npm run build --workspace packages/food-lang && npm run build --workspace apps/web",
@@ -17,6 +20,10 @@
   },
   "overrides": {
     "@prisma/client": "5.22.0",
-    "prisma": "5.22.0"
+    "prisma": "5.22.0",
+    "dompurify": "$dompurify"
+  },
+  "dependencies": {
+    "dompurify": "^3.4.17"
   }
 }

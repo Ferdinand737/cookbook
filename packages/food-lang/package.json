@@ -6,8 +6,14 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
-    "./grammar": { "types": "./dist/grammar.d.ts", "import": "./dist/grammar.js" }
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./grammar": {
+      "types": "./dist/grammar.d.ts",
+      "import": "./dist/grammar.js"
+    }
   },
   "scripts": {
     "build": "node genRules.mjs && tsc -p tsconfig.json",
@@ -15,7 +21,9 @@
     "build:grammar": "node dist/buildGrammar.js"
   },
   "dependencies": {
-    "puppeteer": "^23.6.0"
+    "next": "16.4.5",
+    "puppeteer": "^25.16.0",
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
